@@ -28,8 +28,8 @@
     <servlet-class>com.sise.taotao.servlet.NewServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>GoodsServlst</servlet-name>
-    <servlet-class>com.sise.taotao.servlet.GoodsServlst</servlet-class>
+    <servlet-name>GoodsServlet</servlet-name>
+    <servlet-class>com.sise.taotao.servlet.GoodsServlet</servlet-class>
   </servlet>
 
 
@@ -57,8 +57,8 @@
     <url-pattern>/NewServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>GoodsServlst</servlet-name>
-    <url-pattern>/GoodsServlst</url-pattern>
+    <servlet-name>GoodsServlet</servlet-name>
+    <url-pattern>/GoodsServlet</url-pattern>
   </servlet-mapping>
 
 	<filter>

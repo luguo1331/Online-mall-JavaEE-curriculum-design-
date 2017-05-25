@@ -45,14 +45,10 @@
 			id="demo-slider-0">
 			<ul class="am-slides">
 				<li class="banner1"><a href="introduction.html"><img
-						src="../images/ad1.jpg" /> </a>
-				</li>
-				<li class="banner2"><a><img src="../images/ad2.jpg" /> </a>
-				</li>
-				<li class="banner3"><a><img src="../images/ad3.jpg" /> </a>
-				</li>
-				<li class="banner4"><a><img src="../images/ad4.jpg" /> </a>
-				</li>
+						src="../images/ad1.jpg" /> </a></li>
+				<li class="banner2"><a><img src="../images/ad2.jpg" /> </a></li>
+				<li class="banner3"><a><img src="../images/ad3.jpg" /> </a></li>
+				<li class="banner4"><a><img src="../images/ad4.jpg" /> </a></li>
 
 			</ul>
 		</div>
@@ -66,16 +62,11 @@
 			</div>
 			<div class="nav-cont">
 				<ul>
-					<li class="index"><a href="#">首页</a>
-					</li>
-					<li class="qc"><a href="#">闪购</a>
-					</li>
-					<li class="qc"><a href="#">限时抢</a>
-					</li>
-					<li class="qc"><a href="#">团购</a>
-					</li>
-					<li class="qc last"><a href="#">大包装</a>
-					</li>
+					<li class="index"><a href="#">首页</a></li>
+					<li class="qc"><a href="#">闪购</a></li>
+					<li class="qc"><a href="#">限时抢</a></li>
+					<li class="qc"><a href="#">团购</a></li>
+					<li class="qc last"><a href="#">大包装</a></li>
 				</ul>
 				<div class="nav-extra">
 					<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利
@@ -112,7 +103,8 @@
 																	</dt>
 																	<c:forEach items="${parent.children}" var="child">
 																		<dd>
-																			<a title="蒸蛋糕" href="#"><span>${
+																			<a title="蒸蛋糕"
+																				href="<c:url value='/GoodsServlet?method=findByCategory&cid=${child.cid }'/>"><span>${
 																					child.cname}</span> </a>
 																		</dd>
 																	</c:forEach>
@@ -158,7 +150,8 @@
 													</div>
 												</div>
 											</div>
-										</div> <b class="arrow"></b></li>
+										</div> <b class="arrow"></b>
+									</li>
 								</c:forEach>
 
 							</ul>
@@ -240,8 +233,8 @@
 						<div class="mod-vip">
 							<div class="m-baseinfo">
 								<a href="../person/index.html"> <img
-									src="../images/getAvatar.do.jpg"> </a> <em> Hi,<span
-									class="s-name"> <c:choose>
+									src="../images/getAvatar.do.jpg">
+								</a> <em> Hi,<span class="s-name"> <c:choose>
 											<c:when test="${empty sessionScope.sessionUser }">小叮当</c:when>
 											<c:otherwise>${sessionScope.sessionUser.loginname }</c:otherwise>
 										</c:choose> </span> <a href="#"><p>点击更多优惠活动</p> </a> </em>
@@ -259,8 +252,7 @@
 						<c:forEach items="${new }" var="new" end="4">
 							<li><a target="_blank"
 								href="<c:url value='/NewServlet?method=load&nid=${new.nid }'/>"><span>[${new.ntype
-										}]</span>${new.desc }</a>
-							</li>
+										}]</span>${new.desc }</a></li>
 						</c:forEach>
 					</ul>
 					<div class="advTip">
@@ -296,7 +288,7 @@
 				<div class="clock am-u-sm-3"">
 					<img src="../images/2016.png "></img>
 					<p>
-						今日<br>推荐
+						今日<br>推荐 
 					</p>
 				</div>
 
@@ -465,13 +457,10 @@
 	<!--引导 -->
 	<div class="navCir">
 		<li class="active"><a href="home.html"><i
-				class="am-icon-home "></i>首页</a>
-		</li>
-		<li><a href="sort.html"><i class="am-icon-list"></i>分类</a>
-		</li>
+				class="am-icon-home "></i>首页</a></li>
+		<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
 		<li><a href="shopcart.html"><i
-				class="am-icon-shopping-basket"></i>购物车</a>
-		</li>
+				class="am-icon-shopping-basket"></i>购物车</a></li>
 		<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a>
 		</li>
 	</div>
@@ -610,16 +599,19 @@
 					</a>
 						<div class="mp_tooltip ">
 							客服中心<i class="icon_arrow_right_black "></i>
-						</div></li>
+						</div>
+					</li>
 					<!--二维码 -->
 					<li class="qtitem "><a href="#none "><span
 							class="mpbtn_qrcode "></span> </a>
 						<div class="mp_qrcode " style="display:none; ">
 							<img src="../images/weixin_code_145.png " /><i
 								class="icon_arrow_white "></i>
-						</div></li>
+						</div>
+					</li>
 					<li class="qtitem "><a href="#top " class="return_top "><span
-							class="top "></span> </a></li>
+							class="top "></span> </a>
+					</li>
 				</div>
 
 				<!--回到顶部 -->

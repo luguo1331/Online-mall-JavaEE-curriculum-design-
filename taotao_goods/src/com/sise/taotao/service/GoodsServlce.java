@@ -1,6 +1,10 @@
 package com.sise.taotao.service;
 
+import java.sql.SQLException;
+
 import com.sise.taotao.dao.GoodsDao;
+import com.sise.taotao.domain.Goods;
+import com.sise.taotao.domain.PageBean;
 
 /*
  * 类名称: GoodsServlce   
@@ -13,5 +17,20 @@ import com.sise.taotao.dao.GoodsDao;
  */
 public class GoodsServlce {
 	private GoodsDao goodsDao = new GoodsDao();
-	
+
+	/**
+	 * 根据cid,pc查询商品
+	 * 
+	 * @param cid
+	 * @param pc
+	 * @return
+	 */
+	public PageBean<Goods> findByCategory(String cid, int pc) {
+		try {
+			return goodsDao.findByCategory(cid, pc);
+		} catch (SQLException e) {
+			throw new RuntimeException();
+		}
+	}
+
 }

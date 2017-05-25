@@ -39,4 +39,17 @@ public class UserDao {
 				loginpass);
 	}
 
+	/**
+	 * 注册用户
+	 * 
+	 * @param user
+	 * @throws SQLException
+	 */
+	public void regist(User user) throws SQLException {
+		String sql = "INSERT INTO t_user(loginname,loginpass,uid,email) VALUES(?,?,?,?)";
+		Object[] params = { user.getLoginname(), user.getLoginpass(),
+				user.getUid(), user.getEmail() };
+		qr.update(sql, params);
+	}
+
 }

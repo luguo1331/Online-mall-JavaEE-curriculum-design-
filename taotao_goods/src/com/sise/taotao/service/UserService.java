@@ -2,6 +2,8 @@ package com.sise.taotao.service;
 
 import java.sql.SQLException;
 
+import cn.itcast.commons.CommonUtils;
+
 import com.sise.taotao.dao.UserDao;
 import com.sise.taotao.domain.User;
 
@@ -16,17 +18,32 @@ import com.sise.taotao.domain.User;
  */
 public class UserService {
 	private UserDao userDao = new UserDao();
-	
+
 	/**
 	 * 登陆功能
+	 * 
 	 * @param user
 	 * @return
 	 */
-	public User login(User user){
+	public User login(User user) {
 		try {
-			return userDao.findByLoginnameAndLoginpass(user.getLoginname(),user.getLoginpass());
+			return userDao.findByLoginnameAndLoginpass(user.getLoginname(),
+					user.getLoginpass());
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	public void regist(User user) {
+		// 数据补齐
+		user.setUid(CommonUtils.uuid());
+		user.setEmail(user.getLoginname());
+		// 插入数据库
+		try {
+			userDao.regist(user);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
 	}
 }

@@ -20,6 +20,7 @@ public class CategoryService {
 
 	/**
 	 * 查询所有分类
+	 * 
 	 * @return
 	 */
 	public List<Category> findAll() {

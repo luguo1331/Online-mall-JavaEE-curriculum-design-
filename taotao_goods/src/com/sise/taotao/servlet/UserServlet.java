@@ -31,6 +31,7 @@ public class UserServlet extends BaseServlet {
 
 	/**
 	 * 登录功能
+	 * 
 	 * @param req
 	 * @param resp
 	 * @return
@@ -74,7 +75,45 @@ public class UserServlet extends BaseServlet {
 		}
 	}
 
+	public String regist(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 将表单数据封装到bean中
+		User formUser = CommonUtils.toBean(req.getParameterMap(), User.class);
+		// 校验表单数据
+		Map<String, String> errors = validateRegist(formUser, req.getSession());
+		if (errors.size() != 0) {
+			req.setAttribute("user", formUser);
+			req.setAttribute("errors", "用户名已被注册");
+			return "f:/home/login.jsp";
+		}
+		// 调用service完成业务
+		userService.regist(formUser);
+		// 跳转到登陆页面
+		return "f:/home/login.jsp";
+	}
+
+	/**
+	 * 校验登陆表单数据
+	 * 
+	 * @param formUser
+	 * @param session
+	 * @return
+	 */
 	private Map<String, String> validateLogin(User formUser, HttpSession session) {
+		HashMap<String, String> errors = new HashMap<String, String>();
+		// 校验表单数据
+		return errors;
+	}
+
+	/**
+	 * 校验注册表单数据
+	 * 
+	 * @param formUser
+	 * @param session
+	 * @return
+	 */
+	private Map<String, String> validateRegist(User formUser,
+			HttpSession session) {
 		HashMap<String, String> errors = new HashMap<String, String>();
 		// 校验表单数据
 		return errors;

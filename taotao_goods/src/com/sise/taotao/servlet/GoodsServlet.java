@@ -78,10 +78,26 @@ public class GoodsServlet extends BaseServlet {
 		PageBean<Goods> pageBean = goodsService.findByCategory(cid, pc);
 		// 设置pageBean参数
 		pageBean.setUrl(url);
-//		for ( Goods goods : pageBean.getBeanList()) {
-//			System.out.println(goods);
-//		}
 		req.setAttribute("pagebean", pageBean);
 		return "f:/home/search.jsp";
 	}
+
+	/**
+	 * 根据gid查询商品
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findByGid(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 获取gid
+		String gid = req.getParameter("gid");
+		Goods goods = goodsService.findByGid(gid);
+		req.setAttribute("goods", goods);
+		return "f:/home/introduction.jsp";
+	}
+
 }

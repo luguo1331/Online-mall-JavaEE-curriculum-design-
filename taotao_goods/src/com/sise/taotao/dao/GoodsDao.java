@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.MapHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
@@ -134,6 +135,27 @@ public class GoodsDao {
 		pageBean.setTr(tr);
 		pageBean.setBeanList(beanList);
 		return pageBean;
+	}
+
+	/**
+	 * 根据gid查询商品
+	 * 
+	 * @param gid
+	 * @return
+	 * @throws SQLException
+	 */
+	public Goods findByGid(String gid) throws SQLException {
+		String sql = "SELECT * FROM t_goods g ,t_category c WHERE g.cid=c.cid AND g.gid=?";
+		Map<String, Object> map = qr.query(sql, new MapHandler(), gid);
+		Goods goods = CommonUtils.toBean(map, Goods.class);
+		Category category = CommonUtils.toBean(map, Category.class);
+		goods.setCategory(category);
+		if (map.get("pid") != null) {
+			Category parent = new Category();
+			parent.setCid((String) map.get("pid"));
+			category.setParent(parent);
+		}
+		return goods;
 	}
 
 }

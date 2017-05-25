@@ -18,28 +18,28 @@
 <title>商品页面</title>
 
 <link
-	href="<c:url value='../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css'/>" />
+	href="<c:url value='/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css'/>" />
 <link
-	href="<c:url value='../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css'/>" />
+	href="<c:url value='/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css'/>" />
 <link
-	href="<c:url value='../basic/css/demo.css" rel="stylesheet" type="text/css'/>" />
+	href="<c:url value='/basic/css/demo.css" rel="stylesheet" type="text/css'/>" />
 <link type="text/css"
-	href="<c:url value='../css/optstyle.css" rel="stylesheet'/>" />
+	href="<c:url value='/css/optstyle.css" rel="stylesheet'/>" />
 <link type="text/css"
-	href="<c:url value='../css/style.css" rel="stylesheet'/>" />
+	href="<c:url value='/css/style.css" rel="stylesheet'/>" />
 
 <script type="text/javascript"
-	src="<c:url value='../basic/js/jquery-1.7.min.js'/>"></script>
+	src="<c:url value='/basic/js/jquery-1.7.min.js'/>"></script>
 <script type="text/javascript"
-	src="<c:url value='../basic/js/quick_links.js'/>"></script>
+	src="<c:url value='/basic/js/quick_links.js'/>"></script>
 
 <script type="text/javascript"
-	src="<c:url value='../AmazeUI-2.4.2/assets/js/amazeui.js'/>"></script>
+	src="<c:url value='/AmazeUI-2.4.2/assets/js/amazeui.js'/>"></script>
 <script type="text/javascript"
-	src="<c:url value='../js/jquery.imagezoom.min.js'/>"></script>
+	src="<c:url value='/js/jquery.imagezoom.min.js'/>"></script>
 <script type="text/javascript"
-	src="<c:url value='../js/jquery.flexslider.js'/>"></script>
-<script type="text/javascript" src="<c:url value='../js/list.js'/>"></script>
+	src="<c:url value='/js/jquery.flexslider.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/js/list.js'/>"></script>
 
 </head>
 
@@ -74,9 +74,9 @@
 			<!--悬浮搜索框-->
 
 			<div class="nav white">
-				<div class="logo"><img src="../images/logo.png" /></div>
+				<div class="logo"><img src="<%=path%>/images/logo.png" /></div>
 				<div class="logoBig">
-					<li><img src="../images/logobig.png" /></li>
+					<li><img src="<%=path%>/images/logobig.png" /></li>
 				</div>
 				<div class="search-bar pr">
 					<a name="index_none_header_sysc" href="#"></a>
@@ -130,13 +130,13 @@
 						<div class="flexslider">
 							<ul class="slides">
 								<li>
-									<img src="../images/01.jpg" title="pic" />
+									<img src="<c:url value='<%=path%>/${goods.image_2}'/>" title="pic" />
 								</li>
 								<li>
-									<img src="../images/02.jpg" />
+									<img src="<c:url value='<%=path%>/${goods.image_3}'/>" />
 								</li>
 								<li>
-									<img src="../images/03.jpg" />
+									<img src="<c:url value='<%=path%>/${goods.image_4}'/>" />
 								</li>
 							</ul>
 						</div>
@@ -166,17 +166,17 @@
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="../images/01_small.jpg" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
+										<a href="#"><img src="<c:url value='<%=path%>/${goods.image_2_mid}'/>" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="../images/02_small.jpg" mid="../images/02_mid.jpg" big="../images/02.jpg"></a>
+										<a href="#"><img src="<c:url value='<%=path%>/${goods.image_3_mid}'/>" mid="../images/02_mid.jpg" big="../images/02.jpg"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="../images/03_small.jpg" mid="../images/03_mid.jpg" big="../images/03.jpg"></a>
+										<a href="#"><img src="<c:url value='<%=path%>/${goods.image_4_mid}'/>" mid="../images/03_mid.jpg" big="../images/03.jpg"></a>
 									</div>
 								</li>
 							</ul>
@@ -191,7 +191,7 @@
 						<!--名称-->
 						<div class="tb-detail-hd">
 							<h1>	
-				 良品铺子 手剥松子218g 坚果炒货 巴西松子
+				 ${goods.gname }
 	          </h1>
 						</div>
 						<div class="tb-detail-list">
@@ -199,11 +199,11 @@
 							<div class="tb-detail-price">
 								<li class="price iteminfo_price">
 									<dt>促销价</dt>
-									<dd><em>¥</em><b class="sys_item_price">56.90</b>  </dd>                                 
+									<dd><em>¥</em><b class="sys_item_price">${goods.currPrice }</b>  </dd>                                 
 								</li>
 								<li class="price iteminfo_mktprice">
 									<dt>原价</dt>
-									<dd><em>¥</em><b class="sys_item_mktprice">98.00</b></dd>									
+									<dd><em>¥</em><b class="sys_item_mktprice">${goods.price }</b></dd>									
 								</li>
 								<div class="clear"></div>
 							</div>
@@ -236,13 +236,13 @@
 							<!--销量-->
 							<ul class="tm-ind-panel">
 								<li class="tm-ind-item tm-ind-sellCount canClick">
-									<div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">1015</span></div>
+									<div class="tm-indcon"><span class="tm-label">月销量</span><span class="tm-count">${goods.monSales}</span></div>
 								</li>
 								<li class="tm-ind-item tm-ind-sumCount canClick">
-									<div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">6015</span></div>
+									<div class="tm-indcon"><span class="tm-label">累计销量</span><span class="tm-count">${goods.totalSales}</span></div>
 								</li>
 								<li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
-									<div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">640</span></div>
+									<div class="tm-indcon"><span class="tm-label">累计评价</span><span class="tm-count">${goods.totalAssess}</span></div>
 								</li>
 							</ul>
 							<div class="clear"></div>
@@ -288,7 +288,7 @@
 															<input id="min" class="am-btn am-btn-default" name="" type="button" value="-" />
 															<input id="text_box" name="" type="text" value="1" style="width:30px;" />
 															<input id="add" class="am-btn am-btn-default" name="" type="button" value="+" />
-															<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+															<span id="Stock" class="tb-hidden">库存<span class="stock">${goods.num}</span>件</span>
 														</dd>
 
 													</div>
@@ -305,7 +305,7 @@
 													</div>
 													<div class="text-info">
 														<span class="J_Price price-now">¥39.00</span>
-														<span id="Stock" class="tb-hidden">库存<span class="stock">1000</span>件</span>
+														<span id="Stock" class="tb-hidden">库存<span class="stock">${goods.num}</span>件</span>
 													</div>
 												</div>
 
@@ -369,14 +369,14 @@
 						<ul class="like_list">
 							<li>
 								<div class="s_picBox">
-									<a class="s_pic" href="#"><img src="../images/cp.jpg"></a>
+									<a class="s_pic" href="#"><img src="<%=path%>/images/cp.jpg"></a>
 								</div> <a class="txt" target="_blank" href="#">萨拉米 1+1小鸡腿</a>
 								<div class="info-box"> <span class="info-box-price">¥ 29.90</span> <span class="info-original-price">￥ 199.00</span> </div>
 							</li>
 							<li class="plus_icon"><i>+</i></li>
 							<li>
 								<div class="s_picBox">
-									<a class="s_pic" href="#"><img src="../images/cp2.jpg"></a>
+									<a class="s_pic" href="#"><img src="<%=path%>/images/cp2.jpg"></a>
 								</div> <a class="txt" target="_blank" href="#">ZEK 原味海苔</a>
 								<div class="info-box"> <span class="info-box-price">¥ 8.90</span> <span class="info-original-price">￥ 299.00</span> </div>
 							</li>
@@ -403,7 +403,7 @@
 						     	
 							      <li class="first">
 							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="../images/browse1.jpg"> </a>               
+							      		<a  href="#"> <img class="" src="<%=path%>/images/browse1.jpg"> </a>               
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -413,7 +413,7 @@
 							      </li>
 							      <li>
 							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="../images/browse1.jpg"> </a>               
+							      		<a  href="#"> <img class="" src="<%=path%>/images/browse1.jpg"> </a>               
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -423,7 +423,7 @@
 							      </li>
 							      <li>
 							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="../images/browse1.jpg"> </a>               
+							      		<a  href="#"> <img class="" src="<%=path%>/images/browse1.jpg"> </a>               
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -433,7 +433,7 @@
 							      </li>							      
 							      <li>
 							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="../images/browse1.jpg"> </a>               
+							      		<a  href="#"> <img class="" src="<%=path%>/images/browse1.jpg"> </a>               
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子】零食坚果特产炒货东北红松子原味
@@ -443,7 +443,7 @@
 							      </li>							      
 							      <li>
 							      	<div class="p-img">                    
-							      		<a  href="#"> <img class="" src="../images/browse1.jpg"> </a>               
+							      		<a  href="#"> <img class="" src="<%=path%>/images/browse1.jpg"> </a>               
 							      	</div>
 							      	<div class="p-name"><a href="#">
 							      		【三只松鼠_开口松子218g】零食坚果特产炒货东北红松子原味
@@ -488,16 +488,16 @@
 											<h4>产品参数：</h4></div>
 										<div class="clear"></div>
 										<ul id="J_AttrUL">
-											<li title="">产品类型:&nbsp;烘炒类</li>
-											<li title="">原料产地:&nbsp;巴基斯坦</li>
-											<li title="">产地:&nbsp;湖北省武汉市</li>
-											<li title="">配料表:&nbsp;进口松子、食用盐</li>
-											<li title="">产品规格:&nbsp;210g</li>
-											<li title="">保质期:&nbsp;180天</li>
-											<li title="">产品标准号:&nbsp;GB/T 22165</li>
-											<li title="">生产许可证编号：&nbsp;QS4201 1801 0226</li>
-											<li title="">储存方法：&nbsp;请放置于常温、阴凉、通风、干燥处保存 </li>
-											<li title="">食用方法：&nbsp;开袋去壳即食</li>
+											<li title="">产品类型:&nbsp;${goods.type}</li>
+											<li title="">原料产地:&nbsp;${goods.materialsProduction}</li>
+											<li title="">产地:&nbsp;${goods.production}</li>
+											<li title="">配料表:&nbsp;${goods.batching}</li>
+											<li title="">产品规格:&nbsp;${goods.spec}g</li>
+											<li title="">保质期:&nbsp;${goods.expirationDate}天</li>
+											<li title="">产品标准号:&nbsp;${goods.productStandardNumber}</li>
+											<li title="">生产许可证编号：&nbsp;${goods.productionLicenseNumber}</li>
+											<li title="">储存方法：&nbsp;${goods.storageMethod} </li>
+											<li title="">食用方法：&nbsp;${goods.edibleMethod}</li>
 										</ul>
 										<div class="clear"></div>
 									</div>
@@ -507,13 +507,13 @@
 											<h4>商品细节</h4>
 										</div>
 										<div class="twlistNews">
-											<img src="../images/tw1.jpg" />
-											<img src="../images/tw2.jpg" />
-											<img src="../images/tw3.jpg" />
-											<img src="../images/tw4.jpg" />
-											<img src="../images/tw5.jpg" />
-											<img src="../images/tw6.jpg" />
-											<img src="../images/tw7.jpg" />
+											<img src="<%=path%>/images/tw1.jpg" />
+											<img src="<%=path%>/images/tw2.jpg" />
+											<img src="<%=path%>/images/tw3.jpg" />
+											<img src="<%=path%>/images/tw4.jpg" />
+											<img src="<%=path%>/images/tw5.jpg" />
+											<img src="<%=path%>/images/tw6.jpg" />
+											<img src="<%=path%>/images/tw7.jpg" />
 										</div>
 									</div>
 									<div class="clear"></div>
@@ -1010,7 +1010,7 @@
 										<ul class="am-avg-sm-2 am-avg-md-3 am-avg-lg-4 boxes">
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1021,7 +1021,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1032,7 +1032,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1043,7 +1043,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1054,7 +1054,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1065,7 +1065,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1076,7 +1076,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1087,7 +1087,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1098,7 +1098,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1109,7 +1109,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1120,7 +1120,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1131,7 +1131,7 @@
 											</li>
 											<li>
 												<div class="i-pic limit">
-													<img src="../images/imgsearch1.jpg" />
+													<img src="<%=path%>/images/imgsearch1.jpg" />
 													<p>【良品铺子_开口松子】零食坚果特产炒货
 														<span>东北红松子奶油味</span></p>
 													<p class="price fl">
@@ -1245,7 +1245,7 @@
 
 						<div id="brand" class="item">
 							<a href="#">
-								<span class="wdsc"><img src="../images/wdsc.png" /></span>
+								<span class="wdsc"><img src="<%=path%>/images/wdsc.png" /></span>
 							</a>
 							<div class="mp_tooltip">
 								我的收藏
@@ -1255,7 +1255,7 @@
 
 						<div id="broadcast" class="item">
 							<a href="#">
-								<span class="chongzhi"><img src="../images/chongzhi.png" /></span>
+								<span class="chongzhi"><img src="<%=path%>/images/chongzhi.png" /></span>
 							</a>
 							<div class="mp_tooltip">
 								我要充值
@@ -1271,7 +1271,7 @@
 							<!--二维码 -->
 							<li class="qtitem">
 								<a href="#none"><span class="mpbtn_qrcode"></span></a>
-								<div class="mp_qrcode" style="display:none;"><img src="../images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
+								<div class="mp_qrcode" style="display:none;"><img src="<%=path%>/images/weixin_code_145.png" /><i class="icon_arrow_white"></i></div>
 							</li>
 							<li class="qtitem">
 								<a href="#top" class="return_top"><span class="top"></span></a>

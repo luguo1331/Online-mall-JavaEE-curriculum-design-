@@ -233,6 +233,7 @@
 							<c:forEach items="${pagebean.beanList}" var="goods">
 								<li>
 									<div class="i-pic limit">
+										<a href="<c:url value='/GoodsServlet?method=findByGid&gid=${goods.gid}'/>">
 										<img src= "<%=path%>/${goods.image_2}" />
 										<p class="title fl">【良品铺子旗舰店】${goods.gname}</p>
 										<p class="price fl">
@@ -241,6 +242,7 @@
 										<p class="number fl">
 											销量<span>${goods.totalSales}</span>
 										</p>
+										</a>
 									</div></li>
 							</c:forEach>
 						</ul>

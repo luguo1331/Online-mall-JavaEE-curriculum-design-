@@ -33,4 +33,18 @@ public class GoodsServlce {
 		}
 	}
 
+	/**
+	 * 根据gid查询商品
+	 * 
+	 * @param gid
+	 * @return
+	 */
+	public Goods findByGid(String gid) {
+		try {
+			return goodsDao.findByGid(gid);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 }

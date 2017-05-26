@@ -130,13 +130,13 @@
 						<div class="flexslider">
 							<ul class="slides">
 								<li>
-									<img src="<c:url value='<%=path%>/${goods.image_2}'/>" title="pic" />
+									<img src="<%=path%>/${goods.image_2}" title="pic" />
 								</li>
 								<li>
-									<img src="<c:url value='<%=path%>/${goods.image_3}'/>" />
+									<img src="<%=path%>/${goods.image_3}" />
 								</li>
 								<li>
-									<img src="<c:url value='<%=path%>/${goods.image_4}'/>" />
+									<img src="<%=path%>/${goods.image_4}" />
 								</li>
 							</ul>
 						</div>
@@ -166,17 +166,17 @@
 							<ul class="tb-thumb" id="thumblist">
 								<li class="tb-selected">
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="<c:url value='<%=path%>/${goods.image_2_mid}'/>" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
+										<a href="#"><img src="<%=path%>/${goods.image_2_mid}" mid="../images/01_mid.jpg" big="../images/01.jpg"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="<c:url value='<%=path%>/${goods.image_3_mid}'/>" mid="../images/02_mid.jpg" big="../images/02.jpg"></a>
+										<a href="#"><img src="<%=path%>/${goods.image_3_mid}" mid="../images/02_mid.jpg" big="../images/02.jpg"></a>
 									</div>
 								</li>
 								<li>
 									<div class="tb-pic tb-s40">
-										<a href="#"><img src="<c:url value='<%=path%>/${goods.image_4_mid}'/>" mid="../images/03_mid.jpg" big="../images/03.jpg"></a>
+										<a href="#"><img src="<%=path%>/${goods.image_4_mid}" mid="../images/03_mid.jpg" big="../images/03.jpg"></a>
 									</div>
 								</li>
 							</ul>

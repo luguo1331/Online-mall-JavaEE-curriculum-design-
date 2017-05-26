@@ -233,8 +233,8 @@
 						<div class="mod-vip">
 							<div class="m-baseinfo">
 								<a href="../person/index.html"> <img
-									src="../images/getAvatar.do.jpg">
-								</a> <em> Hi,<span class="s-name"> <c:choose>
+									src="../images/getAvatar.do.jpg"> </a> <em> Hi,<span
+									class="s-name"> <c:choose>
 											<c:when test="${empty sessionScope.sessionUser }">小叮当</c:when>
 											<c:otherwise>${sessionScope.sessionUser.loginname }</c:otherwise>
 										</c:choose> </span> <a href="#"><p>点击更多优惠活动</p> </a> </em>
@@ -288,7 +288,7 @@
 				<div class="clock am-u-sm-3"">
 					<img src="../images/2016.png "></img>
 					<p>
-						今日<br>推荐 
+						今日<br>推荐
 					</p>
 				</div>
 
@@ -376,7 +376,8 @@
 								<div class="sub-title ">¥${parent.children[0].goods[1].price}</div>
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
 							</div>
-							<a href="# "><img
+							<a
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[1].gid}'/> "><img
 								src="../${parent.children[0].goods[1].image_1}" /> </a>
 						</div>
 
@@ -386,7 +387,8 @@
 								<div class="sub-title ">¥${parent.children[0].goods[0].price}</div>
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
 							</div>
-							<a href="# "><img
+							<a
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[0].gid}'/> "><img
 								src="../${parent.children[0].goods[0].image_1}" /> </a>
 						</div>
 
@@ -397,7 +399,8 @@
 								<div class="sub-title ">¥${parent.children[0].goods[2].price}</div>
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
 							</div>
-							<a href="# "><img
+							<a
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[2].gid}'/> "><img
 								src="../${parent.children[0].goods[2].image_1}" /> </a>
 						</div>
 
@@ -407,7 +410,8 @@
 								<div class="sub-title ">¥${parent.children[0].goods[3].price}</div>
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
 							</div>
-							<a href="# "><img
+							<a
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[3].gid}'/> "><img
 								src="../${parent.children[0].goods[3].image_1}" /> </a>
 						</div>
 
@@ -417,7 +421,8 @@
 								<div class="sub-title ">¥${parent.children[0].goods[4].price}</div>
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
 							</div>
-							<a href="# "><img
+							<a
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[4].gid}'/> "><img
 								src="../${parent.children[0].goods[4].image_1}" /> </a>
 						</div>
 
@@ -426,8 +431,9 @@
 								<div class="title ">${parent.children[0].goods[5].gname}</div>
 								<div class="sub-title ">¥${parent.children[0].goods[5].price}</div>
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
-							</div>
-							<a href="# "><img
+							</div>				
+							<a
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[5].gid}'/> "><img
 								src="../${parent.children[0].goods[5].image_1}" /> </a>
 						</div>
 

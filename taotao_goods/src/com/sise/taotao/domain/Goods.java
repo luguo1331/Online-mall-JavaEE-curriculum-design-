@@ -12,47 +12,76 @@ package com.sise.taotao.domain;
 public class Goods {
 	private String gid;// 主键
 	private String gname;// 商品名
-	private String image_1;//图一
-	private String image_2;//图二
-	private String image_3;//图三
-	private String image_4;//图四
-	private Double price;//定价
-	private Double currPrice;//当前价格
-	private Double discount;//折扣
-	private String press;//描述
-	private Category category;//分类
-	private Integer monSales;//月销量
-	private Integer totalSales;//总销量
-	private Integer totalAssess;//总评价
-	private Integer num;//库存
-	private String type;//产品类型
-	private String production;//原料产地
-	private String materialsProduction;//产地
-	private Integer spec;//产品规格
-	private String batching;//配料表
-	private Integer expirationDate;//生产许可证编号
-	private String productStandardNumber;//产品标准号
+	private String image_1;// 图一
+	private String image_2;// 图二
+	private String image_3;// 图三
+	private String image_4;// 图四
+	private String image_2_mid;// 图二
+	private String image_3_mid;// 图三
+	private String image_4_mid;// 图四
+	private Double price;// 定价
+	private Double currPrice;// 当前价格
+	private Double discount;// 折扣
+	private String press;// 描述
+	private Category category;// 分类
+	private Integer monSales;// 月销量
+	private Integer totalSales;// 总销量
+	private Integer totalAssess;// 总评价
+	private Integer num;// 库存
+	private String type;// 产品类型
+	private String production;// 原料产地
+	private String materialsProduction;// 产地
+	private Integer spec;// 产品规格
+	private String batching;// 配料表
+	private Integer expirationDate;// 生产许可证编号
+	private String productStandardNumber;// 产品标准号
 	private String productionLicenseNumber;//
-	private String storageMethod;//储存方法
-	private String edibleMethod;//食用方法
-	private Integer orderBy;//排序
+	private String storageMethod;// 储存方法
+	private String edibleMethod;// 食用方法
+	private Integer orderBy;// 排序
 
 	@Override
 	public String toString() {
 		return "Goods [gid=" + gid + ", gname=" + gname + ", image_1="
 				+ image_1 + ", image_2=" + image_2 + ", image_3=" + image_3
-				+ ", image_4=" + image_4 + ", price=" + price + ", currPrice="
-				+ currPrice + ", discount=" + discount + ", press=" + press
-				+ ", category=" + category + ", monSales=" + monSales
-				+ ", totalSales=" + totalSales + ", totalAssess=" + totalAssess
-				+ ", num=" + num + ", type=" + type + ", production="
-				+ production + ", materialsProduction=" + materialsProduction
-				+ ", spec=" + spec + ", batching=" + batching
-				+ ", expirationDate=" + expirationDate
-				+ ", productStandardNumber=" + productStandardNumber
-				+ ", productionLicenseNumber=" + productionLicenseNumber
-				+ ", storageMethod=" + storageMethod + ", edibleMethod="
-				+ edibleMethod + ", orderBy=" + orderBy + "]";
+				+ ", image_4=" + image_4 + ", image_2_mid=" + image_2_mid
+				+ ", image_3_mid=" + image_3_mid + ", image_4_mid="
+				+ image_4_mid + ", price=" + price + ", currPrice=" + currPrice
+				+ ", discount=" + discount + ", press=" + press + ", category="
+				+ category + ", monSales=" + monSales + ", totalSales="
+				+ totalSales + ", totalAssess=" + totalAssess + ", num=" + num
+				+ ", type=" + type + ", production=" + production
+				+ ", materialsProduction=" + materialsProduction + ", spec="
+				+ spec + ", batching=" + batching + ", expirationDate="
+				+ expirationDate + ", productStandardNumber="
+				+ productStandardNumber + ", productionLicenseNumber="
+				+ productionLicenseNumber + ", storageMethod=" + storageMethod
+				+ ", edibleMethod=" + edibleMethod + ", orderBy=" + orderBy
+				+ "]";
+	}
+
+	public String getImage_2_mid() {
+		return image_2_mid;
+	}
+
+	public void setImage_2_mid(String image_2_mid) {
+		this.image_2_mid = image_2_mid;
+	}
+
+	public String getImage_3_mid() {
+		return image_3_mid;
+	}
+
+	public void setImage_3_mid(String image_3_mid) {
+		this.image_3_mid = image_3_mid;
+	}
+
+	public String getImage_4_mid() {
+		return image_4_mid;
+	}
+
+	public void setImage_4_mid(String image_4_mid) {
+		this.image_4_mid = image_4_mid;
 	}
 
 	public String getGid() {

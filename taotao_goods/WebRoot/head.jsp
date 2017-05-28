@@ -7,10 +7,10 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
 <html>
-<head>
-
+<head lang="en">
+<meta charset="UTF-8">
 <link
 	href="<c:url value='../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css'/>" />
 <link
@@ -29,6 +29,7 @@
 </head>
 
 
+
 <%-- 根据用户是否登录，显示不同的链接 --%>
 
 <c:choose>
@@ -37,8 +38,9 @@
 			<ul class="message-l">
 				<div class="topMessage">
 					<div class="menu-hd">
-						<a href="<c:url value='/home/login.jsp'/>" target="_top" class="h">亲，请登录 &nbsp;|&nbsp; </a>
-						<a href="<c:url value='/home/register.jsp'/>" target="_top">免费注册</a>
+						<a href="<c:url value='/home/login.jsp'/>" target="_top" class="h">亲，请登录
+							&nbsp;|&nbsp; </a> <a href="<c:url value='/home/register.jsp'/>"
+							target="_top">免费注册</a>
 					</div>
 				</div>
 			</ul>
@@ -112,14 +114,14 @@
 		<img src="../images/logo.png" />
 	</div>
 	<div class="logoBig">
-		<li><img src="../images/logobig.png" />
-		</li>
+		<li><img src="../images/logobig.png" /></li>
 	</div>
 
 	<div class="search-bar pr">
 		<a name="index_none_header_sysc" href="#"></a>
-		<form>
-			<input id="searchInput" name="index_none_header_sysc" type="text"
+		<form action="<c:url value='/GoodsServlet'/>" method="post">
+			<input type="hidden" name="method" value="findByGname" /> <input
+				id="searchInput" name="index_none_header_sysc" type="text"
 				placeholder="搜索" autocomplete="off"> <input
 				id="ai-topsearch" class="submit am-btn" value="搜索" index="1"
 				type="submit">
@@ -128,5 +130,4 @@
 </div>
 
 <div class="clear"></div>
-
 </html>

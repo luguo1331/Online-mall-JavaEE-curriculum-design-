@@ -94,6 +94,22 @@ public class GoodsDao {
 	}
 
 	/**
+	 * 按gname模糊查询
+	 * 
+	 * @param gname
+	 * @param pc
+	 * @return
+	 * @throws SQLException
+	 */
+	public PageBean<Goods> findByGname(String gname, int pc)
+			throws SQLException {
+		System.out.println(gname);
+		ArrayList<Expression> expressList = new ArrayList<Expression>();
+		expressList.add(new Expression("gname", "LIKE", "%" + gname + "%"));
+		return findByCriteria(expressList, pc);
+	}
+
+	/**
 	 * 通用的查询方法
 	 * 
 	 * @param expressList

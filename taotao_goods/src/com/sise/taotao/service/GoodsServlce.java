@@ -47,4 +47,19 @@ public class GoodsServlce {
 		}
 	}
 
+	/**
+	 * 根据gname查询商品
+	 * 
+	 * @param gname
+	 * @param pc
+	 * @return
+	 */
+	public PageBean<Goods> findByGname(String gname, int pc) {
+		try {
+			return goodsDao.findByGname(gname, pc);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
 }

@@ -83,6 +83,34 @@ public class GoodsServlet extends BaseServlet {
 	}
 
 	/**
+	 * 根据gname查询商品
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findByGname(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+
+		// 获取当前页码
+		int pc = getPc(req);
+		// 获取当前url
+		String url = getUrl(req);
+		// 获取当前插叙条件
+		// String(req.getParameter("index_none_header_sysc").getBytes("GBK"),"utf-8");
+		String gname = req.getParameter("index_none_header_sysc");
+		// 使用cid与pc查询
+		PageBean<Goods> pageBean = goodsService.findByGname(gname, pc);
+		// 设置pageBean参数
+		pageBean.setUrl(url);
+		req.setAttribute("pagebean", pageBean);
+		System.out.println(pageBean.getBeanList());
+		return "f:/home/search.jsp";
+	}
+
+	/**
 	 * 根据gid查询商品
 	 * 
 	 * @param req

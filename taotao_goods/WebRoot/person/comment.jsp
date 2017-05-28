@@ -44,16 +44,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -78,10 +73,8 @@
 					<div class="am-tabs am-tabs-d2 am-margin" data-am-tabs>
 
 						<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
-							<li class="am-active"><a href="#tab1">所有评价</a>
-							</li>
-							<li><a href="#tab2">有图评价</a>
-							</li>
+							<li class="am-active"><a href="#tab1">所有评价</a></li>
+							<li><a href="#tab2">有图评价</a></li>
 
 						</ul>
 
@@ -106,7 +99,8 @@
 													<a href="#" class="J_MakePoint"> <img
 														src="../images/kouhong.jpg_80x80.jpg" class="itempic">
 													</a>
-												</div></li>
+												</div>
+											</li>
 
 											<li class="td td-comment">
 												<div class="item-title">
@@ -128,7 +122,8 @@
 														<p class="info-time">2015-12-24</p>
 
 													</div>
-												</div></li>
+												</div>
+											</li>
 
 										</ul>
 
@@ -156,7 +151,8 @@
 													<a href="#" class="J_MakePoint"> <img
 														src="../images/kouhong.jpg_80x80.jpg" class="itempic">
 													</a>
-												</div></li>
+												</div>
+											</li>
 
 											<li class="td td-comment">
 												<div class="item-title">
@@ -182,7 +178,8 @@
 														<p class="info-time">2015-12-24</p>
 
 													</div>
-												</div></li>
+												</div>
+											</li>
 
 										</ul>
 
@@ -212,50 +209,9 @@
 				</div>
 			</div>
 		</div>
-
 		<aside class="menu">
-			<ul>
-				<li class="person"><a href="index.html">个人中心</a></li>
-				<li class="person"><a href="#">个人资料</a>
-					<ul>
-						<li><a href="information.html">个人信息</a>
-						</li>
-						<li><a href="safety.html">安全设置</a>
-						</li>
-						<li><a href="address.html">收货地址</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的交易</a>
-					<ul>
-						<li><a href="order.html">订单管理</a>
-						</li>
-						<li><a href="change.html">退款售后</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的资产</a>
-					<ul>
-						<li><a href="coupon.html">优惠券 </a>
-						</li>
-						<li><a href="bonus.html">红包</a>
-						</li>
-						<li><a href="bill.html">账单明细</a>
-						</li>
-					</ul></li>
-
-				<li class="person"><a href="#">我的小窝</a>
-					<ul>
-						<li><a href="collection.html">收藏</a>
-						</li>
-						<li><a href="foot.html">足迹</a>
-						</li>
-						<li class="active"><a href="comment.html">评价</a>
-						</li>
-						<li><a href="news.html">消息</a>
-						</li>
-					</ul></li>
-
-			</ul>
-
+			<!-- 个人用户导航栏 -->
+			<c:import url="/aside.jsp"></c:import>
 		</aside>
 	</div>
 

@@ -46,16 +46,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -81,20 +76,16 @@
 					<div class="m-progress">
 						<div class="m-progress-list">
 							<span class="step-1 step"> <em class="u-progress-stage-bg"></em>
-								<i class="u-stage-icon-inner">1<em class="bg"></em>
-							</i>
+								<i class="u-stage-icon-inner">1<em class="bg"></em> </i>
 								<p class="stage-name">拍下商品</p> </span> <span class="step-2 step">
 								<em class="u-progress-stage-bg"></em> <i
-								class="u-stage-icon-inner">2<em class="bg"></em>
-							</i>
+								class="u-stage-icon-inner">2<em class="bg"></em> </i>
 								<p class="stage-name">卖家发货</p> </span> <span class="step-3 step">
 								<em class="u-progress-stage-bg"></em> <i
-								class="u-stage-icon-inner">3<em class="bg"></em>
-							</i>
+								class="u-stage-icon-inner">3<em class="bg"></em> </i>
 								<p class="stage-name">确认收货</p> </span> <span class="step-4 step">
 								<em class="u-progress-stage-bg"></em> <i
-								class="u-stage-icon-inner">4<em class="bg"></em>
-							</i>
+								class="u-stage-icon-inner">4<em class="bg"></em> </i>
 								<p class="stage-name">交易完成</p> </span> <span
 								class="u-progress-placeholder"></span>
 						</div>
@@ -106,8 +97,7 @@
 						<div class="order-logistics">
 							<a href="logistics.html">
 								<div class="icon-log">
-									<i><img src="../images/receive.png">
-									</i>
+									<i><img src="../images/receive.png"> </i>
 								</div>
 								<div class="latest-logistics">
 									<p class="text">已签收,签收人是青年城签收，感谢使用天天快递，期待再次为您服务</p>
@@ -193,15 +183,19 @@
 																颜色：12#川南玛瑙 <br />包装：裸装
 															</p> </a>
 													</div>
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-price">
-												<div class="item-price">333.00</div></li>
+												<div class="item-price">333.00</div>
+											</li>
 											<li class="td td-number">
 												<div class="item-number">
 													<span>×</span>2
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-operation">
-												<div class="item-operation">退款/退货</div></li>
+												<div class="item-operation">退款/退货</div>
+											</li>
 										</ul>
 
 										<ul class="item-list">
@@ -219,15 +213,19 @@
 																颜色分类：李清照 <br />尺码：均码
 															</p> </a>
 													</div>
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-price">
-												<div class="item-price">333.00</div></li>
+												<div class="item-price">333.00</div>
+											</li>
 											<li class="td td-number">
 												<div class="item-number">
 													<span>×</span>2
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-operation">
-												<div class="item-operation">退款/退货</div></li>
+												<div class="item-operation">退款/退货</div>
+											</li>
 										</ul>
 
 									</div>
@@ -238,7 +236,8 @@
 												<p>
 													含运费：<span>10.00</span>
 												</p>
-											</div></li>
+											</div>
+										</li>
 										<div class="move-right">
 											<li class="td td-status">
 												<div class="item-status">
@@ -249,9 +248,11 @@
 													<p class="order-info">
 														<a href="#">延长收货</a>
 													</p>
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-change">
-												<div class="am-btn am-btn-danger anniu">确认收货</div></li>
+												<div class="am-btn am-btn-danger anniu">确认收货</div>
+											</li>
 										</div>
 									</div>
 								</div>
@@ -280,48 +281,8 @@
 
 		</div>
 		<aside class="menu">
-			<ul>
-				<li class="person"><a href="index.html">个人中心</a></li>
-				<li class="person"><a href="#">个人资料</a>
-					<ul>
-						<li><a href="information.html">个人信息</a>
-						</li>
-						<li><a href="safety.html">安全设置</a>
-						</li>
-						<li><a href="address.html">收货地址</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的交易</a>
-					<ul>
-						<li class="active"><a href="order.html">订单管理</a>
-						</li>
-						<li><a href="change.html">退款售后</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的资产</a>
-					<ul>
-						<li><a href="coupon.html">优惠券 </a>
-						</li>
-						<li><a href="bonus.html">红包</a>
-						</li>
-						<li><a href="bill.html">账单明细</a>
-						</li>
-					</ul></li>
-
-				<li class="person"><a href="#">我的小窝</a>
-					<ul>
-						<li><a href="collection.html">收藏</a>
-						</li>
-						<li><a href="foot.html">足迹</a>
-						</li>
-						<li><a href="comment.html">评价</a>
-						</li>
-						<li><a href="news.html">消息</a>
-						</li>
-					</ul></li>
-
-			</ul>
-
+			<!-- 个人用户导航栏 -->
+			<c:import url="/aside.jsp"></c:import>
 		</aside>
 	</div>
 

@@ -42,11 +42,16 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a></li>
-				<li class="qc"><a href="#">闪购</a></li>
-				<li class="qc"><a href="#">限时抢</a></li>
-				<li class="qc"><a href="#">团购</a></li>
-				<li class="qc last"><a href="#">大包装</a></li>
+				<li class="index"><a href="#">首页</a>
+				</li>
+				<li class="qc"><a href="#">闪购</a>
+				</li>
+				<li class="qc"><a href="#">限时抢</a>
+				</li>
+				<li class="qc"><a href="#">团购</a>
+				</li>
+				<li class="qc last"><a href="#">大包装</a>
+				</li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -121,17 +126,22 @@
 							</div>
 							<ul>
 								<li><a href="order.html"><i><img
-											src="../images/pay.png" /> </i><span>待付款</span> </a></li>
+											src="../images/pay.png" /> </i><span>待付款</span> </a>
+								</li>
 								<li><a href="order.html"><i><img
 											src="../images/send.png" /> </i><span>待发货<em
-											class="m-num">1</em> </span> </a></li>
+											class="m-num">1</em> </span> </a>
+								</li>
 								<li><a href="order.html"><i><img
-											src="../images/receive.png" /> </i><span>待收货</span> </a></li>
+											src="../images/receive.png" /> </i><span>待收货</span> </a>
+								</li>
 								<li><a href="order.html"><i><img
 											src="../images/comment.png" /> </i><span>待评价<em
-											class="m-num">3</em> </span> </a></li>
+											class="m-num">3</em> </span> </a>
+								</li>
 								<li><a href="change.html"><i><img
-											src="../images/refund.png" /> </i><span>退换货</span> </a></li>
+											src="../images/refund.png" /> </i><span>退换货</span> </a>
+								</li>
 							</ul>
 						</div>
 						<!--九宫格-->
@@ -144,23 +154,28 @@
 								<a href="../home/shopcart.html"><li class="am-u-sm-4"><i
 										class="am-icon-shopping-basket am-icon-md"></i><img
 										src="../images/iconbig.png" />
-										<p>购物车</p></li> </a>
+										<p>购物车</p>
+								</li> </a>
 								<a href="collection.html"><li class="am-u-sm-4"><i
 										class="am-icon-heart am-icon-md"></i><img
 										src="../images/iconsmall1.png" />
-										<p>我的收藏</p></li> </a>
+										<p>我的收藏</p>
+								</li> </a>
 								<a href="../home/home.html"><li class="am-u-sm-4"><i
 										class="am-icon-gift am-icon-md"></i><img
 										src="../images/iconsmall0.png" />
-										<p>为你推荐</p></li> </a>
+										<p>为你推荐</p>
+								</li> </a>
 								<a href="comment.html"><li class="am-u-sm-4"><i
 										class="am-icon-pencil am-icon-md"></i><img
 										src="../images/iconsmall3.png" />
-										<p>好评宝贝</p></li> </a>
+										<p>好评宝贝</p>
+								</li> </a>
 								<a href="foot.html"><li class="am-u-sm-4"><i
 										class="am-icon-clock-o am-icon-md"></i><img
 										src="../images/iconsmall2.png" />
-										<p>我的足迹</p></li> </a>
+										<p>我的足迹</p>
+								</li> </a>
 							</ul>
 						</div>
 						<!--物流 -->
@@ -193,7 +208,8 @@
 															<li>义乌 的 义乌总部直发车 已揽件2015-12-20 17:54:49</li>
 															<li class="s-omit"><a
 																data-spm-anchor-id="a1z02.1.1998049142.3"
-																target="_blank" href="#">··· 查看全部</a></li>
+																target="_blank" href="#">··· 查看全部</a>
+															</li>
 															<li>您的订单开始处理2015-12-20 08:13:48</li>
 
 														</ul>
@@ -204,8 +220,7 @@
 										</div>
 										<div class="lg-confirm">
 											<a class="i-btn-typical" href="#">确认收货</a>
-										</div>
-									</li>
+										</div></li>
 									<div class="clear"></div>
 
 									<li class="lg-item">
@@ -232,7 +247,8 @@
 																data-spm-anchor-id="a1z02.1.1998049142.7"
 																target="_blank"
 																href="//wuliu.taobao.com/user/order_detail_new.htm?spm=a1z02.1.1998049142.7.8BJBiJ&amp;trade_id=1479374251166800&amp;seller_id=1651462988&amp;tracelog=yimaidaologistics">···
-																	查看全部</a></li>
+																	查看全部</a>
+															</li>
 															<li>您的订单开始处理2015-12-17 14:27:50</li>
 
 														</ul>
@@ -243,8 +259,7 @@
 										</div>
 										<div class="lg-confirm">
 											<a class="i-btn-typical" href="#">确认收货</a>
-										</div>
-									</li>
+										</div></li>
 
 								</ul>
 
@@ -497,41 +512,8 @@
 		</div>
 
 		<aside class="menu">
-			<ul>
-				<li class="person active"><a href="index.html">个人中心</a>
-				</li>
-				<li class="person"><a href="#">个人资料</a>
-					<ul>
-						<li><a href="information.html">个人信息</a></li>
-						<li><a href="safety.html">安全设置</a></li>
-						<li><a href="address.html">收货地址</a></li>
-					</ul>
-				</li>
-				<li class="person"><a href="#">我的交易</a>
-					<ul>
-						<li><a href="order.html">订单管理</a></li>
-						<li><a href="change.html">退款售后</a></li>
-					</ul>
-				</li>
-				<li class="person"><a href="#">我的资产</a>
-					<ul>
-						<li><a href="coupon.html">优惠券 </a></li>
-						<li><a href="bonus.html">红包</a></li>
-						<li><a href="bill.html">账单明细</a></li>
-					</ul>
-				</li>
-
-				<li class="person"><a href="#">我的小窝</a>
-					<ul>
-						<li><a href="collection.html">收藏</a></li>
-						<li><a href="foot.html">足迹</a></li>
-						<li><a href="comment.html">评价</a></li>
-						<li><a href="news.html">消息</a></li>
-					</ul>
-				</li>
-
-			</ul>
-
+			<!-- 个人用户导航栏 -->
+			<c:import url="/aside.jsp"></c:import>
 		</aside>
 	</div>
 	<!--引导 -->
@@ -541,9 +523,11 @@
 		<li><a href="../home/sort.html"><i class="am-icon-list"></i>分类</a>
 		</li>
 		<li><a href="../home/shopcart.html"><i
-				class="am-icon-shopping-basket"></i>购物车</a></li>
+				class="am-icon-shopping-basket"></i>购物车</a>
+		</li>
 		<li class="active"><a href="index.html"><i
-				class="am-icon-user"></i>我的</a></li>
+				class="am-icon-user"></i>我的</a>
+		</li>
 	</div>
 </body>
 

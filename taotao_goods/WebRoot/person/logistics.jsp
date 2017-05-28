@@ -42,16 +42,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -95,70 +90,81 @@
 								<div class="time-list">
 									<span class="date">2015-12-19</span><span class="week">周六</span><span
 										class="time">15:35:42</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">【武汉市】光谷关山分部派件员正在为您派件</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-19</span><span
 										class="week hidden">周六</span><span class="time">14:27:28</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">【武汉市】快件已到达 光谷关山分部</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-19</span><span
 										class="week hidden">周六</span><span class="time">09:25:51</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">【武汉市】武汉 已发出</p>
 								<div class="time-list">
 									<span class="date  hidden">2015-12-19</span><span
 										class="week  hidden">周六</span><span class="time">06:56:03</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">【杭州市】杭州集散陆运 已发出</P>
 								<div class="time-list">
 									<span class="date">2015-12-17</span><span class="week">周四</span><span
 										class="time">22:15:23</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">【绍兴市】诸暨 已发出</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">18:55:25</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">
 									【绍兴市】天天快递 诸暨收件员 已揽件</span>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">18:54:25</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">
 									商家正通知快递公司揽件</span>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">15:49:40</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">
 									您的包裹已出库</span>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">15:49:40</span>
-								</div></li>
+								</div>
+							</li>
 							<li>
 								<p class="text">您的订单待配货</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">15:18:15</span>
-								</div></li>
+								</div>
+							</li>
 							<li class="first">
 								<p class="text">您的订单开始处理</p>
 								<div class="time-list">
 									<span class="date  hidden">2015-12-17</span><span
 										class="week  hidden">周四</span><span class="time">14:27:50</span>
-								</div></li>
+								</div>
+							</li>
 
 						</ul>
 					</div>
@@ -181,48 +187,8 @@
 			</div>
 		</div>
 		<aside class="menu">
-			<ul>
-				<li class="person"><a href="index.html">个人中心</a></li>
-				<li class="person"><a href="#">个人资料</a>
-					<ul>
-						<li><a href="information.html">个人信息</a>
-						</li>
-						<li><a href="safety.html">安全设置</a>
-						</li>
-						<li><a href="address.html">收货地址</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的交易</a>
-					<ul>
-						<li><a href="order.html">订单管理</a>
-						</li>
-						<li><a href="change.html">退款售后</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的资产</a>
-					<ul>
-						<li><a href="coupon.html">优惠券 </a>
-						</li>
-						<li><a href="bonus.html">红包</a>
-						</li>
-						<li><a href="bill.html">账单明细</a>
-						</li>
-					</ul></li>
-
-				<li class="person"><a href="#">我的小窝</a>
-					<ul>
-						<li><a href="collection.html">收藏</a>
-						</li>
-						<li><a href="foot.html">足迹</a>
-						</li>
-						<li><a href="comment.html">评价</a>
-						</li>
-						<li class="active"><a href="news.html">消息</a>
-						</li>
-					</ul></li>
-
-			</ul>
-
+			<!-- 个人用户导航栏 -->
+			<c:import url="/aside.jsp"></c:import>
 		</aside>
 	</div>
 

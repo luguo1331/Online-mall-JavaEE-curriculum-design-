@@ -47,16 +47,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -80,16 +75,13 @@
 					<div class="m-progress">
 						<div class="m-progress-list">
 							<span class="step-1 step"> <em class="u-progress-stage-bg"></em>
-								<i class="u-stage-icon-inner">1<em class="bg"></em>
-							</i>
+								<i class="u-stage-icon-inner">1<em class="bg"></em> </i>
 								<p class="stage-name">买家申请退款</p> </span> <span class="step-2 step">
 								<em class="u-progress-stage-bg"></em> <i
-								class="u-stage-icon-inner">2<em class="bg"></em>
-							</i>
+								class="u-stage-icon-inner">2<em class="bg"></em> </i>
 								<p class="stage-name">商家处理退款申请</p> </span> <span class="step-3 step">
 								<em class="u-progress-stage-bg"></em> <i
-								class="u-stage-icon-inner">3<em class="bg"></em>
-							</i>
+								class="u-stage-icon-inner">3<em class="bg"></em> </i>
 								<p class="stage-name">款项成功退回</p> </span> <span
 								class="u-progress-placeholder"></span>
 						</div>
@@ -220,48 +212,8 @@
 		</div>
 
 		<aside class="menu">
-			<ul>
-				<li class="person active"><a href="index.html">个人中心</a></li>
-				<li class="person"><a href="#">个人资料</a>
-					<ul>
-						<li><a href="information.html">个人信息</a>
-						</li>
-						<li><a href="safety.html">安全设置</a>
-						</li>
-						<li><a href="address.html">收货地址</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的交易</a>
-					<ul>
-						<li><a href="order.html">订单管理</a>
-						</li>
-						<li><a href="change.html">退款售后</a>
-						</li>
-					</ul></li>
-				<li class="person"><a href="#">我的资产</a>
-					<ul>
-						<li><a href="coupon.html">优惠券 </a>
-						</li>
-						<li><a href="bonus.html">红包</a>
-						</li>
-						<li><a href="bill.html">账单明细</a>
-						</li>
-					</ul></li>
-
-				<li class="person"><a href="#">我的小窝</a>
-					<ul>
-						<li><a href="collection.html">收藏</a>
-						</li>
-						<li><a href="foot.html">足迹</a>
-						</li>
-						<li><a href="comment.html">评价</a>
-						</li>
-						<li><a href="news.html">消息</a>
-						</li>
-					</ul></li>
-
-			</ul>
-
+			<!-- 个人用户导航栏 -->
+			<c:import url="/aside.jsp"></c:import>
 		</aside>
 	</div>
 

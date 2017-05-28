@@ -11,21 +11,6 @@
 <html>
 <head lang="en">
 <meta charset="UTF-8">
-<link
-	href="<c:url value='../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css'/>" />
-<link
-	href="<c:url value='../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css'/>" />
-
-<link
-	href="<c:url value='../basic/css/demo.css" rel="stylesheet" type="text/css'/>" />
-
-<link
-	href="<c:url value='../css/hmstyle.css" rel="stylesheet" type="text/css'/>" />
-<link
-	href="<c:url value='../css/skin.css" rel="stylesheet" type="text/css'/>" />
-<script src="<c:url value='/AmazeUI-2.4.2/assets/js/jquery.min.js'/>"></script>
-<script src="<c:url value='/AmazeUI-2.4.2/assets/js/amazeui.min.js'/>"></script>
-
 </head>
 
 
@@ -110,11 +95,9 @@
 <!--悬浮搜索框-->
 
 <div class="nav white">
-	<div class="logo">
-		<img src="../images/logo.png" />
-	</div>
 	<div class="logoBig">
-		<li><img src="../images/logobig.png" /></li>
+		<li><img src="<%=path%>/images/logobig.png" />
+		</li>
 	</div>
 
 	<div class="search-bar pr">

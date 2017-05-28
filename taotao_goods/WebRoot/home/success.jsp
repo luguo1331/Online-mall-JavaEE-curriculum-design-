@@ -34,9 +34,6 @@
 	<!--顶部导航条 -->
 	<div class="am-container header">
 		<c:import url="/head.jsp"></c:import>
-
-
-
 		<div class="take-delivery">
 			<div class="status">
 				<h2>您已成功付款</h2>

@@ -15,8 +15,8 @@
 
 <title>个人中心</title>
 
-<link
-	href="<c:url value='../AmazeUI-2.4.2/assets/css/admin.css'/>" rel="stylesheet" type="text/css">
+<link href="<c:url value='../AmazeUI-2.4.2/assets/css/admin.css'/>"
+	rel="stylesheet" type="text/css">
 <link href="<c:url value='../AmazeUI-2.4.2/assets/css/amazeui.css'/>"
 	rel="stylesheet" type="text/css">
 <link href="<c:url value='../css/personal.css" rel="stylesheet'/>"
@@ -32,64 +32,7 @@
 		<article>
 			<div class="mt-logo">
 				<!--顶部导航条 -->
-				<div class="am-container header">
-					<ul class="message-l">
-						<div class="topMessage">
-							<div class="menu-hd">
-								<a href="#" target="_top" class="h">亲，请登录</a> <a href="#"
-									target="_top">免费注册</a>
-							</div>
-						</div>
-					</ul>
-					<ul class="message-r">
-						<div class="topMessage home">
-							<div class="menu-hd">
-								<a href="#" target="_top" class="h">商城首页</a>
-							</div>
-						</div>
-						<div class="topMessage my-shangcheng">
-							<div class="menu-hd MyShangcheng">
-								<a href="#" target="_top"><i class="am-icon-user am-icon-fw"></i>个人中心</a>
-							</div>
-						</div>
-						<div class="topMessage mini-cart">
-							<div class="menu-hd">
-								<a id="mc-menu-hd" href="#" target="_top"><i
-									class="am-icon-shopping-cart  am-icon-fw"></i><span>购物车</span><strong
-									id="J_MiniCartNum" class="h">0</strong>
-								</a>
-							</div>
-						</div>
-						<div class="topMessage favorite">
-							<div class="menu-hd">
-								<a href="#" target="_top"><i
-									class="am-icon-heart am-icon-fw"></i><span>收藏夹</span>
-								</a>
-							</div>
-					</ul>
-				</div>
-
-				<!--悬浮搜索框-->
-
-				<div class="nav white">
-					<div class="logoBig">
-						<li><img src="../images/logobig.png" />
-						</li>
-					</div>
-
-					<div class="search-bar pr">
-						<a name="index_none_header_sysc" href="#"></a>
-						<form>
-							<input id="searchInput" name="index_none_header_sysc" type="text"
-								placeholder="搜索" autocomplete="off"> <input
-								id="ai-topsearch" class="submit am-btn" value="搜索" index="1"
-								type="submit">
-						</form>
-					</div>
-				</div>
-
-				<div class="clear"></div>
-			</div>
+				<c:import url="/head.jsp"></c:import>
 			</div>
 		</article>
 	</header>
@@ -99,16 +42,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -156,20 +94,20 @@
 								</p>
 								<p class="m-coupon">
 									<a href="coupon.html"> <i><img
-											src="../images/coupon.png" />
-									</i> <span class="m-title">优惠券</span> <em class="m-num">2</em> </a>
+											src="../images/coupon.png" /> </i> <span class="m-title">优惠券</span>
+										<em class="m-num">2</em> </a>
 								</p>
 								<p class="m-bill">
 									<a href="bill.html"> <i><img src="../images/wallet.png" />
 									</i> <span class="m-title">钱包</span> <em class="m-num">2</em> </a>
 								</p>
 								<p class="m-big">
-									<a href="#"> <i><img src="../images/day-to.png" />
-									</i> <span class="m-title">签到有礼</span> </a>
+									<a href="#"> <i><img src="../images/day-to.png" /> </i> <span
+										class="m-title">签到有礼</span> </a>
 								</p>
 								<p class="m-big">
-									<a href="#"> <i><img src="../images/72h.png" />
-									</i> <span class="m-title">72小时发货</span> </a>
+									<a href="#"> <i><img src="../images/72h.png" /> </i> <span
+										class="m-title">72小时发货</span> </a>
 								</p>
 							</div>
 						</div>
@@ -183,32 +121,17 @@
 							</div>
 							<ul>
 								<li><a href="order.html"><i><img
-											src="../images/pay.png" />
-									</i><span>待付款</span>
-								</a>
-								</li>
+											src="../images/pay.png" /> </i><span>待付款</span> </a></li>
 								<li><a href="order.html"><i><img
-											src="../images/send.png" />
-									</i><span>待发货<em class="m-num">1</em>
-									</span>
-								</a>
-								</li>
+											src="../images/send.png" /> </i><span>待发货<em
+											class="m-num">1</em> </span> </a></li>
 								<li><a href="order.html"><i><img
-											src="../images/receive.png" />
-									</i><span>待收货</span>
-								</a>
-								</li>
+											src="../images/receive.png" /> </i><span>待收货</span> </a></li>
 								<li><a href="order.html"><i><img
-											src="../images/comment.png" />
-									</i><span>待评价<em class="m-num">3</em>
-									</span>
-								</a>
-								</li>
+											src="../images/comment.png" /> </i><span>待评价<em
+											class="m-num">3</em> </span> </a></li>
 								<li><a href="change.html"><i><img
-											src="../images/refund.png" />
-									</i><span>退换货</span>
-								</a>
-								</li>
+											src="../images/refund.png" /> </i><span>退换货</span> </a></li>
 							</ul>
 						</div>
 						<!--九宫格-->
@@ -221,33 +144,23 @@
 								<a href="../home/shopcart.html"><li class="am-u-sm-4"><i
 										class="am-icon-shopping-basket am-icon-md"></i><img
 										src="../images/iconbig.png" />
-									<p>购物车</p>
-								</li>
-								</a>
+										<p>购物车</p></li> </a>
 								<a href="collection.html"><li class="am-u-sm-4"><i
 										class="am-icon-heart am-icon-md"></i><img
 										src="../images/iconsmall1.png" />
-									<p>我的收藏</p>
-								</li>
-								</a>
+										<p>我的收藏</p></li> </a>
 								<a href="../home/home.html"><li class="am-u-sm-4"><i
 										class="am-icon-gift am-icon-md"></i><img
 										src="../images/iconsmall0.png" />
-									<p>为你推荐</p>
-								</li>
-								</a>
+										<p>为你推荐</p></li> </a>
 								<a href="comment.html"><li class="am-u-sm-4"><i
 										class="am-icon-pencil am-icon-md"></i><img
 										src="../images/iconsmall3.png" />
-									<p>好评宝贝</p>
-								</li>
-								</a>
+										<p>好评宝贝</p></li> </a>
 								<a href="foot.html"><li class="am-u-sm-4"><i
 										class="am-icon-clock-o am-icon-md"></i><img
 										src="../images/iconsmall2.png" />
-									<p>我的足迹</p>
-								</li>
-								</a>
+										<p>我的足迹</p></li> </a>
 							</ul>
 						</div>
 						<!--物流 -->
@@ -280,8 +193,7 @@
 															<li>义乌 的 义乌总部直发车 已揽件2015-12-20 17:54:49</li>
 															<li class="s-omit"><a
 																data-spm-anchor-id="a1z02.1.1998049142.3"
-																target="_blank" href="#">··· 查看全部</a>
-															</li>
+																target="_blank" href="#">··· 查看全部</a></li>
 															<li>您的订单开始处理2015-12-20 08:13:48</li>
 
 														</ul>
@@ -292,7 +204,8 @@
 										</div>
 										<div class="lg-confirm">
 											<a class="i-btn-typical" href="#">确认收货</a>
-										</div></li>
+										</div>
+									</li>
 									<div class="clear"></div>
 
 									<li class="lg-item">
@@ -319,8 +232,7 @@
 																data-spm-anchor-id="a1z02.1.1998049142.7"
 																target="_blank"
 																href="//wuliu.taobao.com/user/order_detail_new.htm?spm=a1z02.1.1998049142.7.8BJBiJ&amp;trade_id=1479374251166800&amp;seller_id=1651462988&amp;tracelog=yimaidaologistics">···
-																	查看全部</a>
-															</li>
+																	查看全部</a></li>
 															<li>您的订单开始处理2015-12-17 14:27:50</li>
 
 														</ul>
@@ -331,7 +243,8 @@
 										</div>
 										<div class="lg-confirm">
 											<a class="i-btn-typical" href="#">确认收货</a>
-										</div></li>
+										</div>
+									</li>
 
 								</ul>
 
@@ -360,10 +273,8 @@
 										</div>
 										<div class="s-price-box">
 											<span class="s-price"><em class="s-price-sign">¥</em><em
-												class="s-value">42.50</em>
-											</span> <span class="s-history-price"><em
-												class="s-price-sign">¥</em><em class="s-value">68.00</em>
-											</span>
+												class="s-value">42.50</em> </span> <span class="s-history-price"><em
+												class="s-price-sign">¥</em><em class="s-value">68.00</em> </span>
 
 										</div>
 										<div class="s-title">
@@ -389,10 +300,8 @@
 										</div>
 										<div class="s-price-box">
 											<span class="s-price"><em class="s-price-sign">¥</em><em
-												class="s-value">49.90</em>
-											</span> <span class="s-history-price"><em
-												class="s-price-sign">¥</em><em class="s-value">88.00</em>
-											</span>
+												class="s-value">49.90</em> </span> <span class="s-history-price"><em
+												class="s-price-sign">¥</em><em class="s-value">88.00</em> </span>
 
 										</div>
 										<div class="s-title">
@@ -418,8 +327,7 @@
 										</div>
 										<div class="s-price-box">
 											<span class="s-price"><em class="s-price-sign">¥</em><em
-												class="s-value">378.00</em>
-											</span> <span class="s-history-price"><em
+												class="s-value">378.00</em> </span> <span class="s-history-price"><em
 												class="s-price-sign">¥</em><em class="s-value">1888.00</em>
 											</span>
 
@@ -447,10 +355,8 @@
 										</div>
 										<div class="s-price-box">
 											<span class="s-price"><em class="s-price-sign">¥</em><em
-												class="s-value">42.50</em>
-											</span> <span class="s-history-price"><em
-												class="s-price-sign">¥</em><em class="s-value">68.00</em>
-											</span>
+												class="s-value">42.50</em> </span> <span class="s-history-price"><em
+												class="s-price-sign">¥</em><em class="s-value">68.00</em> </span>
 
 										</div>
 										<div class="s-title">
@@ -476,10 +382,8 @@
 										</div>
 										<div class="s-price-box">
 											<span class="s-price"><em class="s-price-sign">¥</em><em
-												class="s-value">49.90</em>
-											</span> <span class="s-history-price"><em
-												class="s-price-sign">¥</em><em class="s-value">88.00</em>
-											</span>
+												class="s-value">49.90</em> </span> <span class="s-history-price"><em
+												class="s-price-sign">¥</em><em class="s-value">88.00</em> </span>
 
 										</div>
 										<div class="s-title">
@@ -505,8 +409,7 @@
 										</div>
 										<div class="s-price-box">
 											<span class="s-price"><em class="s-price-sign">¥</em><em
-												class="s-value">378.00</em>
-											</span> <span class="s-history-price"><em
+												class="s-value">378.00</em> </span> <span class="s-history-price"><em
 												class="s-price-sign">¥</em><em class="s-value">1888.00</em>
 											</span>
 
@@ -595,44 +498,37 @@
 
 		<aside class="menu">
 			<ul>
-				<li class="person active"><a href="index.html">个人中心</a></li>
+				<li class="person active"><a href="index.html">个人中心</a>
+				</li>
 				<li class="person"><a href="#">个人资料</a>
 					<ul>
-						<li><a href="information.html">个人信息</a>
-						</li>
-						<li><a href="safety.html">安全设置</a>
-						</li>
-						<li><a href="address.html">收货地址</a>
-						</li>
-					</ul></li>
+						<li><a href="information.html">个人信息</a></li>
+						<li><a href="safety.html">安全设置</a></li>
+						<li><a href="address.html">收货地址</a></li>
+					</ul>
+				</li>
 				<li class="person"><a href="#">我的交易</a>
 					<ul>
-						<li><a href="order.html">订单管理</a>
-						</li>
-						<li><a href="change.html">退款售后</a>
-						</li>
-					</ul></li>
+						<li><a href="order.html">订单管理</a></li>
+						<li><a href="change.html">退款售后</a></li>
+					</ul>
+				</li>
 				<li class="person"><a href="#">我的资产</a>
 					<ul>
-						<li><a href="coupon.html">优惠券 </a>
-						</li>
-						<li><a href="bonus.html">红包</a>
-						</li>
-						<li><a href="bill.html">账单明细</a>
-						</li>
-					</ul></li>
+						<li><a href="coupon.html">优惠券 </a></li>
+						<li><a href="bonus.html">红包</a></li>
+						<li><a href="bill.html">账单明细</a></li>
+					</ul>
+				</li>
 
 				<li class="person"><a href="#">我的小窝</a>
 					<ul>
-						<li><a href="collection.html">收藏</a>
-						</li>
-						<li><a href="foot.html">足迹</a>
-						</li>
-						<li><a href="comment.html">评价</a>
-						</li>
-						<li><a href="news.html">消息</a>
-						</li>
-					</ul></li>
+						<li><a href="collection.html">收藏</a></li>
+						<li><a href="foot.html">足迹</a></li>
+						<li><a href="comment.html">评价</a></li>
+						<li><a href="news.html">消息</a></li>
+					</ul>
+				</li>
 
 			</ul>
 
@@ -645,11 +541,9 @@
 		<li><a href="../home/sort.html"><i class="am-icon-list"></i>分类</a>
 		</li>
 		<li><a href="../home/shopcart.html"><i
-				class="am-icon-shopping-basket"></i>购物车</a>
-		</li>
+				class="am-icon-shopping-basket"></i>购物车</a></li>
 		<li class="active"><a href="index.html"><i
-				class="am-icon-user"></i>我的</a>
-		</li>
+				class="am-icon-user"></i>我的</a></li>
 	</div>
 </body>
 

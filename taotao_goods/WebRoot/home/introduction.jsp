@@ -309,7 +309,7 @@
 													</div>
 												</div>
 
-											</form>
+											
 										</div>
 									</div>
 
@@ -355,7 +355,7 @@
 								</div>
 							</li>
 						</div>
-
+</form>
 					</div>
 
 					<div class="clear"></div>

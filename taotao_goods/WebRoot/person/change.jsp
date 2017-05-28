@@ -44,11 +44,16 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a></li>
-				<li class="qc"><a href="#">闪购</a></li>
-				<li class="qc"><a href="#">限时抢</a></li>
-				<li class="qc"><a href="#">团购</a></li>
-				<li class="qc last"><a href="#">大包装</a></li>
+				<li class="index"><a href="#">首页</a>
+				</li>
+				<li class="qc"><a href="#">闪购</a>
+				</li>
+				<li class="qc"><a href="#">限时抢</a>
+				</li>
+				<li class="qc"><a href="#">团购</a>
+				</li>
+				<li class="qc last"><a href="#">大包装</a>
+				</li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -74,8 +79,10 @@
 					<div class="am-tabs am-tabs-d2 am-margin" data-am-tabs>
 
 						<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
-							<li class="am-active"><a href="#tab1">退款管理</a></li>
-							<li><a href="#tab2">售后管理</a></li>
+							<li class="am-active"><a href="#tab1">退款管理</a>
+							</li>
+							<li><a href="#tab2">售后管理</a>
+							</li>
 
 						</ul>
 
@@ -125,20 +132,17 @@
 																		颜色：12#川南玛瑙 <br />包装：裸装
 																	</p> </a>
 															</div>
-														</div>
-													</li>
+														</div></li>
 
 													<ul class="td-changeorder">
 														<li class="td td-orderprice">
 															<div class="item-orderprice">
 																<span>交易金额：</span>72.00
-															</div>
-														</li>
+															</div></li>
 														<li class="td td-changeprice">
 															<div class="item-changeprice">
 																<span>退款金额：</span>70.00
-															</div>
-														</li>
+															</div></li>
 													</ul>
 													<div class="clear"></div>
 												</ul>
@@ -148,13 +152,11 @@
 														<div class="item-status">
 															<p class="Mystatus">退款成功</p>
 
-														</div>
-													</li>
+														</div></li>
 												</div>
 												<li class="td td-change td-changebutton"><a
 													href="record.html">
-														<div class="am-btn am-btn-danger anniu">钱款去向</div> </a>
-												</li>
+														<div class="am-btn am-btn-danger anniu">钱款去向</div> </a></li>
 
 											</div>
 										</div>
@@ -208,20 +210,17 @@
 																		颜色：12#川南玛瑙 <br />包装：裸装
 																	</p> </a>
 															</div>
-														</div>
-													</li>
+														</div></li>
 
 													<ul class="td-changeorder">
 														<li class="td td-orderprice">
 															<div class="item-orderprice">
 																<span>交易金额：</span>72.00
-															</div>
-														</li>
+															</div></li>
 														<li class="td td-changeprice">
 															<div class="item-changeprice">
 																<span>退款金额：</span>70.00
-															</div>
-														</li>
+															</div></li>
 													</ul>
 													<div class="clear"></div>
 												</ul>
@@ -231,13 +230,11 @@
 														<div class="item-status">
 															<p class="Mystatus">退款成功</p>
 
-														</div>
-													</li>
+														</div></li>
 												</div>
 												<li class="td td-change td-changebutton"><a
 													href="record.html">
-														<div class="am-btn am-btn-danger anniu">钱款去向</div> </a>
-												</li>
+														<div class="am-btn am-btn-danger anniu">钱款去向</div> </a></li>
 
 											</div>
 										</div>
@@ -254,18 +251,8 @@
 			</div>
 			<!--底部-->
 			<div class="footer">
-				<div class="footer-hd">
-					<p>
-						<a href="#">恒望科技</a> <b>|</b> <a href="#">商城首页</a> <b>|</b> <a
-							href="#">支付宝</a> <b>|</b> <a href="#">物流</a>
-					</p>
-				</div>
-				<div class="footer-bd">
-					<p>
-						<a href="#">关于恒望</a> <a href="#">合作伙伴</a> <a href="#">联系我们</a> <a
-							href="#">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-					</p>
-				</div>
+				<!-- 底部导航栏 -->
+				<c:import url="/footer.jsp"></c:import>
 			</div>
 		</div>
 

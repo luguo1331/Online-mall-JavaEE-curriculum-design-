@@ -42,11 +42,16 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a></li>
-				<li class="qc"><a href="#">闪购</a></li>
-				<li class="qc"><a href="#">限时抢</a></li>
-				<li class="qc"><a href="#">团购</a></li>
-				<li class="qc last"><a href="#">大包装</a></li>
+				<li class="index"><a href="#">首页</a>
+				</li>
+				<li class="qc"><a href="#">闪购</a>
+				</li>
+				<li class="qc"><a href="#">限时抢</a>
+				</li>
+				<li class="qc"><a href="#">团购</a>
+				</li>
+				<li class="qc last"><a href="#">大包装</a>
+				</li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -90,81 +95,70 @@
 								<div class="time-list">
 									<span class="date">2015-12-19</span><span class="week">周六</span><span
 										class="time">15:35:42</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">【武汉市】光谷关山分部派件员正在为您派件</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-19</span><span
 										class="week hidden">周六</span><span class="time">14:27:28</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">【武汉市】快件已到达 光谷关山分部</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-19</span><span
 										class="week hidden">周六</span><span class="time">09:25:51</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">【武汉市】武汉 已发出</p>
 								<div class="time-list">
 									<span class="date  hidden">2015-12-19</span><span
 										class="week  hidden">周六</span><span class="time">06:56:03</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">【杭州市】杭州集散陆运 已发出</P>
 								<div class="time-list">
 									<span class="date">2015-12-17</span><span class="week">周四</span><span
 										class="time">22:15:23</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">【绍兴市】诸暨 已发出</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">18:55:25</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">
 									【绍兴市】天天快递 诸暨收件员 已揽件</span>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">18:54:25</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">
 									商家正通知快递公司揽件</span>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">15:49:40</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">
 									您的包裹已出库</span>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">15:49:40</span>
-								</div>
-							</li>
+								</div></li>
 							<li>
 								<p class="text">您的订单待配货</p>
 								<div class="time-list">
 									<span class="date hidden">2015-12-17</span><span
 										class="week hidden">周四</span><span class="time">15:18:15</span>
-								</div>
-							</li>
+								</div></li>
 							<li class="first">
 								<p class="text">您的订单开始处理</p>
 								<div class="time-list">
 									<span class="date  hidden">2015-12-17</span><span
 										class="week  hidden">周四</span><span class="time">14:27:50</span>
-								</div>
-							</li>
+								</div></li>
 
 						</ul>
 					</div>
@@ -172,18 +166,8 @@
 			</div>
 			<!--底部-->
 			<div class="footer">
-				<div class="footer-hd">
-					<p>
-						<a href="#">恒望科技</a> <b>|</b> <a href="#">商城首页</a> <b>|</b> <a
-							href="#">支付宝</a> <b>|</b> <a href="#">物流</a>
-					</p>
-				</div>
-				<div class="footer-bd">
-					<p>
-						<a href="#">关于恒望</a> <a href="#">合作伙伴</a> <a href="#">联系我们</a> <a
-							href="#">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-					</p>
-				</div>
+				<!-- 底部导航栏 -->
+				<c:import url="/footer.jsp"></c:import>
 			</div>
 		</div>
 		<aside class="menu">

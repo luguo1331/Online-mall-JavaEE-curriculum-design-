@@ -39,16 +39,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -72,15 +67,11 @@
 
 						<strong class="blog-tit"><p>
 								一张毛爷爷<span>丨</span>基础护肤
-							</p>
-						</strong>
+							</p> </strong>
 						<div class="Row">
-							<li><img src="../images/blog01.jpg" />
-							</li>
-							<li><img src="../images/blog02.jpg" />
-							</li>
-							<li><img src="../images/blog03.jpg" />
-							</li>
+							<li><img src="../images/blog01.jpg" /></li>
+							<li><img src="../images/blog02.jpg" /></li>
+							<li><img src="../images/blog03.jpg" /></li>
 						</div>
 						<p>百元以内的基础护肤套装，小编给妹子们挑选了洗面奶、爽肤水和面霜，按照洁面和护肤的顺序，大家可以尽情将这些口碑好货加入购物车哦。</p>
 						<p>一向是；平价又好用的露得清洗面奶，加上很大一支感觉怎么都用不完的千纤草丝瓜水，最后用玉兰油面霜锁住面部水分，简直完美！</p>
@@ -88,15 +79,11 @@
 
 						<strong class="blog-tit"><p>
 								两张毛爷爷<span>丨</span>彩妆
-							</p>
-						</strong>
+							</p> </strong>
 						<div class="Row">
-							<li><img src="../images/blog04.jpg" />
-							</li>
-							<li><img src="../images/blog05.jpg" />
-							</li>
-							<li><img src="../images/blog06.jpg" />
-							</li>
+							<li><img src="../images/blog04.jpg" /></li>
+							<li><img src="../images/blog05.jpg" /></li>
+							<li><img src="../images/blog06.jpg" /></li>
 						</div>
 
 						<p>眼妆是整个妆面的精髓，一个精致的眼妆可以瞬间提升人的气场，或是娇羞可爱，或者温婉贤淑，或是妩媚妖娆，总有一种风格适合自己。想不到仅仅不到200软妹币就能搞定眼妆这个磨人的小妖精吧！</p>
@@ -104,15 +91,11 @@
 
 						<strong class="blog-tit"><p>
 								三张毛爷爷<span>丨</span>身体护理
-							</p>
-						</strong>
+							</p> </strong>
 						<div class="Row">
-							<li><img src="../images/blog07.jpg" />
-							</li>
-							<li><img src="../images/blog08.jpg" />
-							</li>
-							<li><img src="../images/blog09.jpg" />
-							</li>
+							<li><img src="../images/blog07.jpg" /></li>
+							<li><img src="../images/blog08.jpg" /></li>
+							<li><img src="../images/blog09.jpg" /></li>
 						</div>
 
 						<p>初春空气干燥，洗手洗澡后不马上涂点润肤乳，皮肤就会不听话得干燥粗糙起来，着实让爱美的妹子们操碎了心。春天不光是万物复苏的季节，还是万物需要滋养的季节，而且要从头到脚得滋养。</p>
@@ -127,10 +110,8 @@
 
 			<hr class="am-article-divider blog-hr">
 			<ul class="am-pagination blog-pagination">
-				<li class="am-pagination-prev"><a href="">&laquo; 上一页</a>
-				</li>
-				<li class="am-pagination-next"><a href="">下一页 &raquo;</a>
-				</li>
+				<li class="am-pagination-prev"><a href="">&laquo; 上一页</a></li>
+				<li class="am-pagination-next"><a href="">下一页 &raquo;</a></li>
 			</ul>
 		</div>
 
@@ -140,21 +121,11 @@
 				<section class="am-panel am-panel-default">
 					<div class="am-panel-hd">热门话题</div>
 					<ul class="am-list blog-list">
-						<li><a href="#"><p>[特惠]闺蜜喊你来囤国货啦</p>
-						</a>
-						</li>
-						<li><a href="#"><p>[公告]华北、华中部分地区配送延迟</p>
-						</a>
-						</li>
-						<li><a href="#"><p>[特惠]家电狂欢千亿礼券 买1送1！</p>
-						</a>
-						</li>
-						<li><a href="#"><p>[公告]商城与广州市签署战略合作协议</p>
-						</a>
-						</li>
-						<li><a href="#"><p>[特惠]洋河年末大促，低至两件五折</p>
-						</a>
-						</li>
+						<li><a href="#"><p>[特惠]闺蜜喊你来囤国货啦</p> </a></li>
+						<li><a href="#"><p>[公告]华北、华中部分地区配送延迟</p> </a></li>
+						<li><a href="#"><p>[特惠]家电狂欢千亿礼券 买1送1！</p> </a></li>
+						<li><a href="#"><p>[公告]商城与广州市签署战略合作协议</p> </a></li>
+						<li><a href="#"><p>[特惠]洋河年末大促，低至两件五折</p> </a></li>
 					</ul>
 				</section>
 
@@ -164,18 +135,8 @@
 	</div>
 
 	<div class="footer">
-		<div class="footer-hd">
-			<p>
-				<a href="#">恒望科技</a> <b>|</b> <a href="#">商城首页</a> <b>|</b> <a
-					href="#">支付宝</a> <b>|</b> <a href="#">物流</a>
-			</p>
-		</div>
-		<div class="footer-bd">
-			<p>
-				<a href="#">关于恒望</a> <a href="#">合作伙伴</a> <a href="#">联系我们</a> <a
-					href="#">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-			</p>
-		</div>
+		<!-- 底部导航栏 -->
+		<c:import url="/footer.jsp"></c:import>
 	</div>
 
 	<!--[if lt IE 9]>

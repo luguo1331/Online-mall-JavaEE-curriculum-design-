@@ -45,16 +45,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -80,16 +75,11 @@
 					<div class="am-tabs am-tabs-d2 am-margin" data-am-tabs>
 
 						<ul class="am-avg-sm-5 am-tabs-nav am-nav am-nav-tabs">
-							<li class="am-active"><a href="#tab1">所有订单</a>
-							</li>
-							<li><a href="#tab2">待付款</a>
-							</li>
-							<li><a href="#tab3">待发货</a>
-							</li>
-							<li><a href="#tab4">待收货</a>
-							</li>
-							<li><a href="#tab5">待评价</a>
-							</li>
+							<li class="am-active"><a href="#tab1">所有订单</a></li>
+							<li><a href="#tab2">待付款</a></li>
+							<li><a href="#tab3">待发货</a></li>
+							<li><a href="#tab4">待收货</a></li>
+							<li><a href="#tab5">待评价</a></li>
 						</ul>
 
 						<div class="am-tabs-bd">
@@ -147,15 +137,19 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -173,15 +167,19 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -199,15 +197,19 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 												</div>
 												<div class="order-right">
@@ -217,7 +219,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -228,9 +231,11 @@
 																<p class="order-info">
 																	<a href="logistics.html">查看物流</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change">
-															<div class="am-btn am-btn-danger anniu">删除订单</div></li>
+															<div class="am-btn am-btn-danger anniu">删除订单</div>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -264,15 +269,19 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -290,15 +299,19 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -316,15 +329,19 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 												</div>
 												<div class="order-right">
@@ -334,14 +351,17 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
 																<p class="Mystatus">交易关闭</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change">
-															<div class="am-btn am-btn-danger anniu">删除订单</div></li>
+															<div class="am-btn am-btn-danger anniu">删除订单</div>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -373,17 +393,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -401,17 +425,21 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -429,17 +457,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 												</div>
 												<div class="order-right">
@@ -449,7 +481,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -457,9 +490,11 @@
 																<p class="order-info">
 																	<a href="orderinfo.html">订单详情</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change">
-															<div class="am-btn am-btn-danger anniu">提醒发货</div></li>
+															<div class="am-btn am-btn-danger anniu">提醒发货</div>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -491,17 +526,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -519,17 +558,21 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 												</div>
@@ -540,7 +583,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -554,9 +598,11 @@
 																<p class="order-info">
 																	<a href="#">延长收货</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change">
-															<div class="am-btn am-btn-danger anniu">确认收货</div></li>
+															<div class="am-btn am-btn-danger anniu">确认收货</div>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -621,15 +667,19 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -647,15 +697,19 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -673,15 +727,19 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
-															<div class="item-operation"></div></li>
+															<div class="item-operation"></div>
+														</li>
 													</ul>
 												</div>
 												<div class="order-right">
@@ -691,7 +749,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -700,9 +759,11 @@
 																	<a href="#">取消订单</a>
 																</p>
 
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change"><a href="pay.html">
-																<div class="am-btn am-btn-danger anniu">一键支付</div> </a></li>
+																<div class="am-btn am-btn-danger anniu">一键支付</div> </a>
+														</li>
 													</div>
 												</div>
 
@@ -764,17 +825,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -792,17 +857,21 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -820,17 +889,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 												</div>
 												<div class="order-right">
@@ -840,7 +913,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -848,9 +922,11 @@
 																<p class="order-info">
 																	<a href="orderinfo.html">订单详情</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change">
-															<div class="am-btn am-btn-danger anniu">提醒发货</div></li>
+															<div class="am-btn am-btn-danger anniu">提醒发货</div>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -910,17 +986,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -938,17 +1018,21 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 												</div>
@@ -959,7 +1043,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -973,9 +1058,11 @@
 																<p class="order-info">
 																	<a href="#">延长收货</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change">
-															<div class="am-btn am-btn-danger anniu">确认收货</div></li>
+															<div class="am-btn am-btn-danger anniu">确认收货</div>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -1037,17 +1124,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 												</div>
@@ -1058,7 +1149,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -1069,9 +1161,11 @@
 																<p class="order-info">
 																	<a href="logistics.html">查看物流</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change"><a href="commentlist.html">
-																<div class="am-btn am-btn-danger anniu">评价商品</div> </a></li>
+																<div class="am-btn am-btn-danger anniu">评价商品</div> </a>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -1103,17 +1197,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -1131,17 +1229,21 @@
 																			颜色分类：李清照 <br />尺码：均码
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 													<ul class="item-list">
@@ -1159,17 +1261,21 @@
 																			颜色：12#川南玛瑙 <br />包装：裸装
 																		</p> </a>
 																</div>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-price">
-															<div class="item-price">333.00</div></li>
+															<div class="item-price">333.00</div>
+														</li>
 														<li class="td td-number">
 															<div class="item-number">
 																<span>×</span>2
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-operation">
 															<div class="item-operation">
 																<a href="refund.html">退款/退货</a>
-															</div></li>
+															</div>
+														</li>
 													</ul>
 
 
@@ -1181,7 +1287,8 @@
 															<p>
 																含运费：<span>10.00</span>
 															</p>
-														</div></li>
+														</div>
+													</li>
 													<div class="move-right">
 														<li class="td td-status">
 															<div class="item-status">
@@ -1192,9 +1299,11 @@
 																<p class="order-info">
 																	<a href="logistics.html">查看物流</a>
 																</p>
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-change"><a href="commentlist.html">
-																<div class="am-btn am-btn-danger anniu">评价商品</div> </a></li>
+																<div class="am-btn am-btn-danger anniu">评价商品</div> </a>
+														</li>
 													</div>
 												</div>
 											</div>
@@ -1213,19 +1322,8 @@
 			</div>
 			<!--底部-->
 			<div class="footer">
-				<div class="footer-hd">
-					<p>
-						<a href="#">恒望科技</a> <b>|</b> <a href="#">商城首页</a> <b>|</b> <a
-							href="#">支付宝</a> <b>|</b> <a href="#">物流</a>
-					</p>
-				</div>
-				<div class="footer-bd">
-					<p>
-						<a href="#">关于恒望</a> <a href="#">合作伙伴</a> <a href="#">联系我们</a> <a
-							href="#">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-					</p>
-				</div>
-
+				<!-- 底部导航栏 -->
+				<c:import url="/footer.jsp"></c:import>
 			</div>
 		</div>
 		<aside class="menu">

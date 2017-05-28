@@ -74,7 +74,8 @@
 									class="new-addr-bar hidden">|</span> <a href="#">编辑</a> <span
 									class="new-addr-bar">|</span> <a href="javascript:void(0);"
 									onclick="delClick(this);">删除</a>
-							</div></li>
+							</div>
+						</li>
 						<div class="per-border"></div>
 						<li class="user-addresslist">
 							<div class="address-left">
@@ -100,7 +101,8 @@
 								<a href="#">设为默认</a> <span class="new-addr-bar">|</span> <a
 									href="#">编辑</a> <span class="new-addr-bar">|</span> <a
 									href="javascript:void(0);" onclick="delClick(this);">删除</a>
-							</div></li>
+							</div>
+						</li>
 
 					</ul>
 
@@ -182,26 +184,28 @@
 												<div class="item-pic">
 													<a href="#" class="J_MakePoint"> <img
 														src="../images/kouhong.jpg_80x80.jpg"
-														class="itempic J_ItemImg">
-													</a>
+														class="itempic J_ItemImg"> </a>
 												</div>
 												<div class="item-info">
 													<div class="item-basic-info">
 														<a href="#" class="item-title J_MakePoint"
 															data-point="tbcart.8.11">美康粉黛醉美唇膏 持久保湿滋润防水不掉色</a>
 													</div>
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-info">
 												<div class="item-props">
 													<span class="sku-line">颜色：12#川南玛瑙</span> <span
 														class="sku-line">包装：裸装</span>
-												</div></li>
+												</div>
+											</li>
 											<li class="td td-price">
 												<div class="item-price price-promo-promo">
 													<div class="price-content">
 														<em class="J_Price price-now">39.00</em>
 													</div>
-												</div></li>
+												</div>
+											</li>
 										</div>
 										<li class="td td-amount">
 											<div class="amount-wrapper ">
@@ -214,18 +218,21 @@
 															type="button" value="+" />
 													</div>
 												</div>
-											</div></li>
+											</div>
+										</li>
 										<li class="td td-sum">
 											<div class="td-inner">
 												<em tabindex="0" class="J_ItemSum number">117.00</em>
-											</div></li>
+											</div>
+										</li>
 										<li class="td td-oplist">
 											<div class="td-inner">
 												<span class="phone-title">配送方式</span>
 												<div class="pay-logis">
 													快递<b class="sys_item_freprice">10</b>元
 												</div>
-											</div></li>
+											</div>
+										</li>
 
 									</ul>
 									<div class="clear"></div>
@@ -244,8 +251,7 @@
 											<div class="item-pic">
 												<a href="#" class="J_MakePoint"> <img
 													src="../images/kouhong.jpg_80x80.jpg"
-													class="itempic J_ItemImg">
-												</a>
+													class="itempic J_ItemImg"> </a>
 											</div>
 											<div class="item-info">
 												<div class="item-basic-info">
@@ -253,18 +259,21 @@
 														class="item-title J_MakePoint" data-point="tbcart.8.11">美康粉黛醉美唇膏
 														持久保湿滋润防水不掉色</a>
 												</div>
-											</div></li>
+											</div>
+										</li>
 										<li class="td td-info">
 											<div class="item-props">
 												<span class="sku-line">颜色：10#蜜橘色+17#樱花粉</span> <span
 													class="sku-line">包装：两支手袋装（送彩带）</span>
-											</div></li>
+											</div>
+										</li>
 										<li class="td td-price">
 											<div class="item-price price-promo-promo">
 												<div class="price-content">
 													<em class="J_Price price-now">39.00</em>
 												</div>
-											</div></li>
+											</div>
+										</li>
 									</div>
 
 									<li class="td td-amount">
@@ -278,16 +287,19 @@
 														type="button" value="+" />
 												</div>
 											</div>
-										</div></li>
+										</div>
+									</li>
 									<li class="td td-sum">
 										<div class="td-inner">
 											<em tabindex="0" class="J_ItemSum number">117.00</em>
-										</div></li>
+										</div>
+									</li>
 									<li class="td td-oplist">
 										<div class="td-inner">
 											<span class="phone-title">配送方式</span>
 											<div class="pay-logis">包邮</div>
-										</div></li>
+										</div>
+									</li>
 
 								</ul>
 								<div class="clear"></div>
@@ -305,9 +317,9 @@
 									title="选填,对本次交易的说明（建议填写已经和卖家达成一致的说明）"
 									placeholder="选填,建议填写和卖家达成一致的说明"
 									class="memo-input J_MakePoint c2c-text-default memo-close">
-									<div class="msg hidden J-msg">
-										<p class="error">最多输入500个字符</p>
-									</div>
+								<div class="msg hidden J-msg">
+									<p class="error">最多输入500个字符</p>
+								</div>
 							</div>
 						</div>
 
@@ -328,7 +340,8 @@
 									</div>
 									<div class="c-limit">【无使用门槛】</div>
 								</option>
-						</select></li>
+						</select>
+						</li>
 
 						<li class="td td-bonus"><span class="bonus-title">红包</span> <select
 							data-am-selected>
@@ -348,7 +361,8 @@
 										<span>还剩</span>50.00<span>元</span>
 									</div>
 								</option>
-						</select></li>
+						</select>
+						</li>
 
 					</div>
 					<div class="clear"></div>
@@ -401,18 +415,8 @@
 		</div>
 	</div>
 	<div class="footer">
-		<div class="footer-hd">
-			<p>
-				<a href="#">恒望科技</a> <b>|</b> <a href="#">商城首页</a> <b>|</b> <a
-					href="#">支付宝</a> <b>|</b> <a href="#">物流</a>
-			</p>
-		</div>
-		<div class="footer-bd">
-			<p>
-				<a href="#">关于恒望</a> <a href="#">合作伙伴</a> <a href="#">联系我们</a> <a
-					href="#">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-			</p>
-		</div>
+		<!-- 底部导航栏 -->
+		<c:import url="/footer.jsp"></c:import>
 	</div>
 	</div>
 	<div class="theme-popover-mask"></div>

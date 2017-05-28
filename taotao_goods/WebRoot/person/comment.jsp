@@ -44,11 +44,16 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a></li>
-				<li class="qc"><a href="#">闪购</a></li>
-				<li class="qc"><a href="#">限时抢</a></li>
-				<li class="qc"><a href="#">团购</a></li>
-				<li class="qc last"><a href="#">大包装</a></li>
+				<li class="index"><a href="#">首页</a>
+				</li>
+				<li class="qc"><a href="#">闪购</a>
+				</li>
+				<li class="qc"><a href="#">限时抢</a>
+				</li>
+				<li class="qc"><a href="#">团购</a>
+				</li>
+				<li class="qc last"><a href="#">大包装</a>
+				</li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -73,8 +78,10 @@
 					<div class="am-tabs am-tabs-d2 am-margin" data-am-tabs>
 
 						<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
-							<li class="am-active"><a href="#tab1">所有评价</a></li>
-							<li><a href="#tab2">有图评价</a></li>
+							<li class="am-active"><a href="#tab1">所有评价</a>
+							</li>
+							<li><a href="#tab2">有图评价</a>
+							</li>
 
 						</ul>
 
@@ -99,8 +106,7 @@
 													<a href="#" class="J_MakePoint"> <img
 														src="../images/kouhong.jpg_80x80.jpg" class="itempic">
 													</a>
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-comment">
 												<div class="item-title">
@@ -122,8 +128,7 @@
 														<p class="info-time">2015-12-24</p>
 
 													</div>
-												</div>
-											</li>
+												</div></li>
 
 										</ul>
 
@@ -151,8 +156,7 @@
 													<a href="#" class="J_MakePoint"> <img
 														src="../images/kouhong.jpg_80x80.jpg" class="itempic">
 													</a>
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-comment">
 												<div class="item-title">
@@ -178,8 +182,7 @@
 														<p class="info-time">2015-12-24</p>
 
 													</div>
-												</div>
-											</li>
+												</div></li>
 
 										</ul>
 
@@ -195,18 +198,8 @@
 			</div>
 			<!--底部-->
 			<div class="footer">
-				<div class="footer-hd">
-					<p>
-						<a href="#">恒望科技</a> <b>|</b> <a href="#">商城首页</a> <b>|</b> <a
-							href="#">支付宝</a> <b>|</b> <a href="#">物流</a>
-					</p>
-				</div>
-				<div class="footer-bd">
-					<p>
-						<a href="#">关于恒望</a> <a href="#">合作伙伴</a> <a href="#">联系我们</a> <a
-							href="#">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-					</p>
-				</div>
+				<!-- 底部导航栏 -->
+				<c:import url="/footer.jsp"></c:import>
 			</div>
 		</div>
 		<aside class="menu">

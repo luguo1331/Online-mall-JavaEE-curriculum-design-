@@ -43,8 +43,10 @@
 
 				<div class="am-tabs" id="doc-my-tabs">
 					<ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
-						<li class="am-active"><a href="">邮箱注册</a></li>
-						<li><a href="">手机号注册</a></li>
+						<li class="am-active"><a href="">邮箱注册</a>
+						</li>
+						<li><a href="">手机号注册</a>
+						</li>
 					</ul>
 
 					<div class="am-tabs-bd">
@@ -67,19 +69,18 @@
 										placeholder="确认密码">
 								</div>
 
-							
 
-<!-- 
+
+								<!-- 
 							<div class="login-links">
 								<label for="reader-me"> <input id="reader-me"
 									type="checkbox"> 点击表示您同意商城《服务协议》 </label>
 							</div>
  -->
-							<div class="am-cf">
-								<input type="submit" name="" value="注册"
-									class="am-btn am-btn-primary am-btn-sm am-fl">
-							</div>
-
+								<div class="am-cf">
+									<input type="submit" name="" value="注册"
+										class="am-btn am-btn-primary am-btn-sm am-fl">
+								</div>
 						</div>
 
 						<div class="am-tab-panel">
@@ -131,19 +132,8 @@
 		</div>
 
 		<div class="footer ">
-			<div class="footer-hd ">
-				<p>
-					<a href="# ">恒望科技</a> <b>|</b> <a
-						href="<c:url value='/home/home.jsp'/>">商城首页</a> <b>|</b> <a
-						href="# ">支付宝</a> <b>|</b> <a href="# ">物流</a>
-				</p>
-			</div>
-			<div class="footer-bd ">
-				<p>
-					<a href="# ">关于恒望</a> <a href="# ">合作伙伴</a> <a href="# ">联系我们</a> <a
-						href="# ">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-				</p>
-			</div>
+			<!-- 底部导航栏 -->
+			<c:import url="/footer.jsp"></c:import>
 		</div>
 </body>
 

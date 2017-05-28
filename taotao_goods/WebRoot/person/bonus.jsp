@@ -43,11 +43,16 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a></li>
-				<li class="qc"><a href="#">闪购</a></li>
-				<li class="qc"><a href="#">限时抢</a></li>
-				<li class="qc"><a href="#">团购</a></li>
-				<li class="qc last"><a href="#">大包装</a></li>
+				<li class="index"><a href="#">首页</a>
+				</li>
+				<li class="qc"><a href="#">闪购</a>
+				</li>
+				<li class="qc"><a href="#">限时抢</a>
+				</li>
+				<li class="qc"><a href="#">团购</a>
+				</li>
+				<li class="qc last"><a href="#">大包装</a>
+				</li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -72,8 +77,10 @@
 					<div class="am-tabs-d2 am-tabs  am-margin" data-am-tabs>
 
 						<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
-							<li class="am-active"><a href="#tab1">可用红包</a></li>
-							<li><a href="#tab2">已用/过期红包</a></li>
+							<li class="am-active"><a href="#tab1">可用红包</a>
+							</li>
+							<li><a href="#tab2">已用/过期红包</a>
+							</li>
 
 						</ul>
 
@@ -104,27 +111,23 @@
 															<span>红包初始面额：</span>¥50.00<span>元</span>
 														</p> </a>
 
-												</div>
-											</li>
+												</div></li>
 											<li class="td td-remainderprice">
 												<div class="item-remainderprice">
 													<span>还剩</span>10.40<span>元</span>
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-term ">
 												<div class="item-term">
 													<span>有效期</span> 2015.12.26-2016.2.1
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-usestatus ">
 												<div class="item-usestatus ">
 													<p>可使用</p>
 													<span><img src="../images/gift_stamp_1.png"
 													</span>
-												</div>
-											</li>
+												</div></li>
 										</ul>
 
 									</div>
@@ -156,27 +159,23 @@
 															<span>红包初始面额：</span>¥50.00<span>元</span>
 														</p> </a>
 
-												</div>
-											</li>
+												</div></li>
 											<li class="td td-remainderprice">
 												<div class="item-remainderprice">
 													<span>还剩</span>0.00<span>元</span>
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-term ">
 												<div class="item-term">
 													<span>有效期</span> 2015.12.26-2016.2.1
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-usestatus ">
 												<div class="item-usestatus ">
 													<p>已用完</p>
 													<span><img src="../images/gift_stamp_2.png"
 													</span>
-												</div>
-											</li>
+												</div></li>
 										</ul>
 
 										<!--已过期-->
@@ -195,27 +194,23 @@
 															<span>红包初始面额：</span>¥50.00<span>元</span>
 														</p> </a>
 
-												</div>
-											</li>
+												</div></li>
 											<li class="td td-remainderprice">
 												<div class="item-remainderprice">
 													<span>还剩</span>50.00<span>元</span>
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-term ">
 												<div class="item-term">
 													<span>有效期</span> 2015.12.26-2016.2.1
-												</div>
-											</li>
+												</div></li>
 
 											<li class="td td-usestatus ">
 												<div class="item-usestatus ">
 													<p>已过期</p>
 													<span><img src="../images/gift_stamp_3.png"
 													</span>
-												</div>
-											</li>
+												</div></li>
 										</ul>
 
 
@@ -231,18 +226,8 @@
 			</div>
 			<!--底部-->
 			<div class="footer ">
-				<div class="footer-hd ">
-					<p>
-						<a href="# ">恒望科技</a> <b>|</b> <a href="# ">商城首页</a> <b>|</b> <a
-							href="# ">支付宝</a> <b>|</b> <a href="# ">物流</a>
-					</p>
-				</div>
-				<div class="footer-bd ">
-					<p>
-						<a href="# ">关于恒望</a> <a href="# ">合作伙伴</a> <a href="# ">联系我们</a>
-						<a href="# ">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
-					</p>
-				</div>
+				<!-- 底部导航栏 -->
+				<c:import url="/footer.jsp"></c:import>
 			</div>
 
 		</div>

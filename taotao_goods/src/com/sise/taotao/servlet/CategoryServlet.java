@@ -35,7 +35,6 @@ public class CategoryServlet extends BaseServlet {
 	 */
 	public List<Category> FindAll() throws ServletException, IOException {
 		return categoryService.findAll();
-
 	}
 
 }

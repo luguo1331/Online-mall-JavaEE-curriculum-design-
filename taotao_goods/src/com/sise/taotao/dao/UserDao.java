@@ -1,12 +1,18 @@
 package com.sise.taotao.dao;
 
 import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.MapHandler;
 
+import cn.itcast.commons.CommonUtils;
 import cn.itcast.jdbc.TxQueryRunner;
 
+import com.sise.taotao.domain.Address;
 import com.sise.taotao.domain.User;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
@@ -35,8 +41,15 @@ public class UserDao {
 	public User findByLoginnameAndLoginpass(String loginname, String loginpass)
 			throws SQLException {
 		String sql = "SELECT * FROM t_user WHERE loginname=? AND loginpass=?";
-		return qr.query(sql, new BeanHandler<User>(User.class), loginname,
+		Map<String, Object> map = qr.query(sql, new MapHandler(), loginname,
 				loginpass);
+		User user = CommonUtils.toBean(map, User.class);
+		sql = "SELECT * FROM t_address WHERE uid=?";
+		String param = user.getUid();
+		List<Address> addressList = qr.query(sql, new BeanListHandler<Address>(
+				Address.class),param);
+		user.setAddressList(addressList);
+		return user;
 	}
 
 	/**

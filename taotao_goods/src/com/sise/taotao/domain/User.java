@@ -1,5 +1,7 @@
 package com.sise.taotao.domain;
 
+import java.util.List;
+
 /*
  * 类名称: User   
  * 类描述:                
@@ -14,14 +16,14 @@ public class User {
 	private String uid;// 主键
 	private String loginname;// 登录名
 	private String loginpass;// 登录密码
-	private String nickName;//昵称
-	private String sex;//性别
-	private String birthday;//生日
+	private String nickName;// 昵称
+	private String sex;// 性别
+	private String birthday;// 生日
 	private String email;// 邮箱
-	private String phone;//电话
+	private String phone;// 电话
 	private boolean status;// 状态，true表示已激活，或者未激活
 	private String activationCode;// 激活码，它是唯一值！即每个用户的激活码是不同的！
-
+	private List<Address> addressList;// 地址
 	// 注册表单
 	private String reloginpass;// 确认密码
 	private Boolean rememb;// 记住密码
@@ -29,15 +31,12 @@ public class User {
 	// 修改密码表单
 	private String newpass;// 新密码
 
-	
-	@Override
-	public String toString() {
-		return "User [uid=" + uid + ", loginname=" + loginname + ", loginpass="
-				+ loginpass + ", nickName=" + nickName + ", sex=" + sex
-				+ ", birthday=" + birthday + ", email=" + email + ", phone="
-				+ phone + ", status=" + status + ", activationCode="
-				+ activationCode + ", reloginpass=" + reloginpass + ", rememb="
-				+ rememb + ", newpass=" + newpass + "]";
+	public List<Address> getAddressList() {
+		return addressList;
+	}
+
+	public void setAddressList(List<Address> addressList) {
+		this.addressList = addressList;
 	}
 
 	public String getUid() {
@@ -143,7 +142,5 @@ public class User {
 	public void setNewpass(String newpass) {
 		this.newpass = newpass;
 	}
-
-
 
 }

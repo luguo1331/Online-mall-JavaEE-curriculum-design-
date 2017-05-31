@@ -1,5 +1,7 @@
 package com.sise.taotao.domain;
 
+import java.math.BigDecimal;
+
 /*
  * 类名称: CartItem   
  * 类描述:                
@@ -53,5 +55,17 @@ public class CartItem {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	// 添加小计方法
+	public double getSubtotal() {
+		/*
+		 * 使用BigDecimal不会有误差
+		 * 要求必须使用String类型构造器
+		 */
+		BigDecimal b1 = new BigDecimal(goods.getCurrPrice() + "");
+		BigDecimal b2 = new BigDecimal(quantity + "");
+		BigDecimal b3 = b1.multiply(b2);
+		return b3.doubleValue();
 	}
 }

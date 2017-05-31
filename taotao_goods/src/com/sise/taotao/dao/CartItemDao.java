@@ -69,6 +69,16 @@ public class CartItemDao {
 	}
 
 	/**
+	 * 根据cartItemId查询订单项
+	 * @param cartItemId
+	 * @return
+	 * @throws SQLException
+	 */
+	public CartItem findByCartItemId(String cartItemId) throws SQLException {
+		String sql = "SELECT * FROM t_cartitem c,t_goods g WHERE g.gid=c.gid AND c.cartItemId=?";
+		return toCartItem(qr.query(sql, new MapHandler(),cartItemId));
+	}
+	/**
 	 * 修改指定id的订单项数目
 	 * 
 	 * @param cartItemId
@@ -77,8 +87,14 @@ public class CartItemDao {
 	 */
 	public void updateQuantity(String cartItemId, int quantity)
 			throws SQLException {
-		String sql = "UPDATE t_cartitem SET quantity=? WHERE cartItemId=?";
-		qr.update(sql, quantity, cartItemId);
+		String sql = "UPDATE t_cartitem SET quantity=? WHERE cartItemId=?";	
+		Integer num = findByCartItemId(cartItemId).getGoods().getNum();
+		if (num<quantity) {
+			quantity=num;
+		}
+		else {
+			qr.update(sql, quantity, cartItemId);
+		}	
 	}
 
 	/**

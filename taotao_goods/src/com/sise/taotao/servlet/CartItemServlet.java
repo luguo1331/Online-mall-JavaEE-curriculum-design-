@@ -65,4 +65,20 @@ public class CartItemServlet extends BaseServlet {
 		req.setAttribute("cartItemList", cartItemLIst);
 		return "f:/home/pay.jsp";
 	}
+	public String updateQuantity(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String cartItemId = req.getParameter("cartItemId");
+		int quantity = Integer.parseInt(req.getParameter("quantity"));
+		CartItem cartItem = cartTtemService.updateQuantity(cartItemId, quantity);
+		
+		// 给客户端返回一个json对象
+		StringBuilder sb = new StringBuilder("{");
+		sb.append("\"quantity\"").append(":").append(cartItem.getQuantity());
+		sb.append(",");
+		sb.append("\"subtotal\"").append(":").append(cartItem.getSubtotal());
+		sb.append("}");
+
+		resp.getWriter().print(sb);
+		return null;
+	}
 }

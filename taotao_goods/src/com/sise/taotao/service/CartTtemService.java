@@ -54,4 +54,19 @@ public class CartTtemService {
 			throw new RuntimeException(e);
 		}
 	}
+
+	/**
+	 * 修改订单项 数量
+	 * @param cartItemId
+	 * @param quantity
+	 * @return
+	 */
+	public CartItem updateQuantity(String cartItemId, int quantity) {
+		try {
+			cartItemDao.updateQuantity(cartItemId, quantity);		
+			return cartItemDao.findByCartItemId(cartItemId);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

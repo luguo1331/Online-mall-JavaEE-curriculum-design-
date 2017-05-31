@@ -5,22 +5,88 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 
 
  $(document).ready(function(){
-
+	 showTotal();
      $(function(){
          $(".add").click(function(){
           var t=$(this).parent().find('input[class*=text_box]');
-         t.val(parseInt(t.val())+1)
+          var id = t.attr("id").substring(0, 32);
+          sendUpdateQuantity(id, Number(t.val()) + 1);
         })
       $(".min").click(function(){
        var t=$(this).parent().find('input[class*=text_box]');
-         t.val(parseInt(t.val())-1)
-         if(parseInt(t.val())<0){
-          t.val(0);
-          }
+       var id = t.attr("id").substring(0, 32);
+       if(parseInt(t.val())==1){
+    	   if (confirm("您是否真要删除该条目？")) {
+				location = "/taotao_goods/CartItemServlet?method=batchDelete&cartItemIds="
+						+ id;
+			}
+       }
+       else{
+    	   sendUpdateQuantity(id, Number(t.val()) -1);
+       }
        })
     }) 
+	// 请求服务器，修改数量。
+	function sendUpdateQuantity(id, quantity) {
+		$.ajax({
+			async : false,
+			cache : false,
+			url : "/taotao_goods/CartItemServlet",
+			data : {
+				method : "updateQuantity",
+				cartItemId : id,
+				quantity : quantity
+			},
+			type : "POST",
+			dataType : "json",
+			success : function(result) {
+				// 1. 修改数量
+				$("#" + id + "Quantity").val(result.quantity);
+				// 2. 修改小计
+				$("#" + id + "Subtotal").text(result.subtotal);
+				// 3. 重新计算总计
+				showTotal();
+			}
+		});
+	}
+     
+     function round(num,dec){ 
+    	    var strNum = num + '';/* 把要转换的小数转换成字符串 */
+    	    var index = strNum.indexOf("."); /* 获取小数点的位置 */
+    	    if(index < 0) {
+    	        return num;/* 如果没有小数点，那么无需四舍五入，返回这个整数 */
+    	    }
+    	    var n = strNum.length - index -1;/* 获取当前浮点数，小数点后的位数 */
+    	    if(dec < n){ 
+    	    	/* 把小数点向后移动要保留的位数，把需要保留的小数部分变成整数部分，只留下不需要保留的部分为小数 */ 
+    	        var e = Math.pow(10, dec);
+    	        num = num * e;
+    	        /* 进行四舍五入，只保留整数部分 */
+    	        num = Math.round(num);
+    	        /* 再把原来小数部分还原为小数 */
+    	        return num / e;
+    	    } else { 
+    	        return num;/* 如果当前小数点后的位数等于或小于要保留的位数，那么无需处理，直接返回 */
+    	    } 
+    	} 
+     /*
+		 * 计算总计
+		 */
+     function showTotal() {
+ 		var total = 0;
+ 		/*
+		 * 获取所有的条目！循环遍历之
+		 */
+ 		$('em[class*=J_ItemSum]').each(function() {
 
-	
+ 			var text = $(this).text();
+ 			// 累加计算
+ 			total += Number(text);
+ 		});
+ 		// 把总计显示在总计元素上
+ 		$("#total").text(round(total, 2));// round()函数的作用是把total保留2位
+ 		$("#J_ActualFee").text(round(total, 2));
+ 	}
 	<!--兼容IE浏览器 -->
 	    if (!document.getElementsByClassName) {
         document.getElementsByClassName = function (cls) {
@@ -37,7 +103,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
     }
  
  
-//地址选择
+// 地址选择
 				$(function() {
 					$(".user-addresslist").click(function() {
 						$(this).addClass("defaultAddr").siblings().removeClass("defaultAddr");
@@ -67,7 +133,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
 				var $ww = $(window).width();
 	
 				$('.theme-login').click(function() {
-//					禁止遮罩层下面的内容滚动
+// 禁止遮罩层下面的内容滚动
 					$(document.body).css("overflow","hidden");
 				
 					$(this).addClass("selected");

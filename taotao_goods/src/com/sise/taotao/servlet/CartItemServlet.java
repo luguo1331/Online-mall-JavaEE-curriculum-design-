@@ -2,14 +2,17 @@ package com.sise.taotao.servlet;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.itcast.commons.CommonUtils;
 import cn.itcast.servlet.BaseServlet;
 
 import com.sise.taotao.domain.CartItem;
+import com.sise.taotao.domain.Goods;
 import com.sise.taotao.domain.User;
 import com.sise.taotao.service.CartTtemService;
 
@@ -27,9 +30,13 @@ public class CartItemServlet extends BaseServlet {
 
 	public String pay(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		
-		return "f:/home/pay.jsp";
-
+		// 得到表单数据并封装
+		Map map = req.getParameterMap();
+		CartItem cartItem = CommonUtils.toBean(map, CartItem.class);
+		cartItem.setGoods(CommonUtils.toBean(map, Goods.class));
+		cartItem.setUser((User)req.getSession().getAttribute("sessionUser"));
+		cartTtemService.add(cartItem);
+		return myCart(req, resp);
 	}
 
 	/**
@@ -56,6 +63,6 @@ public class CartItemServlet extends BaseServlet {
 		 * 3. 保存起来，转发到/cart/list.jsp
 		 */
 		req.setAttribute("cartItemList", cartItemLIst);
-		return "f:/jsps/cart/list.jsp";
+		return "f:/home/pay.jsp";
 	}
 }

@@ -17,17 +17,17 @@
 <title>结算页面</title>
 
 <link
-	href="<c:url value='../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet'/>"
+	href="<c:url value='/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet'/>"
 	type="text/css" />
 <link
-	href="<c:url value='../basic/css/demo.css" rel="stylesheet" type="text/css'/>" />
+	href="<c:url value='/basic/css/demo.css" rel="stylesheet" type="text/css'/>" />
 <link
-	href="<c:url value='../css/cartstyle.css" rel="stylesheet" type="text/css'/>" />
+	href="<c:url value='/css/cartstyle.css" rel="stylesheet" type="text/css'/>" />
 
 <link
-	href="<c:url value='../css/jsstyle.css" rel="stylesheet" type="text/css'/>" />
+	href="<c:url value='/css/jsstyle.css" rel="stylesheet" type="text/css'/>" />
 
-<script type="text/javascript" src="<c:url value='../js/address.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/js/address.js'/>"></script>
 
 </head>
 
@@ -46,49 +46,21 @@
 					</div>
 					<div class="clear"></div>
 					<ul>
-						<div class="per-border"></div>
-						<li class="user-addresslist defaultAddr">
-
-							<div class="address-left">
-								<div class="user DefaultAddr">
-
-									<span class="buy-address-detail"> <span class="buy-user">艾迪
-									</span> <span class="buy-phone">15871145629</span> </span>
-								</div>
-								<div class="default-address DefaultAddr">
-									<span class="buy-line-title buy-line-title-type">收货地址：</span> <span
-										class="buy--address-detail"> <span class="province">湖北</span>省
-										<span class="city">武汉</span>市 <span class="dist">洪山</span>区 <span
-										class="street">雄楚大道666号(中南财经政法大学)</span> </span> </span>
-								</div>
-								<ins class="deftip">默认地址</ins>
-							</div>
-							<div class="address-right">
-								<a href="../person/address.html"> <span
-									class="am-icon-angle-right am-icon-lg"></span> </a>
-							</div>
-							<div class="clear"></div>
-
-							<div class="new-addr-btn">
-								<a href="#" class="hidden">设为默认</a> <span
-									class="new-addr-bar hidden">|</span> <a href="#">编辑</a> <span
-									class="new-addr-bar">|</span> <a href="javascript:void(0);"
-									onclick="delClick(this);">删除</a>
-							</div>
-						</li>
+					<c:forEach items="${sessionScope.sessionUser.addressList}"
+						var="address">
 						<div class="per-border"></div>
 						<li class="user-addresslist">
 							<div class="address-left">
 								<div class="user DefaultAddr">
 
-									<span class="buy-address-detail"> <span class="buy-user">艾迪
-									</span> <span class="buy-phone">15871145629</span> </span>
+									<span class="buy-address-detail"> <span class="buy-user">${sessionScope.sessionUser.loginname}
+									</span> <span class="buy-phone">${sessionScope.sessionUser.phone}</span> </span>
 								</div>
 								<div class="default-address DefaultAddr">
 									<span class="buy-line-title buy-line-title-type">收货地址：</span> <span
-										class="buy--address-detail"> <span class="province">湖北</span>省
-										<span class="city">武汉</span>市 <span class="dist">武昌</span>区 <span
-										class="street">东湖路75号众环大厦2栋9层902</span> </span> </span>
+										class="buy--address-detail"> <span class="province">${address.provincial }</span>
+										<span class="city">${address.city }</span> <span class="dist">${address.distric }</span> <span
+										class="street">${address.detailedAddress }</span> </span> </span>
 								</div>
 								<ins class="deftip hidden">默认地址</ins>
 							</div>
@@ -103,6 +75,7 @@
 									href="javascript:void(0);" onclick="delClick(this);">删除</a>
 							</div>
 						</li>
+					</c:forEach>
 
 					</ul>
 
@@ -137,11 +110,11 @@
 				<div class="logistics">
 					<h3>选择支付方式</h3>
 					<ul class="pay-list">
-						<li class="pay card"><img src="../images/wangyin.jpg" />银联<span></span>
+						<li class="pay card"><img src="<%=path%>/images/wangyin.jpg" />银联<span></span>
 						</li>
-						<li class="pay qq"><img src="../images/weizhifu.jpg" />微信<span></span>
+						<li class="pay qq"><img src="<%=path%>/images/weizhifu.jpg" />微信<span></span>
 						</li>
-						<li class="pay taobao"><img src="../images/zhifubao.jpg" />支付宝<span></span>
+						<li class="pay taobao"><img src="<%=path%>/images/zhifubao.jpg" />支付宝<span></span>
 						</li>
 					</ul>
 				</div>
@@ -184,7 +157,8 @@
 												<div class="item-pic">
 													<a href="#" class="J_MakePoint"> <img
 														src="../images/kouhong.jpg_80x80.jpg"
-														class="itempic J_ItemImg"> </a>
+														class="itempic J_ItemImg">
+													</a>
 												</div>
 												<div class="item-info">
 													<div class="item-basic-info">
@@ -251,7 +225,8 @@
 											<div class="item-pic">
 												<a href="#" class="J_MakePoint"> <img
 													src="../images/kouhong.jpg_80x80.jpg"
-													class="itempic J_ItemImg"> </a>
+													class="itempic J_ItemImg">
+												</a>
 											</div>
 											<div class="item-info">
 												<div class="item-basic-info">
@@ -317,9 +292,9 @@
 									title="选填,对本次交易的说明（建议填写已经和卖家达成一致的说明）"
 									placeholder="选填,建议填写和卖家达成一致的说明"
 									class="memo-input J_MakePoint c2c-text-default memo-close">
-								<div class="msg hidden J-msg">
-									<p class="error">最多输入500个字符</p>
-								</div>
+									<div class="msg hidden J-msg">
+										<p class="error">最多输入500个字符</p>
+									</div>
 							</div>
 						</div>
 

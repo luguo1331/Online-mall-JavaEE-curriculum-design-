@@ -3,6 +3,8 @@ package com.sise.taotao.service;
 import java.sql.SQLException;
 import java.util.List;
 
+import cn.itcast.commons.CommonUtils;
+
 import com.sise.taotao.dao.CartItemDao;
 import com.sise.taotao.domain.CartItem;
 
@@ -20,6 +22,7 @@ public class CartTtemService {
 
 	/**
 	 * 我的购物车
+	 * 
 	 * @param uid
 	 * @return
 	 */
@@ -30,9 +33,25 @@ public class CartTtemService {
 			throw new RuntimeException(e);
 		}
 	}
-	
-	public void add(CartItem cartItem) {
-		
-	}
 
+	/**
+	 * 添加订单项
+	 * @param cartItem
+	 */
+	public void add(CartItem cartItem) {
+		try {
+			CartItem _cartItem = cartItemDao.findByUidAndBid(cartItem.getUser()
+					.getUid(), cartItem.getGoods().getGid());
+			if (_cartItem == null) {
+				cartItem.setCartItemId(CommonUtils.uuid());
+				cartItemDao.addCartItem(cartItem);
+			} else {
+				int quantity = cartItem.getQuantity() + _cartItem.getQuantity();
+				cartItemDao.updateQuantity(_cartItem.getCartItemId(),
+						quantity);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

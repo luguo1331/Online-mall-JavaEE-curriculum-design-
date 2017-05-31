@@ -62,11 +62,16 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a></li>
-				<li class="qc"><a href="#">闪购</a></li>
-				<li class="qc"><a href="#">限时抢</a></li>
-				<li class="qc"><a href="#">团购</a></li>
-				<li class="qc last"><a href="#">大包装</a></li>
+				<li class="index"><a href="#">首页</a>
+				</li>
+				<li class="qc"><a href="#">闪购</a>
+				</li>
+				<li class="qc"><a href="#">限时抢</a>
+				</li>
+				<li class="qc"><a href="#">团购</a>
+				</li>
+				<li class="qc last"><a href="#">大包装</a>
+				</li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -75,8 +80,10 @@
 		</div>
 	</div>
 	<ol class="am-breadcrumb am-breadcrumb-slash">
-		<li><a href="#">首页</a></li>
-		<li><a href="#">分类</a></li>
+		<li><a href="#">首页</a>
+		</li>
+		<li><a href="#">分类</a>
+		</li>
 		<li class="am-active">内容</li>
 	</ol>
 	<script type="text/javascript">
@@ -95,12 +102,9 @@
 		<section class="slider">
 			<div class="flexslider">
 				<ul class="slides">
-					<li><img src="<%=path%>/${goods.image_2}" title="pic" />
-					</li>
-					<li><img src="<%=path%>/${goods.image_3}" />
-					</li>
-					<li><img src="<%=path%>/${goods.image_4}" />
-					</li>
+					<li><img src="<%=path%>/${goods.image_2}" title="pic" /></li>
+					<li><img src="<%=path%>/${goods.image_3}" /></li>
+					<li><img src="<%=path%>/${goods.image_4}" /></li>
 				</ul>
 			</div>
 		</section>
@@ -161,22 +165,19 @@
 							<a href="#"><img src="<%=path%>/${goods.image_4}"
 								mid="<%=path%>/${goods.image_3}"
 								big="<%=path%>/${goods.image_2}"> </a>
-						</div>
-					</li>
+						</div></li>
 					<li class="tb-selected">
 						<div class="tb-pic tb-s40">
 							<a href="#"><img src="<%=path%>/${goods.image_4}"
 								mid="<%=path%>/${goods.image_3}"
 								big="<%=path%>/${goods.image_2}"> </a>
-						</div>
-					</li>
+						</div></li>
 					<li class="tb-selected">
 						<div class="tb-pic tb-s40">
 							<a href="#"><img src="<%=path%>/${goods.image_4}"
 								mid="<%=path%>/${goods.image_3}"
 								big="<%=path%>/${goods.image_2}"> </a>
-						</div>
-					</li>
+						</div></li>
 				</ul>
 			</div>
 
@@ -197,14 +198,12 @@
 						<dt>促销价</dt>
 						<dd>
 							<em>¥</em><b class="sys_item_price">${goods.currPrice }</b>
-						</dd>
-					</li>
+						</dd></li>
 					<li class="price iteminfo_mktprice">
 						<dt>原价</dt>
 						<dd>
 							<em>¥</em><b class="sys_item_mktprice">${goods.price }</b>
-						</dd>
-					</li>
+						</dd></li>
 					<div class="clear"></div>
 				</div>
 
@@ -230,18 +229,15 @@
 					<li class="tm-ind-item tm-ind-sellCount canClick">
 						<div class="tm-indcon">
 							<span class="tm-label">月销量</span><span class="tm-count">${goods.monSales}</span>
-						</div>
-					</li>
+						</div></li>
 					<li class="tm-ind-item tm-ind-sumCount canClick">
 						<div class="tm-indcon">
 							<span class="tm-label">累计销量</span><span class="tm-count">${goods.totalSales}</span>
-						</div>
-					</li>
+						</div></li>
 					<li class="tm-ind-item tm-ind-reviewCount canClick tm-line3">
 						<div class="tm-indcon">
 							<span class="tm-label">累计评价</span><span class="tm-count">${goods.totalAssess}</span>
-						</div>
-					</li>
+						</div></li>
 				</ul>
 				<div class="clear"></div>
 
@@ -265,30 +261,37 @@
 							<div class="theme-popbod dform">
 								<form class="theme-signin" id="form1" name="loginform"
 									action="<c:url value='/CartItemServlet'/>" method="post">
-									<input type="hidden" name="method" value="pay" />
+									<input type="hidden" name="method" value="pay" /> <input
+										type="hidden" name="gid" value="${goods.gid }" />
 									<div class="theme-signin-left">
 
 										<div class="theme-options">
 											<div class="cart-title">口味</div>
 											<ul>
-												<li class="sku-line selected">原味<i></i></li>
-												<li class="sku-line">奶油<i></i></li>
+												<li class="sku-line selected">原味<i></i>
+												</li>
+												<li class="sku-line">奶油<i></i>
+												</li>
 											</ul>
 										</div>
 										<div class="theme-options">
 											<div class="cart-title">包装</div>
 											<ul>
 												s
-												<li class="sku-line selected">手袋单人份<i></i></li>
-												<li class="sku-line">礼盒双人份<i></i></li>
-												<li class="sku-line">全家福礼包<i></i></li>
+												<li class="sku-line selected">手袋单人份<i></i>
+												</li>
+												<li class="sku-line">礼盒双人份<i></i>
+												</li>
+												<li class="sku-line">全家福礼包<i></i>
+												</li>
 											</ul>
 										</div>
 										<div class="theme-options">
 											<div class="cart-title number">数量</div>
 											<dd>
 												<input id="min" class="am-btn am-btn-default" name=""
-													type="button" value="-" /> <input id="text_box"
+													type="button" value="-" />
+													 <input id="text_box"
 													name="quantity" type="text" value="1" style="width:30px;" />
 												<input id="add" class="am-btn am-btn-default" name=""
 													type="button" value="+" /> <span id="Stock"
@@ -312,6 +315,7 @@
 												id="Stock" class="tb-hidden">库存<span class="stock">${goods.num}</span>件</span>
 										</div>
 									</div>
+								</form>
 							</div>
 						</div>
 
@@ -353,15 +357,13 @@
 					<div class="clearfix tb-btn tb-btn-buy theme-login">
 						<a id="LikBuy" title="点此按钮到下一步确认购买信息"
 							href="javascript:$('#form1').submit();">立即购买</a>
-					</div>
-				</li>
+					</div></li>
 				<li>
 					<div class="clearfix tb-btn tb-btn-basket theme-login">
 						<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
-					</div>
-				</li>
+					</div></li>
 			</div>
-			</form>
+
 		</div>
 
 		<div class="clear"></div>
@@ -381,9 +383,9 @@
 					<div class="info-box">
 						<span class="info-box-price">¥ 29.90</span> <span
 							class="info-original-price">￥ 199.00</span>
-					</div>
+					</div></li>
+				<li class="plus_icon"><i>+</i>
 				</li>
-				<li class="plus_icon"><i>+</i></li>
 				<li>
 					<div class="s_picBox">
 						<a class="s_pic" href="#"><img src="<%=path%>/images/cp2.jpg">
@@ -392,18 +394,18 @@
 					<div class="info-box">
 						<span class="info-box-price">¥ 8.90</span> <span
 							class="info-original-price">￥ 299.00</span>
-					</div>
+					</div></li>
+				<li class="plus_icon"><i>=</i>
 				</li>
-				<li class="plus_icon"><i>=</i></li>
 				<li class="total_price">
 					<p class="combo_price">
 						<span class="c-title">套餐价:</span><span>￥35.00</span>
 					</p>
 					<p class="save_all">
 						共省:<span>￥463.00</span>
-					</p> <a href="#" class="buy_now">立即购买</a>
+					</p> <a href="#" class="buy_now">立即购买</a></li>
+				<li class="plus_icon"><i class="am-icon-angle-right"></i>
 				</li>
-				<li class="plus_icon"><i class="am-icon-angle-right"></i></li>
 			</ul>
 		</div>
 	</div>
@@ -430,8 +432,7 @@
 						</div>
 						<div class="p-price">
 							<strong>￥35.90</strong>
-						</div>
-					</li>
+						</div></li>
 					<li>
 						<div class="p-img">
 							<a href="#"> <img class="" src="<%=path%>/images/browse1.jpg">
@@ -442,8 +443,7 @@
 						</div>
 						<div class="p-price">
 							<strong>￥35.90</strong>
-						</div>
-					</li>
+						</div></li>
 					<li>
 						<div class="p-img">
 							<a href="#"> <img class="" src="<%=path%>/images/browse1.jpg">
@@ -454,8 +454,7 @@
 						</div>
 						<div class="p-price">
 							<strong>￥35.90</strong>
-						</div>
-					</li>
+						</div></li>
 					<li>
 						<div class="p-img">
 							<a href="#"> <img class="" src="<%=path%>/images/browse1.jpg">
@@ -466,8 +465,7 @@
 						</div>
 						<div class="p-price">
 							<strong>￥35.90</strong>
-						</div>
-					</li>
+						</div></li>
 					<li>
 						<div class="p-img">
 							<a href="#"> <img class="" src="<%=path%>/images/browse1.jpg">
@@ -478,8 +476,7 @@
 						</div>
 						<div class="p-price">
 							<strong>￥35.90</strong>
-						</div>
-					</li>
+						</div></li>
 
 				</ul>
 			</div>
@@ -488,16 +485,13 @@
 			<div class="am-tabs" data-am-tabs>
 				<ul class="am-avg-sm-3 am-tabs-nav am-nav am-nav-tabs">
 					<li class="am-active"><a href="#"> <span
-							class="index-needs-dt-txt">宝贝详情</span> </a>
-					</li>
+							class="index-needs-dt-txt">宝贝详情</span> </a></li>
 
 					<li><a href="#"> <span class="index-needs-dt-txt">全部评价</span>
-					</a>
-					</li>
+					</a></li>
 
 					<li><a href="#"> <span class="index-needs-dt-txt">猜你喜欢</span>
-					</a>
-					</li>
+					</a></li>
 				</ul>
 
 				<div class="am-tabs-bd">
@@ -569,26 +563,22 @@
 								<li class="tb-taglist-li tb-taglist-li-current">
 									<div class="comment-info">
 										<span>全部评价</span> <span class="tb-tbcr-num">(32)</span>
-									</div>
-								</li>
+									</div></li>
 
 								<li class="tb-taglist-li tb-taglist-li-1">
 									<div class="comment-info">
 										<span>好评</span> <span class="tb-tbcr-num">(32)</span>
-									</div>
-								</li>
+									</div></li>
 
 								<li class="tb-taglist-li tb-taglist-li-0">
 									<div class="comment-info">
 										<span>中评</span> <span class="tb-tbcr-num">(32)</span>
-									</div>
-								</li>
+									</div></li>
 
 								<li class="tb-taglist-li tb-taglist-li--1">
 									<div class="comment-info">
 										<span>差评</span> <span class="tb-tbcr-num">(32)</span>
-									</div>
-								</li>
+									</div></li>
 							</ul>
 						</div>
 						<div class="clear"></div>
@@ -622,8 +612,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -651,8 +640,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -681,8 +669,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -709,8 +696,7 @@
 										</div>
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
@@ -740,8 +726,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -769,8 +754,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -799,8 +783,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -827,8 +810,7 @@
 										</div>
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -857,8 +839,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -886,8 +867,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -916,8 +896,7 @@
 
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 							<li class="am-comment">
 								<!-- 评论容器 --> <a href=""> <img class="am-comment-avatar"
 									src="../images/hwbn40x40.jpg" /> <!-- 评论者头像 --> </a>
@@ -944,8 +923,7 @@
 										</div>
 									</div>
 									<!-- 评论内容 -->
-								</div>
-							</li>
+								</div></li>
 
 						</ul>
 
@@ -953,13 +931,20 @@
 
 						<!--分页 -->
 						<ul class="am-pagination am-pagination-right">
-							<li class="am-disabled"><a href="#">&laquo;</a></li>
-							<li class="am-active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&raquo;</a></li>
+							<li class="am-disabled"><a href="#">&laquo;</a>
+							</li>
+							<li class="am-active"><a href="#">1</a>
+							</li>
+							<li><a href="#">2</a>
+							</li>
+							<li><a href="#">3</a>
+							</li>
+							<li><a href="#">4</a>
+							</li>
+							<li><a href="#">5</a>
+							</li>
+							<li><a href="#">&raquo;</a>
+							</li>
 						</ul>
 						<div class="clear"></div>
 
@@ -983,8 +968,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -994,8 +978,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1005,8 +988,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1016,8 +998,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1027,8 +1008,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1038,8 +1018,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1049,8 +1028,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1060,8 +1038,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1071,8 +1048,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1082,8 +1058,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1093,8 +1068,7 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 								<li>
 									<div class="i-pic limit">
 										<img src="<%=path%>/images/imgsearch1.jpg" />
@@ -1104,21 +1078,27 @@
 										<p class="price fl">
 											<b>¥</b> <strong>298.00</strong>
 										</p>
-									</div>
-								</li>
+									</div></li>
 							</ul>
 						</div>
 						<div class="clear"></div>
 
 						<!--分页 -->
 						<ul class="am-pagination am-pagination-right">
-							<li class="am-disabled"><a href="#">&laquo;</a></li>
-							<li class="am-active"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li><a href="#">5</a></li>
-							<li><a href="#">&raquo;</a></li>
+							<li class="am-disabled"><a href="#">&laquo;</a>
+							</li>
+							<li class="am-active"><a href="#">1</a>
+							</li>
+							<li><a href="#">2</a>
+							</li>
+							<li><a href="#">3</a>
+							</li>
+							<li><a href="#">4</a>
+							</li>
+							<li><a href="#">5</a>
+							</li>
+							<li><a href="#">&raquo;</a>
+							</li>
 						</ul>
 						<div class="clear"></div>
 
@@ -1202,19 +1182,16 @@
 					</a>
 						<div class="mp_tooltip">
 							客服中心<i class="icon_arrow_right_black"></i>
-						</div>
-					</li>
+						</div></li>
 					<!--二维码 -->
 					<li class="qtitem"><a href="#none"><span
 							class="mpbtn_qrcode"></span> </a>
 						<div class="mp_qrcode" style="display:none;">
 							<img src="<%=path%>/images/weixin_code_145.png" /><i
 								class="icon_arrow_white"></i>
-						</div>
-					</li>
+						</div></li>
 					<li class="qtitem"><a href="#top" class="return_top"><span
-							class="top"></span> </a>
-					</li>
+							class="top"></span> </a></li>
 				</div>
 
 				<!--回到顶部 -->

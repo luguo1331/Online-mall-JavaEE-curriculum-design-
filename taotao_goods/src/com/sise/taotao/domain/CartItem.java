@@ -13,15 +13,23 @@ public class CartItem {
 	private String cartItemId;// 主键
 	private int quantity;// 数量
 	private Goods goods;// 条目对应的商品
+	private User user;// 所属用户
+	
 	public Goods getGoods() {
 		return goods;
+	}
+
+	@Override
+	public String toString() {
+		return "CartItem [cartItemId=" + cartItemId + ", quantity=" + quantity
+				+ ", goods=" + goods + ", user=" + user + "]";
 	}
 
 	public void setGoods(Goods goods) {
 		this.goods = goods;
 	}
 
-	private User user;// 所属用户
+
 
 	public String getCartItemId() {
 		return cartItemId;

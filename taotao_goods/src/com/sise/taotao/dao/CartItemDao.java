@@ -62,9 +62,23 @@ public class CartItemDao {
 	public void addCartItem(CartItem cartItem) throws SQLException {
 		String sql = "INSERT INTO t_cartitem(cartItemId, quantity, gid, uid)"
 				+ " values(?,?,?,?)";
+		System.out.println(cartItem);
 		Object[] params = { cartItem.getCartItemId(), cartItem.getQuantity(),
 				cartItem.getGoods().getGid(), cartItem.getUser().getUid() };
 		qr.update(sql, params);
+	}
+
+	/**
+	 * 修改指定id的订单项数目
+	 * 
+	 * @param cartItemId
+	 * @param quantity
+	 * @throws SQLException
+	 */
+	public void updateQuantity(String cartItemId, int quantity)
+			throws SQLException {
+		String sql = "UPDATE t_cartitem SET quantity=? WHERE cartItemId=?";
+		qr.update(sql, quantity, cartItemId);
 	}
 
 	/**

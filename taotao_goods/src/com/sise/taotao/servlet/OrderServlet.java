@@ -1,0 +1,83 @@
+package com.sise.taotao.servlet;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cn.itcast.commons.CommonUtils;
+import cn.itcast.servlet.BaseServlet;
+
+import com.sise.taotao.domain.Address;
+import com.sise.taotao.domain.CartItem;
+import com.sise.taotao.domain.Order;
+import com.sise.taotao.domain.OrderItem;
+import com.sise.taotao.domain.User;
+import com.sise.taotao.service.CartTtemService;
+import com.sise.taotao.service.OrderService;
+
+/*
+ * 类名称: OrderServlet   
+ * 类描述: 订单模块WEB层              
+ * 创建人: 凌威      
+ * 修改人:  
+ * 修改时间:2017-6-3 下午5:17:58 
+ * 修改备注:
+ * @version 1.0.0
+ */
+public class OrderServlet extends BaseServlet {
+	private OrderService orderService = new OrderService();
+	private CartTtemService cartTtemService = new CartTtemService();
+
+	public String createOrder(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 获取cartItemIds，然后查询
+		String cartItemIds = req.getParameter("cartItemIds");
+		List<CartItem> cartItemList = cartTtemService
+				.loadCartItems(cartItemIds);
+
+		User owner = (User) req.getSession().getAttribute("sessionUser");
+
+		// 创建Order
+		Order order = new Order();
+		order.setOid(CommonUtils.uuid());
+		order.setStatus(1);// 订单状态：1未付款, 2已付款但未发货, 3已发货未确认收货, 4确认收货了交易成功,
+		// 5已取消(只有未付款才能取消)
+		order.setOrdertime(String.format("%tF %<tT", new Date()));
+		order.setAddress(owner.getAddressList().get(0).getProvincial()+" "
+				+ owner.getAddressList().get(0).getCity()+" "
+				+ owner.getAddressList().get(0).getDistric()+" "
+				+ owner.getAddressList().get(0).getDetailedAddress());
+		order.setOwner(owner);
+		BigDecimal total = new BigDecimal("0");
+		for (CartItem cartItem : cartItemList) {
+			total = total.add(new BigDecimal(cartItem.getSubtotal() + ""));
+		}
+		order.setTotal(total.doubleValue());// 设置总计
+
+		ArrayList<OrderItem> orderItemList = new ArrayList<OrderItem>();
+		for (CartItem cartItem : cartItemList) {
+			OrderItem orderItem = new OrderItem();
+			orderItem.setOrderItemId(CommonUtils.uuid());
+			orderItem.setGoods(cartItem.getGoods());
+			orderItem.setSubtotal(cartItem.getSubtotal());
+			orderItem.setQuantity(cartItem.getQuantity());
+			orderItem.setOrder(order);
+			orderItemList.add(orderItem);
+		}
+
+		order.setOrderItemList(orderItemList);
+		// 调用service完成添加
+		orderService.createOrder(order);
+
+		// 删除购物车条目
+		cartTtemService.batchDelete(cartItemIds);
+		req.setAttribute("order", order);
+		return "f:/home/success.jsp";
+	}
+}

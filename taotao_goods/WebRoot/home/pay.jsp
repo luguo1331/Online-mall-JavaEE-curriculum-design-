@@ -29,7 +29,24 @@
 
 <script type="text/javascript" src="<c:url value='/js/address.js'/>"></script>
 <script src="<c:url value='/AmazeUI-2.4.2/assets/js/jquery.min.js'/>"></script>
-
+<script type="text/javascript" >
+ 	/*
+ 	 * 结算
+ 	 */
+ 	function jiesuan() {
+ 		// 1. 获取所有的条目的id，放到数组中
+ 		var cartItemIdArray = new Array();
+ 		$(".sku-line").each(function() {
+ 			cartItemIdArray.push($(this).text());//把值添加到数组中		
+ 		});	
+ 		// 2. 把数组的值toString()，然后赋给表单的cartItemIds这个hidden
+ 		$("#cartItemIds").val(cartItemIdArray.toString());
+ 		// 把详细位置的值，也保存到表单中
+ 		$("#addressDetail").val($("#address").text());
+ 		// 3. 提交这个表单
+ 		$("#jieSuanForm").submit();
+ 	}
+ 	</script>
 </head>
 
 <body>
@@ -290,12 +307,11 @@
 								<div id="holyshit268" class="pay-address">
 
 									<p class="buy-footer-address">
-										<span class="buy-line-title buy-line-title-type">寄送至：</span> <span
-											class="buy--address-detail"> <span class="province">${sessionScope.sessionUser.addressList[0].provincial}</span>
-											<span class="city">${sessionScope.sessionUser.addressList[0].city}</span>&nbsp;<span
-											class="dist">${sessionScope.sessionUser.addressList[0].distric
-												}</span>&nbsp;<span class="street">${sessionScope.sessionUser.addressList[0].detailedAddress
-												}</span> </span> </span>
+										<span class="buy-line-title buy-line-title-type">寄送至：</span> 
+										<span id="address" class="buy--address-detail"> ${sessionScope.sessionUser.addressList[0].provincial}
+											${sessionScope.sessionUser.addressList[0].city}&nbsp;
+											${sessionScope.sessionUser.addressList[0].distric}&nbsp;
+											${sessionScope.sessionUser.addressList[0].detailedAddress} </span>
 									</p>
 									<p class="buy-footer-address">
 										<span class="buy-line-title">收货人：</span> <span
@@ -308,7 +324,11 @@
 
 							<div id="holyshit269" class="submitOrder">
 								<div class="go-btn-wrap">
-									<a id="J_Go" href="<c:url value='/home/success.jsp'/>" class="btn-go" tabindex="0"
+								<form id="jieSuanForm" action="<c:url value='/OrderServlet'/>" method="post">
+								<input type="hidden" name="cartItemIds" id="cartItemIds" />
+								<input type="hidden" name="addressDetail" id="addressDetail" /> 
+								<input type="hidden" name="method" value="createOrder" />
+									<a id="J_Go" href="javascript:jiesuan();" class="btn-go" tabindex="0"
 										title="点击此按钮，提交订单">提交订单</a>
 								</div>
 							</div>

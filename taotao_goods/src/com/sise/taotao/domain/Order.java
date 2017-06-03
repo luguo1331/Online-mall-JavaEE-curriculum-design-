@@ -1,5 +1,6 @@
 package com.sise.taotao.domain;
 
+import java.util.List;
 
 /*
  * 类名称: Order   
@@ -18,6 +19,15 @@ public class Order {
 						// 5已取消(只有未付款才能取消)
 	private String address;// 收货地址
 	private User owner;// 订单的所有者
+	private List<OrderItem> orderItemList;
+
+	public List<OrderItem> getOrderItemList() {
+		return orderItemList;
+	}
+
+	public void setOrderItemList(List<OrderItem> orderItemList) {
+		this.orderItemList = orderItemList;
+	}
 
 	public String getOid() {
 		return oid;

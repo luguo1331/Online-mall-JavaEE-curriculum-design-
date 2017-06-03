@@ -35,6 +35,11 @@
     <servlet-name>CartItemServlet</servlet-name>
     <servlet-class>com.sise.taotao.servlet.CartItemServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>OrderServlet</servlet-name>
+    <servlet-class>com.sise.taotao.servlet.OrderServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -68,6 +73,10 @@
   <servlet-mapping>
     <servlet-name>CartItemServlet</servlet-name>
     <url-pattern>/CartItemServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderServlet</servlet-name>
+    <url-pattern>/OrderServlet</url-pattern>
   </servlet-mapping>
 
 	<filter>

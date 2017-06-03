@@ -1,6 +1,7 @@
 package com.sise.taotao.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -28,7 +29,37 @@ import com.sise.taotao.service.CartTtemService;
 public class CartItemServlet extends BaseServlet {
 	private CartTtemService cartTtemService = new CartTtemService();
 
+	/**
+	 * 立即购买
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public String pay(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 得到表单数据并封装
+		Map map = req.getParameterMap();
+		CartItem cartItem = CommonUtils.toBean(map, CartItem.class);
+		System.out.println(cartItem);
+		cartItem.setGoods(CommonUtils.toBean(map, Goods.class));
+		cartItem.setUser((User) req.getSession().getAttribute("sessionUser"));
+		cartTtemService.add(cartItem);
+		return myCart(req, resp);
+	}
+
+	/**
+	 * 加入购物车
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String addShop(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// 得到表单数据并封装
 		Map map = req.getParameterMap();
@@ -36,7 +67,31 @@ public class CartItemServlet extends BaseServlet {
 		cartItem.setGoods(CommonUtils.toBean(map, Goods.class));
 		cartItem.setUser((User) req.getSession().getAttribute("sessionUser"));
 		cartTtemService.add(cartItem);
-		return myCart(req, resp);
+		return myCart2(req, resp);
+	}
+
+	/**
+	 * 加载多个cartItem
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String loadCartItems(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 获得表单数据
+		String cartItemIds = req.getParameter("cartItemIds");
+		double total = Double.parseDouble(req.getParameter("total"));
+		// 通过service得到当前用户的List<CartItem>
+		List<CartItem> cartItemList = cartTtemService
+				.loadCartItems(cartItemIds);
+		// 保存到req中，然后转发到/home/payh.jsp
+		req.setAttribute("cartItemList", cartItemList);
+		req.setAttribute("total", total);
+		req.setAttribute("cartItemIds", cartItemIds);
+		return "f:/home/pay.jsp";
 	}
 
 	/**
@@ -91,6 +146,25 @@ public class CartItemServlet extends BaseServlet {
 		 */
 		req.setAttribute("cartItemList", cartItemLIst);
 		return "f:/home/shopcart.jsp";
+	}
+
+	/**
+	 * 删除订单项
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String batchDelete(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		/*
+		 * 1. 获取cartItemIds参数 2. 调用service方法完成工作 3. 返回到list.jsp
+		 */
+		String cartItemIds = req.getParameter("cartItemIds");
+		cartTtemService.batchDelete(cartItemIds);
+		return myCart(req, resp);
 	}
 
 	/**

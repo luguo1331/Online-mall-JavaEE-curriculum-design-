@@ -26,7 +26,25 @@
 	type="text/css" />
 
 <script type="text/javascript" src="<c:url value='/js/jquery.js'/>"></script>
-
+<script type="text/javascript" >
+ 	/*
+ 	 * 结算
+ 	 */
+ 	function jiesuan() {
+ 		// 1. 获取所有被选择的条目的id，放到数组中
+ 		var cartItemIdArray = new Array();
+ 		$(":checkbox[id=J_CheckBox_170037950254][checked=checked]").each(function() {
+ 			cartItemIdArray.push($(this).val());//把复选框的值添加到数组中
+ 			
+ 		});	
+ 		// 2. 把数组的值toString()，然后赋给表单的cartItemIds这个hidden
+ 		$("#cartItemIds").val(cartItemIdArray.toString());
+ 		// 把总计的值，也保存到表单中
+ 		$("#hiddenTotal").val($("#J_Total").text());
+ 		// 3. 提交这个表单
+ 		$("#jieSuanForm").submit();
+ 	}
+ 	</script>
 </head>
 
 <body>
@@ -82,11 +100,11 @@
 								<ul class="item-content clearfix">
 									<li class="td td-chk">
 										<div class="cart-checkbox ">
-											<input class="check" id="J_CheckBox_170037950254" value="${cartItem.cartItemId}" name="checkboxBtn" checked="checked" type="checkbox"/> <label
-												for="J_CheckBox_170037950254">						
-												</label>
-										</div>
-									</li>
+											<input class="check" id="J_CheckBox_170037950254"
+												value="${cartItem.cartItemId}" name="checkboxBtn"
+												checked="checked" type="checkbox" /> <label
+												for="J_CheckBox_170037950254"> </label>
+										</div></li>
 									<li class="td td-item">
 										<div class="item-pic">
 											<a href="#" target="_blank"
@@ -97,19 +115,17 @@
 										</div>
 										<div class="item-info">
 											<div class="item-basic-info">
-												<a href="#" target="_blank" title="${cartItem.goods.gname}"
-													class="item-title J_MakePoint" data-point="tbcart.8.11">${cartItem.goods.gname}</a>
+												<a href="<c:url value='/GoodsServlet?method=findByGid&gid=${cartItem.goods.gid}'/> " target="_blank" title="${cartItem.goods.gname}"
+													class="item-title J_MakePoint" data-point="tbcart.8.11">${cartItem.goods.gname}</a>				
 											</div>
-										</div>
-									</li>
+										</div></li>
 									<li class="td td-info">
 										<div class="item-props item-props-can">
 											<span class="sku-line">${cartItem.cartItemId}</span> <span
 												class="sku-line"></span> <span tabindex="0"
 												class="btn-edit-sku theme-login"></span> <i
 												class="theme-login am-icon-sort-desc"></i>
-										</div>
-									</li>
+										</div></li>
 									<li class="td td-price">
 										<div class="item-price price-promo-promo">
 											<div class="price-content">
@@ -120,8 +136,7 @@
 													<em class="J_Price price-now" tabindex="0">${cartItem.goods.currPrice}</em>
 												</div>
 											</div>
-										</div>
-									</li>
+										</div></li>
 									<li class="td td-amount">
 										<div class="amount-wrapper ">
 											<div class="item-amount ">
@@ -133,22 +148,19 @@
 														class="add am-btn" name="" type="button" value="+" />
 												</div>
 											</div>
-										</div>
-									</li>
+										</div></li>
 									<li class="td td-sum">
 										<div class="td-inner">
 											<em tabindex="0" class="J_ItemSum number"
 												id="${cartItem.cartItemId}Subtotal">${cartItem.subtotal
 												}</em>
-										</div>
-									</li>
+										</div></li>
 									<li class="td td-op">
 										<div class="td-inner">
 											<a title="移入收藏夹" class="btn-fav" href="#"> 移入收藏夹</a> <a
 												href="javascript:;" data-point-url="#" class="delete">
 												删除</a>
-										</div>
-									</li>
+										</div></li>
 								</ul>
 							</c:forEach>
 						</div>
@@ -159,8 +171,8 @@
 					<div id="J_SelectAll2" class="select-all J_SelectAll">
 						<div class="cart-checkbox">
 							<input class="check-all check" id="J_SelectAllCbx2"
-								name="select-all" value="true" type="checkbox" checked="checked"> <label
-								for="J_SelectAllCbx2"></label>
+								name="select-all" value="true" type="checkbox" checked="checked">
+							<label for="J_SelectAllCbx2"></label>
 						</div>
 						<span>全选</span>
 					</div>
@@ -181,9 +193,15 @@
 								id="J_Total">0.00</em> </strong>
 						</div>
 						<div class="btn-area">
-							<a href="pay.html" id="J_Go"
-								class="submit-btn submit-btn-disabled"
-								aria-label="请注意如果没有选择宝贝，将无法结算"> <span>结&nbsp;算</span> </a>
+							<form id="jieSuanForm" action="<c:url value='/CartItemServlet'/>"
+								method="post">
+								<input type="hidden" name="cartItemIds" id="cartItemIds" /> <input
+									type="hidden" name="total" id="hiddenTotal" /> <input
+									type="hidden" name="method" value="loadCartItems" /> <a
+									href="javascript:jiesuan();" id="J_Go"
+									class="submit-btn submit-btn-disabled"
+									aria-label="请注意如果没有选择宝贝，将无法结算"> <span>结&nbsp;算</span> </a>
+							</form>
 						</div>
 					</div>
 
@@ -213,17 +231,19 @@
 								<li class="theme-options">
 									<div class="cart-title">颜色：</div>
 									<ul>
-										<li class="sku-line selected">12#川南玛瑙<i></i></li>
-										<li class="sku-line">10#蜜橘色+17#樱花粉<i></i></li>
-									</ul>
-								</li>
+										<li class="sku-line selected">12#川南玛瑙<i></i>
+										</li>
+										<li class="sku-line">10#蜜橘色+17#樱花粉<i></i>
+										</li>
+									</ul></li>
 								<li class="theme-options">
 									<div class="cart-title">包装：</div>
 									<ul>
-										<li class="sku-line selected">包装：裸装<i></i></li>
-										<li class="sku-line">两支手袋装（送彩带）<i></i></li>
-									</ul>
-								</li>
+										<li class="sku-line selected">包装：裸装<i></i>
+										</li>
+										<li class="sku-line">两支手袋装（送彩带）<i></i>
+										</li>
+									</ul></li>
 								<div class="theme-options">
 									<div class="cart-title number">数量</div>
 									<dd>
@@ -258,10 +278,13 @@
 				</div>
 				<!--引导 -->
 				<div class="navCir">
-					<li><a href="home.html"><i class="am-icon-home "></i>首页</a></li>
-					<li><a href="sort.html"><i class="am-icon-list"></i>分类</a></li>
+					<li><a href="home.html"><i class="am-icon-home "></i>首页</a>
+					</li>
+					<li><a href="sort.html"><i class="am-icon-list"></i>分类</a>
+					</li>
 					<li class="active"><a href="shopcart.html"><i
-							class="am-icon-shopping-basket"></i>购物车</a></li>
+							class="am-icon-shopping-basket"></i>购物车</a>
+					</li>
 					<li><a href="../person/index.html"><i class="am-icon-user"></i>我的</a>
 					</li>
 				</div>

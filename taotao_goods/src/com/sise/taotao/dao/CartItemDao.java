@@ -29,6 +29,38 @@ public class CartItemDao {
 	private QueryRunner qr = new TxQueryRunner();
 
 	/**
+	 * 加载多个cartItem
+	 * 
+	 * @param cartItemIds
+	 * @return
+	 * @throws SQLException
+	 */
+	public List<CartItem> loadCartItems(String cartItemIds) throws SQLException {
+		// 将cartItemIds转换成数组
+		Object[] cartItemIdsArray = cartItemIds.split(",");
+		// 生成where子句
+		String whereSql = toWhereSql(cartItemIdsArray.length);
+		// 生成sql语句
+		String sql = "SELECT * FROM t_goods g, t_cartitem c WHERE g.gid=c.gid AND "
+				+ whereSql;
+		return toCartItems(qr
+				.query(sql, new MapListHandler(), cartItemIdsArray));
+	}
+
+	/**
+	 * 删除订单项
+	 * 
+	 * @param cartItemIds
+	 * @throws SQLException
+	 */
+	public void batchDelete(String cartItemIds) throws SQLException {
+		Object[] cartItemIdArray = cartItemIds.split(",");
+		String whereSql = toWhereSql(cartItemIdArray.length);
+		String sql = "DELETE FROM t_cartitem WHERE " + whereSql;
+		qr.update(sql, cartItemIdArray);
+	}
+
+	/**
 	 * 根据uid,gid 查询订单项
 	 * 
 	 * @param uid
@@ -70,14 +102,16 @@ public class CartItemDao {
 
 	/**
 	 * 根据cartItemId查询订单项
+	 * 
 	 * @param cartItemId
 	 * @return
 	 * @throws SQLException
 	 */
 	public CartItem findByCartItemId(String cartItemId) throws SQLException {
 		String sql = "SELECT * FROM t_cartitem c,t_goods g WHERE g.gid=c.gid AND c.cartItemId=?";
-		return toCartItem(qr.query(sql, new MapHandler(),cartItemId));
+		return toCartItem(qr.query(sql, new MapHandler(), cartItemId));
 	}
+
 	/**
 	 * 修改指定id的订单项数目
 	 * 
@@ -87,14 +121,13 @@ public class CartItemDao {
 	 */
 	public void updateQuantity(String cartItemId, int quantity)
 			throws SQLException {
-		String sql = "UPDATE t_cartitem SET quantity=? WHERE cartItemId=?";	
+		String sql = "UPDATE t_cartitem SET quantity=? WHERE cartItemId=?";
 		Integer num = findByCartItemId(cartItemId).getGoods().getNum();
-		if (num<quantity) {
-			quantity=num;
-		}
-		else {
+		if (num < quantity) {
+			quantity = num;
+		} else {
 			qr.update(sql, quantity, cartItemId);
-		}	
+		}
 	}
 
 	/**
@@ -130,4 +163,21 @@ public class CartItemDao {
 
 	}
 
+	/**
+	 * 拼接where子句
+	 * 
+	 * @param len
+	 * @return
+	 */
+	private String toWhereSql(int len) {
+		StringBuffer sb = new StringBuffer("cartItemId in(");
+		for (int i = 0; i < len; i++) {
+			sb.append("?");
+			if (i < len - 1) {
+				sb.append(",");
+			}
+		}
+		sb.append(")");
+		return sb.toString();
+	}
 }

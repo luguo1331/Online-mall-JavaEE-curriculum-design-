@@ -40,7 +40,15 @@
 <script type="text/javascript"
 	src="<c:url value='/js/jquery.flexslider.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/js/list.js'/>"></script>
-
+<script type="text/javascript" >
+ 	/*
+ 	 * 结算
+ 	 */
+ 	function subShop() {
+ 		$("#method").val("addShop");
+ 		$("#form1").submit();
+ 	}
+ 	</script>
 </head>
 
 <body>
@@ -258,10 +266,10 @@
 							<div class="theme-poptit">
 								<a href="javascript:;" title="关闭" class="close">×</a>
 							</div>
-							<div class="theme-popbod dform">
+							<div class="theme-popbod dform">											
 								<form class="theme-signin" id="form1" name="loginform"
 									action="<c:url value='/CartItemServlet'/>" method="post">
-									<input type="hidden" name="method" value="pay" /> <input
+									<input type="hidden" name="method" value="pay" id="method"/> <input
 										type="hidden" name="gid" value="${goods.gid }" />
 									<div class="theme-signin-left">
 
@@ -360,7 +368,7 @@
 					</div></li>
 				<li>
 					<div class="clearfix tb-btn tb-btn-basket theme-login">
-						<a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+						<a id="LikBasket" title="加入购物车" href="javascript:subShop();"><i></i>加入购物车</a>
 					</div></li>
 			</div>
 

@@ -2,6 +2,7 @@ package com.sise.taotao.service;
 
 import java.sql.SQLException;
 import java.util.List;
+import org.w3c.dom.ls.LSInput;
 
 import cn.itcast.commons.CommonUtils;
 
@@ -21,6 +22,20 @@ public class CartTtemService {
 	private CartItemDao cartItemDao = new CartItemDao();
 
 	/**
+	 * 加载多个cartItem
+	 * 
+	 * @param cartItemIds
+	 * @return
+	 */
+	public List<CartItem> loadCartItems(String cartItemIds) {
+		try {
+			return cartItemDao.loadCartItems(cartItemIds);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
 	 * 我的购物车
 	 * 
 	 * @param uid
@@ -36,6 +51,7 @@ public class CartTtemService {
 
 	/**
 	 * 添加订单项
+	 * 
 	 * @param cartItem
 	 */
 	public void add(CartItem cartItem) {
@@ -47,8 +63,7 @@ public class CartTtemService {
 				cartItemDao.addCartItem(cartItem);
 			} else {
 				int quantity = cartItem.getQuantity() + _cartItem.getQuantity();
-				cartItemDao.updateQuantity(_cartItem.getCartItemId(),
-						quantity);
+				cartItemDao.updateQuantity(_cartItem.getCartItemId(), quantity);
 			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -57,14 +72,42 @@ public class CartTtemService {
 
 	/**
 	 * 修改订单项 数量
+	 * 
 	 * @param cartItemId
 	 * @param quantity
 	 * @return
 	 */
 	public CartItem updateQuantity(String cartItemId, int quantity) {
 		try {
-			cartItemDao.updateQuantity(cartItemId, quantity);		
+			cartItemDao.updateQuantity(cartItemId, quantity);
 			return cartItemDao.findByCartItemId(cartItemId);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 加载一个cartItem
+	 * 
+	 * @param cartItemId
+	 * @return
+	 */
+	public CartItem cartItem(String cartItemId) {
+		try {
+			return cartItemDao.findByCartItemId(cartItemId);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 删除订单项
+	 * 
+	 * @param cartItemIds
+	 */
+	public void batchDelete(String cartItemIds) {
+		try {
+			cartItemDao.batchDelete(cartItemIds);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

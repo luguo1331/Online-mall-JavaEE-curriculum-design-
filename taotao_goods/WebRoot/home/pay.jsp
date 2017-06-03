@@ -273,7 +273,7 @@
 					<!--含运费小计 -->
 					<div class="buy-point-discharge ">
 						<p class="price g_price ">
-							合计（含运费） <span>¥</span><em class="pay-sum" id="total">244.00</em>
+							合计（含运费） <span>¥</span><em class="pay-sum" id="total">${total }</em>
 						</p>
 					</div>
 

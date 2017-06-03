@@ -67,6 +67,8 @@ $(document).ready(function(){
  		showTotal();
  	});
  	
+
+ 	
 	/*
 	给所有条目的复选框添加click事件
 	*/

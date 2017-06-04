@@ -11,4 +11,5 @@ package com.sise.taotao.other;
  */
 public class PageConstants {
 	public static final int GOOD_PAGE_SIZE = 12;// 商品每页记录数
+	public static final int ORDER_PAGE_SIZE= 12;
 }

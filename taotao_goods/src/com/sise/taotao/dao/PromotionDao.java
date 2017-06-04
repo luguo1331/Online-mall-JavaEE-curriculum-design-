@@ -33,4 +33,6 @@ public class PromotionDao {
 		String sql = "SELECT * FROM t_promotion";
 		return qr.query(sql, new BeanListHandler<Promotion>(Promotion.class));
 	}
+	
+	
 }

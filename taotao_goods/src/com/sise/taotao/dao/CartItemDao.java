@@ -94,7 +94,6 @@ public class CartItemDao {
 	public void addCartItem(CartItem cartItem) throws SQLException {
 		String sql = "INSERT INTO t_cartitem(cartItemId, quantity, gid, uid)"
 				+ " values(?,?,?,?)";
-		System.out.println(cartItem);
 		Object[] params = { cartItem.getCartItemId(), cartItem.getQuantity(),
 				cartItem.getGoods().getGid(), cartItem.getUser().getUid() };
 		qr.update(sql, params);

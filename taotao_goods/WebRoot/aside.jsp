@@ -26,7 +26,7 @@
 		</ul></li>
 	<li class="person"><a href="#">我的交易</a>
 		<ul>
-			<li><a href="order.html">订单管理</a>
+			<li><a href="<c:url value='/OrderServlet?method=myOrders'/>">订单管理</a>
 			</li>
 			<li><a href="change.html">退款售后</a>
 			</li>

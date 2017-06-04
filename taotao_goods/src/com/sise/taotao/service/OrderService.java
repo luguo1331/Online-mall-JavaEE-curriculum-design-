@@ -6,6 +6,7 @@ import cn.itcast.jdbc.JdbcUtils;
 
 import com.sise.taotao.dao.OrderDao;
 import com.sise.taotao.domain.Order;
+import com.sise.taotao.domain.PageBean;
 
 /*
  * 类名称: OrderService   
@@ -21,6 +22,7 @@ public class OrderService {
 
 	/**
 	 * 生成订单
+	 * 
 	 * @param order
 	 */
 	public void createOrder(Order order) {
@@ -37,4 +39,25 @@ public class OrderService {
 		}
 	}
 
+	/**
+	 * 我的订单
+	 * 
+	 * @param uid
+	 * @param pc
+	 * @return
+	 */
+	public PageBean<Order> myOrders(String uid, int pc) {
+		try {
+			JdbcUtils.beginTransaction();
+			PageBean<Order> pb = orderDao.findByUser(uid, pc);
+			JdbcUtils.commitTransaction();
+			return pb;
+		} catch (SQLException e) {
+			try {
+				JdbcUtils.rollbackTransaction();
+			} catch (SQLException e1) {
+			}
+			throw new RuntimeException(e);
+		}
+	}
 }

@@ -247,7 +247,7 @@
 																				class="am-btn am-btn-danger anniu">提醒发货</div> </a>
 																	</c:when>
 																	<c:when test="${order.status eq 3 }">
-																		<a href="#"><div
+																		<a href="<c:url value='/OrderServlet?method=confirm&oid=${order.oid }'/>"><div
 																				class="am-btn am-btn-danger anniu">确认收货</div> </a>
 																	</c:when>
 																	<c:when test="${order.status eq 4 }">

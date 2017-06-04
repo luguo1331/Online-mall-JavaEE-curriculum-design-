@@ -118,6 +118,33 @@ public class OrderServlet extends BaseServlet {
 	}
 
 	/**
+	 * 确认收货
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String confirm(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String oid = req.getParameter("oid");
+		/*
+		 * 校验订单状态
+		 */
+		int status = orderService.findStatus(oid);
+		if (status != 3) {
+			req.setAttribute("code", "error");
+			req.setAttribute("msg", "状态不对，不能确认收货！");
+			return "f:/jsps/msg.jsp";
+		}
+		orderService.updateStatus(oid, 4);// 设置状态为交易成功！
+		req.setAttribute("code", "success");
+		req.setAttribute("msg", "恭喜，交易成功！");
+		return myOrders(req, resp);
+	}
+
+	/**
 	 * 我的订单
 	 * 
 	 * @param req

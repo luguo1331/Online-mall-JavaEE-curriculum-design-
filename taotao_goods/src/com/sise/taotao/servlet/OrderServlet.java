@@ -34,6 +34,15 @@ public class OrderServlet extends BaseServlet {
 	private OrderService orderService = new OrderService();
 	private CartTtemService cartTtemService = new CartTtemService();
 
+	/**
+	 * 生成订单
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public String createOrder(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// 获取cartItemIds，然后查询
@@ -82,6 +91,33 @@ public class OrderServlet extends BaseServlet {
 	}
 
 	/**
+	 * 取消订单
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String cancel(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String oid = req.getParameter("oid");
+		/*
+		 * 校验订单状态
+		 */
+		int status = orderService.findStatus(oid);
+		if (status != 1) {
+			req.setAttribute("code", "error");
+			req.setAttribute("msg", "状态不对，不能取消！");
+			return "f:/person/order.jsp";
+		}
+		orderService.updateStatus(oid, 5);// 设置状态为取消！
+		req.setAttribute("code", "success");
+		req.setAttribute("msg", "您的订单已取消，您不后悔吗！");
+		return myOrders(req, resp);
+	}
+
+	/**
 	 * 我的订单
 	 * 
 	 * @param req
@@ -113,7 +149,7 @@ public class OrderServlet extends BaseServlet {
 		 * 5. 给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
 		 */
 		pb.setUrl(url);
-		req.setAttribute("pb", pb);	
+		req.setAttribute("pb", pb);
 		return "f:/person/order.jsp";
 	}
 

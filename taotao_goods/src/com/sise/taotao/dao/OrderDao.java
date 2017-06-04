@@ -22,7 +22,7 @@ import com.sise.taotao.other.PageConstants;
 
 /*
  * 类名称: OrderDao   
- * 类描述:                
+ * 类描述: 订单模块持久层              
  * 创建人: 凌威      
  * 修改人:  
  * 修改时间:2017-5-30 下午9:07:59 
@@ -31,6 +31,31 @@ import com.sise.taotao.other.PageConstants;
  */
 public class OrderDao {
 	private QueryRunner qr = new TxQueryRunner();
+
+	/**
+	 * 根据oid查询订单状态
+	 * 
+	 * @param oid
+	 * @return
+	 * @throws SQLException
+	 */
+	public int findStatus(String oid) throws SQLException {
+		String sql = "SELECT status FROM t_order WHERE oid=?";
+		Number number = (Number) qr.query(sql, new ScalarHandler(), oid);
+		return number.intValue();
+	}
+
+	/**
+	 * 修改订单状态
+	 * 
+	 * @param oid
+	 * @param status
+	 * @throws SQLException
+	 */
+	public void updateStatus(String oid, int status) throws SQLException {
+		String sql = "UPDATE t_order SET status=? WHERE oid=?";
+		qr.update(sql, status, oid);
+	}
 
 	/**
 	 * 生成订单

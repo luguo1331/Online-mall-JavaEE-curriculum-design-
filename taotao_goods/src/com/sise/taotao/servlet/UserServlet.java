@@ -118,4 +118,30 @@ public class UserServlet extends BaseServlet {
 		// 校验表单数据
 		return errors;
 	}
+
+	/**
+	 * 修改用户信息
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String updateMessage(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		User formUser = CommonUtils.toBean(req.getParameterMap(), User.class);
+		User user = (User) req.getSession().getAttribute("sessionUser");
+		formUser.setUid(user.getUid());
+		formUser.setLoginname(user.getLoginname());
+		formUser.setLoginpass(user.getLoginpass());
+		user = userService.updateMessage(formUser);
+		req.getSession().setAttribute("sessionUser", user);
+		return "f:/person/index.jsp";
+	}
+
+	public String updatePassword(HttpServletRequest req,
+			HttpServletResponse resp) throws ServletException, IOException {
+		return null;
+	}
 }

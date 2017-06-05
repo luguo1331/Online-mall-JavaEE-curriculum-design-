@@ -26,7 +26,19 @@
 	type="text/javascript"></script>
 <script src="../AmazeUI-2.4.2/assets/js/amazeui.js"
 	type="text/javascript"></script>
-
+<script type="text/javascript">
+	$(function() {
+		$('#doc-datepicker').datepicker().on('changeDate.datepicker.amui',
+				function(event) {
+					console.log(event.date);
+				});
+	});
+	$(document).ready(function() {
+		$('#submit').click(function() {
+			$('#form1').submit();
+		});
+	});
+</script>
 </head>
 
 <body>
@@ -90,7 +102,7 @@
 
 						<div class="info-m">
 							<div>
-								<b>用户名：<i>小叮当</i> </b>
+								<b>用户名：<i>${sessionScope.sessionUser.loginname}</i> </b>
 							</div>
 							<div class="u-level">
 								<span class="rank r2"> <s class="vip1"></s><a
@@ -105,20 +117,24 @@
 
 					<!--个人信息 -->
 					<div class="info-main">
-						<form class="am-form am-form-horizontal">
-
+						<form class="am-form am-form-horizontal"
+							action="<c:url value='/UserServlet'/>" method="post" id="form1">
+							<input type="hidden" name="method" value="updateMessage"
+								id="method" />
 							<div class="am-form-group">
 								<label for="user-name2" class="am-form-label">昵称</label>
 								<div class="am-form-content">
-									<input type="text" id="user-name2" placeholder="nickname">
-
-								</div>
-							</div>
-
-							<div class="am-form-group">
-								<label for="user-name" class="am-form-label">姓名</label>
-								<div class="am-form-content">
-									<input type="text" id="user-name2" placeholder="name">
+									<c:choose>
+										<c:when test="${empty sessionScope.sessionUser.nickname}">
+											<input type="text" id="user-name2" placeholder="昵称"
+												name="nickname">
+										</c:when>
+										<c:otherwise>
+											<input type="text" id="user-name2"
+												placeholder="${sessionScope.sessionUser.nickname}"
+												name="nickname" value="${sessionScope.sessionUser.nickname}"/>
+										</c:otherwise>
+									</c:choose>
 
 								</div>
 							</div>
@@ -127,8 +143,8 @@
 								<label class="am-form-label">性别</label>
 								<div class="am-form-content sex">
 									<label class="am-radio-inline"> <input type="radio"
-										name="radio10" value="male" data-am-ucheck> 男 </label> <label
-										class="am-radio-inline"> <input type="radio"
+										name="radio10" value="male" data-am-ucheck checked="checked">
+										男 </label> <label class="am-radio-inline"> <input type="radio"
 										name="radio10" value="female" data-am-ucheck> 女 </label> <label
 										class="am-radio-inline"> <input type="radio"
 										name="radio10" value="secret" data-am-ucheck> 保密 </label>
@@ -138,38 +154,52 @@
 							<div class="am-form-group">
 								<label for="user-birth" class="am-form-label">生日</label>
 								<div class="am-form-content birth">
-									<div class="birth-select">
-										<select data-am-selected>
-											<option value="a">2015</option>
-											<option value="b">1987</option>
-										</select> <em>年</em>
-									</div>
-									<div class="birth-select2">
-										<select data-am-selected>
-											<option value="a">12</option>
-											<option value="b">8</option>
-										</select> <em>月</em>
-									</div>
-									<div class="birth-select2">
-										<select data-am-selected>
-											<option value="a">21</option>
-											<option value="b">23</option>
-										</select> <em>日</em>
-									</div>
+									<c:choose>
+										<c:when test="${empty sessionScope.sessionUser.birthday}">
+											<input type="text" class="am-form-field" placeholder="生日"
+												id="doc-datepicker" name="birthday">
+										</c:when>
+										<c:otherwise>
+											<input type="text" class="am-form-field"
+												placeholder="${sessionScope.sessionUser.birthday}"
+												name="birthday" value="${sessionScope.sessionUser.birthday}" />
+										</c:otherwise>
+									</c:choose>
+
 								</div>
 
 							</div>
 							<div class="am-form-group">
 								<label for="user-phone" class="am-form-label">电话</label>
 								<div class="am-form-content">
-									<input id="user-phone" placeholder="telephonenumber" type="tel">
-
+									<c:choose>
+										<c:when test="${empty sessionScope.sessionUser.phone}">
+											<input id="user-phone" placeholder="电话号码" name="phone"
+												type="tel">
+										</c:when>
+										<c:otherwise>
+											<input id="user-phone"
+												placeholder="${sessionScope.sessionUser.phone}" name="phone"
+												type="tel" value="${sessionScope.sessionUser.phone}">
+										</c:otherwise>
+									</c:choose>
 								</div>
 							</div>
 							<div class="am-form-group">
 								<label for="user-email" class="am-form-label">电子邮件</label>
 								<div class="am-form-content">
-									<input id="user-email" placeholder="Email" type="email">
+									<c:choose>
+										<c:when test="${empty sessionScope.sessionUser.email}">
+											<input id="user-email" placeholder="邮箱" type="email"
+												name="email">
+										</c:when>
+										<c:otherwise>
+											<input id="user-email"
+												placeholder="${sessionScope.sessionUser.email}" type="email"
+												name="email" value="${sessionScope.sessionUser.email}">
+										</c:otherwise>
+									</c:choose>
+
 
 								</div>
 							</div>
@@ -195,26 +225,27 @@
 								</div>
 							</div>
 							<div class="info-btn">
-								<div class="am-btn am-btn-danger">保存修改</div>
+								<div class ="am-btn am-btn-danger" id="submit">保存修改
 							</div>
-
-						</form>
 					</div>
 
+					</form>
 				</div>
 
 			</div>
-			<!--底部-->
-			<div class="footer">
-				<!-- 底部导航栏 -->
-				<c:import url="/footer.jsp"></c:import>
-			</div>
-		</div>
 
-		<aside class="menu">
-			<!-- 个人用户导航栏 -->
-			<c:import url="/aside.jsp"></c:import>
-		</aside>
+		</div>
+		<!--底部-->
+		<div class="footer">
+			<!-- 底部导航栏 -->
+			<c:import url="/footer.jsp"></c:import>
+		</div>
+	</div>
+
+	<aside class="menu">
+		<!-- 个人用户导航栏 -->
+		<c:import url="/aside.jsp"></c:import>
+	</aside>
 	</div>
 
 </body>

@@ -16,7 +16,7 @@ public class User {
 	private String uid;// 主键
 	private String loginname;// 登录名
 	private String loginpass;// 登录密码
-	private String nickName;// 昵称
+	private String nickname;// 昵称
 	private String sex;// 性别
 	private String birthday;// 生日
 	private String email;// 邮箱
@@ -63,12 +63,12 @@ public class User {
 		this.loginpass = loginpass;
 	}
 
-	public String getNickName() {
-		return nickName;
+	public String getNickname() {
+		return nickname;
 	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public String getSex() {

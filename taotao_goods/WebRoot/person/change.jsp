@@ -53,16 +53,11 @@
 		</div>
 		<div class="nav-cont">
 			<ul>
-				<li class="index"><a href="#">首页</a>
-				</li>
-				<li class="qc"><a href="#">闪购</a>
-				</li>
-				<li class="qc"><a href="#">限时抢</a>
-				</li>
-				<li class="qc"><a href="#">团购</a>
-				</li>
-				<li class="qc last"><a href="#">大包装</a>
-				</li>
+				<li class="index"><a href="#">首页</a></li>
+				<li class="qc"><a href="#">闪购</a></li>
+				<li class="qc"><a href="#">限时抢</a></li>
+				<li class="qc"><a href="#">团购</a></li>
+				<li class="qc last"><a href="#">大包装</a></li>
 			</ul>
 			<div class="nav-extra">
 				<i class="am-icon-user-secret am-icon-md nav-user"></i><b></b>我的福利 <i
@@ -88,10 +83,8 @@
 					<div class="am-tabs am-tabs-d2 am-margin" data-am-tabs>
 
 						<ul class="am-avg-sm-2 am-tabs-nav am-nav am-nav-tabs">
-							<li class="am-active"><a href="#tab1">退款管理</a>
-							</li>
-							<li><a href="#tab2">售后管理</a>
-							</li>
+							<li class="am-active"><a href="#tab1">退款管理</a></li>
+							<li><a href="#tab2">售后管理</a></li>
 
 						</ul>
 
@@ -148,46 +141,38 @@
 																							<br />${orderItem.orderItemId}
 																						</p> </a>
 																				</div>
-																			</div></li>
+																			</div>
+																		</li>
 																		<li class="td td-price">
 																			<div class="item-price">${orderItem.goods.currPrice}0</div>
 																		</li>
 																		<li class="td td-number">
 																			<div class="item-number">
-																				<span></span>${orderItem.goods.currPrice*orderItem.quantity}0
-																			</div></li>
+																				<span></span>${orderItem.goods.currPrice*orderItem.quantity}
+																			</div>
+																		</li>
 																		<li class="td td-operation">
-																			<div class="item-operation"></div></li>
+																			<div class="item-operation"></div>
+																		</li>
 																	</ul>
 																</c:forEach>
 															</div>
-															<div class="order-right">
-																<li class="td td-amount">
-																	<div class="item-amount">
-																		合计：${order.total}
-																		<p>
-																			含运费：<span>0.00</span>
-																		</p>
+															<div class="change move-right">
+																<li class="td td-moneystatus td-status">
+																	<div class="item-status">
+																		<p class="Mystatus">退款成功</p>
 																	</div></li>
-																<div class="move-right">
-																	<li class="td td-status">
-																		<div class="item-status">
-																			<p class="Mystatus">已取消</p>
-																		</div></li>
-																	<li class="td td-change"><a href="#"><div
-																				class="am-btn am-btn-danger anniu">钱款去向</div> </a>
-																	</li>
-																</div>
 															</div>
+															<li class="td td-change td-changebutton"><a
+																href="record.html">
+																	<div class="am-btn am-btn-danger anniu">钱款去向</div> </a></li>
 														</div>
 													</div>
 												</c:when>
 											</c:choose>
 										</c:forEach>
 									</div>
-
 								</div>
-
 							</div>
 							<div class="am-tab-panel am-fade" id="tab2">
 								<div class="order-top">
@@ -234,17 +219,20 @@
 																		颜色：12#川南玛瑙 <br />包装：裸装
 																	</p> </a>
 															</div>
-														</div></li>
+														</div>
+													</li>
 
 													<ul class="td-changeorder">
 														<li class="td td-orderprice">
 															<div class="item-orderprice">
 																<span>交易金额：</span>72.00
-															</div></li>
+															</div>
+														</li>
 														<li class="td td-changeprice">
 															<div class="item-changeprice">
 																<span>退款金额：</span>70.00
-															</div></li>
+															</div>
+														</li>
 													</ul>
 													<div class="clear"></div>
 												</ul>
@@ -254,11 +242,13 @@
 														<div class="item-status">
 															<p class="Mystatus">退款成功</p>
 
-														</div></li>
+														</div>
+													</li>
 												</div>
 												<li class="td td-change td-changebutton"><a
 													href="record.html">
-														<div class="am-btn am-btn-danger anniu">钱款去向</div> </a></li>
+														<div class="am-btn am-btn-danger anniu">钱款去向</div> </a>
+												</li>
 
 											</div>
 										</div>

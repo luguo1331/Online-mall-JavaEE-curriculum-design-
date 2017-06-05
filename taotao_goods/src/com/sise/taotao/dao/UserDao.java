@@ -47,7 +47,7 @@ public class UserDao {
 		sql = "SELECT * FROM t_address WHERE uid=?";
 		String param = user.getUid();
 		List<Address> addressList = qr.query(sql, new BeanListHandler<Address>(
-				Address.class),param);
+				Address.class), param);
 		user.setAddressList(addressList);
 		return user;
 	}
@@ -62,6 +62,18 @@ public class UserDao {
 		String sql = "INSERT INTO t_user(loginname,loginpass,uid,email) VALUES(?,?,?,?)";
 		Object[] params = { user.getLoginname(), user.getLoginpass(),
 				user.getUid(), user.getEmail() };
+		qr.update(sql, params);
+	}
+
+	/**
+	 * 修改用户信息
+	 * @param user
+	 * @throws SQLException
+	 */
+	public void updateMessage(User user) throws SQLException {
+		String sql = "UPDATE t_user SET nickname=?,birthday=?,email=?,phone=? WHERE uid=?";
+		Object[] params = { user.getNickname(), user.getBirthday(),
+				user.getEmail(), user.getPhone(), user.getUid() };
 		qr.update(sql, params);
 	}
 

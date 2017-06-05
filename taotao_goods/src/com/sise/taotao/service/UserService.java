@@ -20,7 +20,7 @@ public class UserService {
 	private UserDao userDao = new UserDao();
 
 	/**
-	 * 登陆功能
+	 * 登陆
 	 * 
 	 * @param user
 	 * @return
@@ -34,6 +34,11 @@ public class UserService {
 		}
 	}
 
+	/**
+	 * 注册用户
+	 * 
+	 * @param user
+	 */
 	public void regist(User user) {
 		// 数据补齐
 		user.setUid(CommonUtils.uuid());
@@ -44,6 +49,20 @@ public class UserService {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
 
+	/**
+	 * 修改用户信息
+	 * 
+	 * @param user
+	 */
+	public User updateMessage(User user) {
+		try {
+			userDao.updateMessage(user);
+			return userDao.findByLoginnameAndLoginpass(user.getLoginname(),
+					user.getLoginpass());
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 }

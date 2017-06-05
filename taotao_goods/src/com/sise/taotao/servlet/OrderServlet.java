@@ -173,7 +173,7 @@ public class OrderServlet extends BaseServlet {
 		 */
 		PageBean<Order> pb = orderService.myOrders(user.getUid(), pc);
 		/*
-		 * 5. 给PageBean设置url，保存PageBean，转发到/jsps/book/list.jsp
+		 * 5. 给PageBean设置url，保存PageBean，转发到/person/order.jsp
 		 */
 		pb.setUrl(url);
 		req.setAttribute("pb", pb);

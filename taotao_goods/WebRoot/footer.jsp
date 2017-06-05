@@ -6,12 +6,6 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-
-<!DOCTYPE html>
-<html>
-<head lang="en">
-<meta charset="UTF-8">
-</head>
 <div class="footer-hd ">
 	<p>
 		<a href="# ">恒望科技</a> <b>|</b> <a href="# ">商城首页</a> <b>|</b> <a
@@ -24,4 +18,4 @@
 			href="# ">网站地图</a> <em>© 2015-2025 Hengwang.com 版权所有</em>
 	</p>
 </div>
-</html>
+

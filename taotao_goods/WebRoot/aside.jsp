@@ -7,11 +7,6 @@
 			+ path + "/";
 %>
 
-<!DOCTYPE html>
-<html>
-<head lang="en">
-<meta charset="UTF-8">
-</head>
 
 <ul>
 	<li class="person"><a href="index.html">个人中心</a></li>
@@ -54,5 +49,3 @@
 		</ul></li>
 
 </ul>
-
-</html>

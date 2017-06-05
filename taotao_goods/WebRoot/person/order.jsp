@@ -148,7 +148,7 @@
 																	</div>
 																</li>
 																<li class="td td-price">
-																	<div class="item-price">${orderItem.goods.currPrice}</div>
+																	<div class="item-price">${orderItem.goods.currPrice}0</div>
 																</li>
 																<li class="td td-number">
 																	<div class="item-number">
@@ -164,7 +164,7 @@
 													<div class="order-right">
 														<li class="td td-amount">
 															<div class="item-amount">
-																合计：${order.total}
+																合计：${order.total}0
 																<p>
 																	含运费：<span>0.00</span>
 																</p>
@@ -310,7 +310,7 @@
 																			</div>
 																		</li>
 																		<li class="td td-price">
-																			<div class="item-price">${orderItem.goods.currPrice}</div>
+																			<div class="item-price">${orderItem.goods.currPrice}0</div>
 																		</li>
 																		<li class="td td-number">
 																			<div class="item-number">
@@ -326,7 +326,7 @@
 															<div class="order-right">
 																<li class="td td-amount">
 																	<div class="item-amount">
-																		合计：${order.total}
+																		合计：${order.total}0
 																		<p>
 																			含运费：<span>0.00</span>
 																		</p>
@@ -416,7 +416,7 @@
 																			</div>
 																		</li>
 																		<li class="td td-price">
-																			<div class="item-price">${orderItem.goods.currPrice}</div>
+																			<div class="item-price">${orderItem.goods.currPrice}0</div>
 																		</li>
 																		<li class="td td-number">
 																			<div class="item-number">
@@ -432,7 +432,7 @@
 															<div class="order-right">
 																<li class="td td-amount">
 																	<div class="item-amount">
-																		合计：${order.total}
+																		合计：${order.total}0
 																		<p>
 																			含运费：<span>0.00</span>
 																		</p>
@@ -524,7 +524,7 @@
 																			</div>
 																		</li>
 																		<li class="td td-price">
-																			<div class="item-price">${orderItem.goods.currPrice}</div>
+																			<div class="item-price">${orderItem.goods.currPrice}0</div>
 																		</li>
 																		<li class="td td-number">
 																			<div class="item-number">
@@ -540,7 +540,7 @@
 															<div class="order-right">
 																<li class="td td-amount">
 																	<div class="item-amount">
-																		合计：${order.total}
+																		合计：${order.total}0
 																		<p>
 																			含运费：<span>0.00</span>
 																		</p>
@@ -634,7 +634,7 @@
 																			</div>
 																		</li>
 																		<li class="td td-price">
-																			<div class="item-price">${orderItem.goods.currPrice}</div>
+																			<div class="item-price">${orderItem.goods.currPrice}0</div>
 																		</li>
 																		<li class="td td-number">
 																			<div class="item-number">
@@ -650,7 +650,7 @@
 															<div class="order-right">
 																<li class="td td-amount">
 																	<div class="item-amount">
-																		合计：${order.total}
+																		合计：${order.total}0
 																		<p>
 																			含运费：<span>0.00</span>
 																		</p>

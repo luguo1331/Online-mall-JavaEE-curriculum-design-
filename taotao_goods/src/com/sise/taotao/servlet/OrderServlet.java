@@ -181,6 +181,42 @@ public class OrderServlet extends BaseServlet {
 	}
 
 	/**
+	 * 退款售后
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String refundOrders(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		/*
+		 * 1. 得到pc：如果页面传递，使用页面的，如果没传，pc=1
+		 */
+		int pc = getPc(req);
+		/*
+		 * 2. 得到url：...
+		 */
+		String url = getUrl(req);
+		/*
+		 * 3. 从当前session中获取User
+		 */
+		User user = (User) req.getSession().getAttribute("sessionUser");
+
+		/*
+		 * 4. 使用pc和cid调用service#findByCategory得到PageBean
+		 */
+		PageBean<Order> pb = orderService.myOrders(user.getUid(), pc);
+		/*
+		 * 5. 给PageBean设置url，保存PageBean，转发到/person/order.jsp
+		 */
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/person/change.jsp";
+	}
+
+	/**
 	 * 获取当前页码
 	 * 
 	 * @param req

@@ -79,7 +79,7 @@
 
 						<div class="info-m">
 							<div>
-								<b>用户名：<i>小叮当</i> </b>
+								<b>用户名：<i>${sessionScope.sessionUser.loginname}</i> </b>
 							</div>
 							<div class="u-level">
 								<span class="rank r2"> <s class="vip1"></s><a
@@ -102,7 +102,7 @@
 									</div>
 								</div>
 								<div class="fore3">
-									<a href="password.html">
+									<a href="<c:url value='/person/password.jsp'/>">
 										<div class="am-btn am-btn-secondary">修改</div> </a>
 								</div>
 							</li>

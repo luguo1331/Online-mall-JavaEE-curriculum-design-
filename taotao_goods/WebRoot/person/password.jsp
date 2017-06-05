@@ -16,17 +16,27 @@
 
 <title>修改密码</title>
 
-<link href="../AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet"
+<link
+	href="<c:url value='/AmazeUI-2.4.2/assets/css/admin.css'/>" rel="stylesheet"
 	type="text/css">
-<link href="../AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet"
+<link href="<c:url value='/AmazeUI-2.4.2/assets/css/amazeui.css'/>"
+	rel="stylesheet" type="text/css">
+
+<link href="<c:url value='/css/personal.css" rel="stylesheet'/>"
+	type="text/css">
+<link href="<c:url value='/css/stepstyle.css" rel="stylesheet'/>"
 	type="text/css">
 
-<link href="../css/personal.css" rel="stylesheet" type="text/css">
-<link href="../css/stepstyle.css" rel="stylesheet" type="text/css">
-
-<script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
-<script src="../AmazeUI-2.4.2/assets/js/amazeui.js"></script>
-
+<script type="text/javascript"
+	src="<c:url value='/js/jquery-1.7.2.min.js'/>"></script>
+<script src="<c:url value='/AmazeUI-2.4.2/assets/js/amazeui.js'/>"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#submit').click(function() {
+			$('#form1').submit();
+		});
+	});
+</script>
 </head>
 
 <body>
@@ -88,18 +98,21 @@
 						<div class="u-progress-bar-inner"></div>
 					</div>
 				</div>
-				<form class="am-form am-form-horizontal">
+				<form class="am-form am-form-horizontal" id="form1"
+					action="<c:url value='/UserServlet'/>" method="post" >
+					<input type="hidden" name="method" value="updatePassword"
+						id="method" />
 					<div class="am-form-group">
 						<label for="user-old-password" class="am-form-label">原密码</label>
 						<div class="am-form-content">
-							<input type="password" id="user-old-password"
+							<input type="password" id="user-old-password" name="loginpass"
 								placeholder="请输入原登录密码">
 						</div>
 					</div>
 					<div class="am-form-group">
 						<label for="user-new-password" class="am-form-label">新密码</label>
 						<div class="am-form-content">
-							<input type="password" id="user-new-password"
+							<input type="password" id="user-new-password" name="newpass"
 								placeholder="由数字、字母组合">
 						</div>
 					</div>
@@ -107,11 +120,11 @@
 						<label for="user-confirm-password" class="am-form-label">确认密码</label>
 						<div class="am-form-content">
 							<input type="password" id="user-confirm-password"
-								placeholder="请再次输入上面的密码">
+								name="reloginpass" placeholder="请再次输入上面的密码">
 						</div>
 					</div>
 					<div class="info-btn">
-						<div class="am-btn am-btn-danger">保存修改</div>
+						<div class="am-btn am-btn-danger" id="submit">保存修改</div>
 					</div>
 
 				</form>

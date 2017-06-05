@@ -8,6 +8,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 import cn.itcast.commons.CommonUtils;
 import cn.itcast.jdbc.TxQueryRunner;
@@ -53,6 +54,34 @@ public class UserDao {
 	}
 
 	/**
+	 * 按uid和password查询
+	 * 
+	 * @param uid
+	 * @param password
+	 * @return
+	 * @throws SQLException
+	 */
+	public boolean findByUidAndPassword(String uid, String password)
+			throws SQLException {
+		String sql = "select count(*) from t_user where uid=? and loginpass=?";
+		Number number = (Number) qr.query(sql, new ScalarHandler(), uid,
+				password);
+		return number.intValue() > 0;
+	}
+
+	/**
+	 * 修改密码
+	 * 
+	 * @param uid
+	 * @param password
+	 * @throws SQLException
+	 */
+	public void updatePassword(String uid, String password) throws SQLException {
+		String sql = "update t_user set loginpass=? where uid=?";
+		qr.update(sql, password, uid);
+	}
+
+	/**
 	 * 注册用户
 	 * 
 	 * @param user
@@ -67,6 +96,7 @@ public class UserDao {
 
 	/**
 	 * 修改用户信息
+	 * 
 	 * @param user
 	 * @throws SQLException
 	 */

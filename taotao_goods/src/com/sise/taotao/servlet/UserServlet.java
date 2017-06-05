@@ -15,6 +15,7 @@ import cn.itcast.commons.CommonUtils;
 import cn.itcast.servlet.BaseServlet;
 
 import com.sise.taotao.domain.User;
+import com.sise.taotao.exception.UserException;
 import com.sise.taotao.service.UserService;
 
 /*
@@ -140,8 +141,30 @@ public class UserServlet extends BaseServlet {
 		return "f:/person/index.jsp";
 	}
 
+	/**
+	 * 修改用户密码
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public String updatePassword(HttpServletRequest req,
 			HttpServletResponse resp) throws ServletException, IOException {
-		return null;
+		User formUser = CommonUtils.toBean(req.getParameterMap(), User.class);
+		User user = (User) req.getSession().getAttribute("sessionUser");
+		if (user == null) {
+			return "f:/home/login.jsp";
+		}
+		try {
+			userService.updatePassword(user.getUid(), formUser.getNewpass(),
+					formUser.getLoginpass());
+			return "f:/person/index.jsp";
+		} catch (UserException e) {
+			req.setAttribute("msg", e.getMessage());// 保存异常信息到request
+			req.setAttribute("user", formUser);// 为了回显
+			return "f:/person/password.jsp";
+		}
 	}
 }

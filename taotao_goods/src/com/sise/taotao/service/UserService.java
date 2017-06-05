@@ -6,6 +6,7 @@ import cn.itcast.commons.CommonUtils;
 
 import com.sise.taotao.dao.UserDao;
 import com.sise.taotao.domain.User;
+import com.sise.taotao.exception.UserException;
 
 /*
  * 类名称: UserService   
@@ -61,6 +62,28 @@ public class UserService {
 			userDao.updateMessage(user);
 			return userDao.findByLoginnameAndLoginpass(user.getLoginname(),
 					user.getLoginpass());
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 修改密码
+	 * 
+	 * @param uid
+	 * @param newPass
+	 * @param oldPass
+	 * @throws UserException
+	 */
+	public void updatePassword(String uid, String newPass, String oldPass)
+			throws UserException {
+
+		try {
+			boolean bool = userDao.findByUidAndPassword(uid, oldPass);
+			if (!bool) {// 如果老密码错误
+				throw new UserException("老密码错误！");
+			}
+			userDao.updatePassword(uid, newPass);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

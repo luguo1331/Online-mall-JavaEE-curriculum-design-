@@ -1,4 +1,9 @@
-#Wed Jun 07 18:13:53 CST 2017
+#Wed Jun 07 22:00:09 CST 2017
 eclipse.preferences.version=1
+encoding//WebRoot/admin/comment.jsp=UTF-8
+encoding//WebRoot/admin/goods.jsp=UTF-8
 encoding//WebRoot/admin/index.jsp=UTF-8
+encoding//WebRoot/admin/order.jsp=UTF-8
+encoding//WebRoot/admin/stock.jsp=UTF-8
+encoding//WebRoot/admin/user.jsp=UTF-8
 encoding/<project>=UTF-8

@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.omg.CORBA.Request;
+
 import cn.itcast.commons.CommonUtils;
 import cn.itcast.servlet.BaseServlet;
 
@@ -85,8 +87,12 @@ public class UserServlet extends BaseServlet {
 	 * @throws ServletException
 	 * @throws IOException
 	 */
-	public List<User> findAll() throws ServletException, IOException {
-		return userService.findAll();
+	public String findAll(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		List<User> userList = userService.findAll();
+		req.setAttribute("userList", userList);
+		return "f:/admin/user.jsp";
+				
 	}
 
 	public String regist(HttpServletRequest req, HttpServletResponse resp)

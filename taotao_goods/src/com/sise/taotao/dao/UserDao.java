@@ -70,6 +70,17 @@ public class UserDao {
 	}
 
 	/**
+	 * 查找所有用户
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
+	public List<User> findAll() throws SQLException {
+		String sql = "SELECT * FROM t_user";
+		return qr.query(sql, new BeanListHandler<User>(User.class));
+	}
+
+	/**
 	 * 修改密码
 	 * 
 	 * @param uid

@@ -1,6 +1,7 @@
 package com.sise.taotao.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import cn.itcast.commons.CommonUtils;
 
@@ -30,6 +31,19 @@ public class UserService {
 		try {
 			return userDao.findByLoginnameAndLoginpass(user.getLoginname(),
 					user.getLoginpass());
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 查找所有用户
+	 * 
+	 * @return
+	 */
+	public List<User> findAll() {
+		try {
+			return userDao.findAll();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

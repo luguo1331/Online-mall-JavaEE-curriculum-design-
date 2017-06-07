@@ -3,6 +3,7 @@ package com.sise.taotao.servlet;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletException;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpSession;
 import cn.itcast.commons.CommonUtils;
 import cn.itcast.servlet.BaseServlet;
 
+import com.sise.taotao.domain.Category;
 import com.sise.taotao.domain.User;
 import com.sise.taotao.exception.UserException;
 import com.sise.taotao.service.UserService;
@@ -74,6 +76,17 @@ public class UserServlet extends BaseServlet {
 				return "r:/home/home.jsp";
 			}
 		}
+	}
+
+	/**
+	 * 查询所有用户
+	 * 
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public List<User> findAll() throws ServletException, IOException {
+		return userService.findAll();
 	}
 
 	public String regist(HttpServletRequest req, HttpServletResponse resp)

@@ -41,10 +41,7 @@
 	</header>
 
 	<div class="am-cf admin-main">
-
 		<div class="nav-navicon admin-main admin-sidebar">
-
-
 			<div class="sideMenu am-icon-dashboard"
 				style="color:#aeb2b7; margin: 10px 0 0 0;">欢迎系统管理员：清风抚雪</div>
 			<div class="sideMenu">
@@ -226,37 +223,16 @@
 							</div>
 						</div>
 					</form>
-
-
-
-
-
-
-
-
-
-
-
-
 				</div>
-
-
-
 			</div>
 
-
-
-
-
 			<div class="am-popup am-popup-inner" id="my-popups">
-
 				<div class="am-popup-hd">
 					<h4 class="am-popup-title">修改栏目名称</h4>
 					<span data-am-modal-close class="am-close">&times;</span>
 				</div>
 
 				<div class="am-popup-bd">
-
 
 					<form class="am-form tjlanmu">
 
@@ -313,37 +289,19 @@
 						</div>
 					</form>
 
-
-
-
-
-
-
-
-
-
-
-
 				</div>
 
-
-
 			</div>
-
-
-
-
-
 
 			<div class="admin-biaogelist">
 
 				<div class="listbiaoti am-cf">
-					<ul class="am-icon-users">会员管理
+					<ul class="am-icon-users">用户管理
 					</ul>
 
 					<dl class="am-icon-home" style="float: right;">
 						当前位置： 首页 >
-						<a href="#">商品列表</a>
+						<a href="#">用户管理</a>
 					</dl>
 
 					<dl>
@@ -353,33 +311,7 @@
 					</dl>
 					<!--这里打开的是新页面-->
 
-
-
-
-
-
-
-
-
-
-
-
-
 				</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 				<form class="am-form am-g">
 					<table width="100%"
@@ -387,85 +319,50 @@
 						<thead>
 							<tr class="am-success">
 								<th class="table-check"><input type="checkbox" /></th>
-
 								<th class="table-id">ID</th>
-								<th class="table-title">会员名称</th>
-								<th class="table-type">会员等级</th>
-								<th class="table-author am-hide-sm-only">会员积分</th>
-								<th class="table-author am-hide-sm-only">注册日期</th>
-								<th class="table-date am-hide-sm-only">最近消费</th>
+								<th class="table-title">用户名称</th>
+								<th class="table-type">用户邮箱</th>
+								<th class="table-author am-hide-sm-only">用户手机</th>
+								<th class="table-author am-hide-sm-only">性别</th>
+								<th class="table-date am-hide-sm-only">用户状态</th>
 								<th width="130px" class="table-set">操作</th>
 							</tr>
 						</thead>
+
 						<tbody>
-							<tr>
-								<td><input type="checkbox" /></td>
-
-								<td>14</td>
-								<td><a href="#">Business management</a></td>
-								<td>3件 （消费455个积分）</td>
-								<td class="am-hide-sm-only">访问</td>
-								<td class="am-hide-sm-only">访问</td>
-								<td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-								<td>
-
-
-
-									<div class="am-btn-toolbar">
-										<div class="am-btn-group am-btn-group-xs">
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-success am-round">
-												<span class="am-icon-search" title="查看订单详情"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"
-												data-am-modal="{target: '#my-popups'}" title="修改订单">
-												<span class="am-icon-pencil-square-o"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
-												title="删除订单">
-												<span class="am-icon-trash-o"></span>
-											</button>
+							<c:forEach items="${userList}" var="user">
+								<tr>
+									<td><input type="checkbox" /></td>
+									<td>${user.uid}</td>
+									<td><a href="#">${user.loginname}</a></td>
+									<td>${user.email}</td>
+									<td class="am-hide-sm-only">${user.phone}</td>
+									<td class="am-hide-sm-only">${user.sex}</td>
+									<td class="am-hide-sm-only">${user.status}</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button
+													class="am-btn am-btn-default am-btn-xs am-text-success am-round">
+													<span class="am-icon-search" title="查看订单详情"></span>
+												</button>
+												<button
+													class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"
+													data-am-modal="{target: '#my-popups'}" title="修改订单">
+													<span class="am-icon-pencil-square-o"></span>
+												</button>
+												<button
+													class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
+													title="删除订单">
+													<span class="am-icon-trash-o"></span>
+												</button>
+											</div>
 										</div>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" /></td>
-
-								<td>15</td>
-								<td><a href="#">Business management</a></td>
-								<td>default</td>
-								<td class="am-hide-sm-only"><i
-									class="am-icon-close am-text-primary"></i></td>
-								<td class="am-hide-sm-only">访问</td>
-								<td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-								<td>
-
-									<div class="am-btn-toolbar">
-										<div class="am-btn-group am-btn-group-xs">
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-success am-round">
-												<span class="am-icon-search" title="查看订单详情"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"
-												data-am-modal="{target: '#my-popups'}" title="修改订单">
-												<span class="am-icon-pencil-square-o"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
-												title="删除订单">
-												<span class="am-icon-trash-o"></span>
-											</button>
-										</div>
-									</div>
-								</td>
-							</tr>
+									</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
-
 					<div class="am-btn-group am-btn-group-xs">
 						<button type="button" class="am-btn am-btn-default">
 							<span class="am-icon-plus"></span> 删除
@@ -503,49 +400,31 @@
 						<li><a href="#">»</a></li>
 					</ul>
 
-
-
-
 					<hr />
 					<p>注：.....</p>
 				</form>
 
-
-
-
 				<div class="foods">
-					<ul>版权所有@2015
+					<ul>版权所有@2017
 					</ul>
 					<dl>
 						<a href="" title="返回头部" class="am-icon-btn am-icon-arrow-up"></a>
 					</dl>
 				</div>
-
-
-
-
 			</div>
-
 		</div>
-
-
-
-
 	</div>
 
 	<!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
-<script src="assets/js/polyfill/rem.min.js"></script>
-<script src="assets/js/polyfill/respond.min.js"></script>
-<script src="assets/js/amazeui.legacy.js"></script>
+<script src="<c:url value='/assets/js/polyfill/rem.min.js'/>"></script>
+<script src="<c:url value='/assets/js/polyfill/respond.min.js'/>"></script>
+<script src="<c:url value='/assets/js/amazeui.legacy.js'/>"></script>
 <![endif]-->
 
 	<!--[if (gte IE 9)|!(IE)]><!-->
-	<script src="assets/js/amazeui.min.js"></script>
+	<script src="<c:url value='/assets/js/amazeui.min.js'/>"></script>
 	<!--<![endif]-->
-
-
-
 </body>
 </html>

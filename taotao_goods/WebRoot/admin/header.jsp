@@ -37,7 +37,7 @@
 				</li>
 			</ul></li>
 		<li class="kuanjie"><a
-			href="<c:url value=''/>会员管理</a> <a href="#">奖金管理</a> <a
+			href="<c:url value='/UserServlet?method=findAll'/>">用户管理</a> <a href="#">奖金管理</a> <a
 					href="#">订单管理</a> <a href="#">产品管理</a> <a href="#">个人中心</a> <a
 					href="#">系统设置</a>
 				</li>

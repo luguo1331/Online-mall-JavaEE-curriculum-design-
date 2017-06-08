@@ -6,6 +6,7 @@ import java.util.List;
 import cn.itcast.commons.CommonUtils;
 
 import com.sise.taotao.dao.UserDao;
+import com.sise.taotao.domain.PageBean;
 import com.sise.taotao.domain.User;
 import com.sise.taotao.exception.UserException;
 
@@ -41,9 +42,9 @@ public class UserService {
 	 * 
 	 * @return
 	 */
-	public List<User> findAll() {
+	public PageBean<User> findAll(int pc) {
 		try {
-			return userDao.findAll();
+			return userDao.findAll(pc);
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

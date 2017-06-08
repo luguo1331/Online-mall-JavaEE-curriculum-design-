@@ -330,7 +330,7 @@
 						</thead>
 
 						<tbody>
-							<c:forEach items="${userList}" var="user">
+							<c:forEach items="${pb.beanList }" var="user">
 								<tr>
 									<td><input type="checkbox" /></td>
 									<td>${user.uid}</td>

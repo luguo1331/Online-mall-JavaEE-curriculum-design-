@@ -1,6 +1,7 @@
 package com.sise.taotao.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -14,7 +15,11 @@ import cn.itcast.commons.CommonUtils;
 import cn.itcast.jdbc.TxQueryRunner;
 
 import com.sise.taotao.domain.Address;
+import com.sise.taotao.domain.Goods;
+import com.sise.taotao.domain.PageBean;
 import com.sise.taotao.domain.User;
+import com.sise.taotao.other.Expression;
+import com.sise.taotao.other.PageConstants;
 import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /*
@@ -70,17 +75,6 @@ public class UserDao {
 	}
 
 	/**
-	 * 查找所有用户
-	 * 
-	 * @return
-	 * @throws SQLException
-	 */
-	public List<User> findAll() throws SQLException {
-		String sql = "SELECT * FROM t_user";
-		return qr.query(sql, new BeanListHandler<User>(User.class));
-	}
-
-	/**
 	 * 修改密码
 	 * 
 	 * @param uid
@@ -116,6 +110,61 @@ public class UserDao {
 		Object[] params = { user.getNickname(), user.getBirthday(),
 				user.getEmail(), user.getPhone(), user.getUid() };
 		qr.update(sql, params);
+	}
+
+	/**
+	 * 通用的查询方法
+	 * 
+	 * @param expressList
+	 * @param pc
+	 * @return
+	 * @throws SQLException
+	 */
+	private PageBean<User> findByCriteria(List<Expression> expressList, int pc)
+			throws SQLException {
+		// 得到每页记录数
+		int ps = PageConstants.USER_PAGE_SIZE;// 5
+		// 拼接查询语句
+		StringBuilder whereSql = new StringBuilder(" WHERE 1=1");
+		List<Object> params = new ArrayList<Object>();
+		for (Expression expression : expressList) {
+			whereSql.append(" AND ").append(expression.getName()).append(" ")
+					.append(expression.getOperator()).append(" ");
+			if (expression.getOperator() != "IS NULL") {
+				whereSql.append("?");
+				params.add(expression.getValue());
+			}
+		}
+		// 查询总记录数
+		String sql = "SELECT count(*) FROM t_user" + whereSql;
+		Number number = (Number) qr.query(sql, new ScalarHandler(),
+				params.toArray());
+		int tr = number.intValue();
+
+		// 查询beanList
+		sql = "SELECT * FROM t_user" + whereSql + "  LIMIT ?,?";
+		params.add((pc - 1) * ps);
+		params.add(ps);
+		List<User> beanList = qr.query(sql, new BeanListHandler<User>(
+				User.class), params.toArray());
+		// 设置pageBean参数
+		PageBean<User> pageBean = new PageBean<User>();
+		pageBean.setPc(pc);
+		pageBean.setPs(ps);
+		pageBean.setTr(tr);
+		pageBean.setBeanList(beanList);
+		return pageBean;
+	}
+
+	/**
+	 * 查找所有用户
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
+	public PageBean<User> findAll(int pc) throws SQLException {
+		List<Expression> expressList = new ArrayList<Expression>();
+		return findByCriteria(expressList, pc);
 	}
 
 }

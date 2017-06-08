@@ -43,31 +43,7 @@
 		<!--侧边导航条 -->
 		<c:import url="/admin/aside.jsp"></c:import>说
 		<div class=" admin-content">
-			<div class="daohang">
-				<ul>
-					<li>
-						<button type="button"
-							class="am-btn am-btn-default am-radius am-btn-xs">首页
-					</li>
-					<li>
-						<button type="button"
-							class="am-btn am-btn-default am-radius am-btn-xs">
-							帮助中心<a href="javascript: void(0)" class="am-close am-close-spin"
-								data-am-modal-close="">×</a>
-						</button></li>
-					<li>
-						<button type="button"
-							class="am-btn am-btn-default am-radius am-btn-xs">
-							奖金管理<a href="javascript: void(0)" class="am-close am-close-spin"
-								data-am-modal-close="">×</a>
-						</button></li>
-					<li>
-						<button type="button"
-							class="am-btn am-btn-default am-radius am-btn-xs">
-							产品管理<a href="javascript: void(0)" class="am-close am-close-spin"
-								data-am-modal-close="">×</a>
-						</button></li>
-				</ul>
+			<div class="daohang">			
 			</div>
 			<div class="am-popup am-popup-inner" id="my-popup">
 				<div class="am-popup-hd">

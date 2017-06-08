@@ -18,6 +18,8 @@ import cn.itcast.commons.CommonUtils;
 import cn.itcast.servlet.BaseServlet;
 
 import com.sise.taotao.domain.Category;
+import com.sise.taotao.domain.Goods;
+import com.sise.taotao.domain.PageBean;
 import com.sise.taotao.domain.User;
 import com.sise.taotao.exception.UserException;
 import com.sise.taotao.service.UserService;
@@ -83,16 +85,24 @@ public class UserServlet extends BaseServlet {
 	/**
 	 * 查询所有用户
 	 * 
+	 * @param req
+	 * @param resp
 	 * @return
 	 * @throws ServletException
 	 * @throws IOException
 	 */
 	public String findAll(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		List<User> userList = userService.findAll();
-		req.setAttribute("userList", userList);
+		// 获取当前页码
+		int pc = getPc(req);
+		// 获取当前url
+		String url = getUrl(req);
+		// 使用pc查询
+		PageBean<User> pb = userService.findAll(pc);
+		// 设置pageBean参数
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
 		return "f:/admin/user.jsp";
-
 	}
 
 	/**

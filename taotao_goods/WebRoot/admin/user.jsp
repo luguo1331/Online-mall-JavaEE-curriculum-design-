@@ -315,12 +315,12 @@
 
 				<form class="am-form am-g">
 					<table width="100%"
-						class="am-table am-table-bordered am-table-radius am-table-striped">
+						class="am-table am-table-bordered am-table-striped am-table-hover am-text-middle">
 						<thead>
 							<tr class="am-success">
 								<th class="table-check"><input type="checkbox" /></th>
 								<th class="table-id">ID</th>
-								<th class="table-title">用户名称</th>
+								<th class="table-id">用户名称</th>
 								<th class="table-type">用户邮箱</th>
 								<th class="table-author am-hide-sm-only">用户手机</th>
 								<th class="table-author am-hide-sm-only">性别</th>
@@ -345,11 +345,6 @@
 												<button
 													class="am-btn am-btn-default am-btn-xs am-text-success am-round">
 													<span class="am-icon-search" title="查看订单详情"></span>
-												</button>
-												<button
-													class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"
-													data-am-modal="{target: '#my-popups'}" title="修改订单">
-													<span class="am-icon-pencil-square-o"></span>
 												</button>
 												<button
 													class="am-btn am-btn-default am-btn-xs am-text-danger am-round"

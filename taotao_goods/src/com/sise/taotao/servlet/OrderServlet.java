@@ -118,6 +118,22 @@ public class OrderServlet extends BaseServlet {
 	}
 
 	/**
+	 * 查询所有订单
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findAll(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		List<Order> orderList = orderService.findAll();
+		req.setAttribute("orderList", orderList);
+		return "f:/admin/order.jsp";
+	}
+
+	/**
 	 * 确认收货
 	 * 
 	 * @param req

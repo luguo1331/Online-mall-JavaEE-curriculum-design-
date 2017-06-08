@@ -1,6 +1,7 @@
 package com.sise.taotao.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import cn.itcast.jdbc.JdbcUtils;
 
@@ -43,6 +44,19 @@ public class OrderService {
 	public int findStatus(String oid) {
 		try {
 			return orderDao.findStatus(oid);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 查询所有订单
+	 * 
+	 * @return
+	 */
+	public List<Order> findAll() {
+		try {
+			return orderDao.findAll();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

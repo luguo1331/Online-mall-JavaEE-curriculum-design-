@@ -155,6 +155,22 @@ public class OrderDao {
 		return pb;
 	}
 
+	/**
+	 * 查询所有订单
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
+	public List<Order> findAll() throws SQLException {
+		String sql = "SELECT * FROM t_order";
+		List<Order> orderList = qr.query(sql, new BeanListHandler<Order>(
+				Order.class));
+		for (Order order : orderList) {
+			loadOrderItem(order);
+		}
+		return orderList;
+	}
+
 	/*
 	 * 为指定的order载它的所有OrderItem
 	 */

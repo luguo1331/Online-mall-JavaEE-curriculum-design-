@@ -83,6 +83,29 @@ public class GoodsServlet extends BaseServlet {
 	}
 
 	/**
+	 * 查询所有商品
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findAll(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 获取当前页码
+		int pc = getPc(req);
+		// 获取当前url
+		String url = getUrl(req);
+		// 使用pc查询
+		PageBean<Goods> pb = goodsService.findAll(pc);
+		// 设置pageBean参数
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/admin/goods.jsp";
+	}
+
+	/**
 	 * 根据gname查询商品
 	 * 
 	 * @param req

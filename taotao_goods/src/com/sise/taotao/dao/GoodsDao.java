@@ -94,6 +94,17 @@ public class GoodsDao {
 	}
 
 	/**
+	 * 查询所有商品
+	 * @param pc
+	 * @return
+	 * @throws SQLException
+	 */
+	public PageBean<Goods> findAll(int pc) throws SQLException {
+		List<Expression> expressList = new ArrayList<Expression>();
+		return findByCriteria(expressList, pc);
+	}
+
+	/**
 	 * 按gname模糊查询
 	 * 
 	 * @param gname
@@ -139,7 +150,7 @@ public class GoodsDao {
 		int tr = number.intValue();
 
 		// 查询beanList
-		sql = "SELECT * FROM t_goods" + whereSql + "ORDER BY orderBy LIMIT ?,?";
+		sql = "SELECT * FROM t_goods" + whereSql + " ORDER BY orderBy LIMIT ?,?";
 		params.add((pc - 1) * ps);
 		params.add(ps);
 		List<Goods> beanList = qr.query(sql, new BeanListHandler<Goods>(

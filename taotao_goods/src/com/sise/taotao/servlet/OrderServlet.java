@@ -117,21 +117,6 @@ public class OrderServlet extends BaseServlet {
 		return myOrders(req, resp);
 	}
 
-	/**
-	 * 查询所有订单
-	 * 
-	 * @param req
-	 * @param resp
-	 * @return
-	 * @throws ServletException
-	 * @throws IOException
-	 */
-	public String findAll(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
-		List<Order> orderList = orderService.findAll();
-		req.setAttribute("orderList", orderList);
-		return "f:/admin/order.jsp";
-	}
 
 	/**
 	 * 确认收货
@@ -194,6 +179,31 @@ public class OrderServlet extends BaseServlet {
 		pb.setUrl(url);
 		req.setAttribute("pb", pb);
 		return "f:/person/order.jsp";
+	}
+
+	/**
+	 * 查询所有订单
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findAll(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		/*
+		 * 1. 得到pc：如果页面传递，使用页面的，如果没传，pc=1
+		 */
+		int pc = getPc(req);
+		/*
+		 * 2. 得到url：...
+		 */
+		String url = getUrl(req);
+		PageBean<Order> pb = orderService.findAll(pc);
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/admin/order.jsp";
 	}
 
 	/**

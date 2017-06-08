@@ -161,14 +161,9 @@ public class OrderDao {
 	 * @return
 	 * @throws SQLException
 	 */
-	public List<Order> findAll() throws SQLException {
-		String sql = "SELECT * FROM t_order";
-		List<Order> orderList = qr.query(sql, new BeanListHandler<Order>(
-				Order.class));
-		for (Order order : orderList) {
-			loadOrderItem(order);
-		}
-		return orderList;
+	public PageBean<Order> findAll(int pc) throws SQLException {
+		List<Expression> exprList = new ArrayList<Expression>();
+		return findByCriteria(exprList, pc);
 	}
 
 	/*

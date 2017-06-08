@@ -92,9 +92,18 @@ public class UserServlet extends BaseServlet {
 		List<User> userList = userService.findAll();
 		req.setAttribute("userList", userList);
 		return "f:/admin/user.jsp";
-				
+
 	}
 
+	/**
+	 * 注册功能
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	public String regist(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		// 将表单数据封装到bean中
@@ -185,5 +194,38 @@ public class UserServlet extends BaseServlet {
 			req.setAttribute("user", formUser);// 为了回显
 			return "f:/person/password.jsp";
 		}
+	}
+
+	/**
+	 * 获取当前页码，默认值是1
+	 * 
+	 * @param request
+	 * @return
+	 */
+	private int getPc(HttpServletRequest request) {
+		int pc = 1;
+		String param = request.getParameter("pc");
+		if (param != null && !param.trim().isEmpty()) {
+			try {
+				pc = Integer.parseInt(param);
+			} catch (RuntimeException e) {
+			}
+		}
+		return pc;
+	}
+
+	/**
+	 * 截取当前url
+	 * 
+	 * @param request
+	 * @return
+	 */
+	private String getUrl(HttpServletRequest request) {
+		String url = request.getRequestURI() + "?" + request.getQueryString();
+		int index = url.lastIndexOf("&pc=");
+		if (index != -1) {
+			url = url.substring(0, index);
+		}
+		return url;
 	}
 }

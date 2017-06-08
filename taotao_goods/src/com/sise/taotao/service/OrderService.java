@@ -1,7 +1,6 @@
 package com.sise.taotao.service;
 
 import java.sql.SQLException;
-import java.util.List;
 
 import cn.itcast.jdbc.JdbcUtils;
 
@@ -49,15 +48,22 @@ public class OrderService {
 		}
 	}
 
+	
 	/**
-	 * 查询所有订单
-	 * 
+	 * 查询所有
+	 * @param pc
 	 * @return
 	 */
-	public List<Order> findAll() {
+	public PageBean<Order> findAll(int pc) {
 		try {
-			return orderDao.findAll();
+			JdbcUtils.beginTransaction();
+			PageBean<Order> pb = orderDao.findAll(pc);
+			JdbcUtils.commitTransaction();
+			return pb;
 		} catch (SQLException e) {
+			try {
+				JdbcUtils.rollbackTransaction();
+			} catch (SQLException e1) {}
 			throw new RuntimeException(e);
 		}
 	}

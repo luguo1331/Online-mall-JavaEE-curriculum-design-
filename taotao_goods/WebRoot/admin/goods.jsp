@@ -632,22 +632,7 @@
 							<span class="am-icon-trash-o"></span> 删除
 						</button>
 					</div>
-					<ul class="am-pagination am-fr">
-						<li class="am-disabled"><a href="#">«</a>
-						</li>
-						<li class="am-active"><a href="#">1</a>
-						</li>
-						<li><a href="#">2</a>
-						</li>
-						<li><a href="#">3</a>
-						</li>
-						<li><a href="#">4</a>
-						</li>
-						<li><a href="#">5</a>
-						</li>
-						<li><a href="#">»</a>
-						</li>
-					</ul>
+					<c:import url="/pager.jsp"></c:import>					
 					<hr />
 					<p>
 						备注：操作图标含义 <a class="am-text-success am-icon-file" title="添加子栏目">

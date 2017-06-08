@@ -62,4 +62,17 @@ public class GoodsServlce {
 		}
 	}
 
+	/**
+	 * 查询所有商品
+	 * 
+	 * @param pc
+	 * @return
+	 */
+	public PageBean<Goods> findAll(int pc) {
+		try {
+			return goodsDao.findAll(pc);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

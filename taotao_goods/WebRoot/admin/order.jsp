@@ -18,6 +18,7 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="renderer" content="webkit">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
+
 <link rel="icon" type="image/png"
 	href="<c:url value='/assets/i/favicon.png'/>">
 <link rel="apple-touch-icon-precomposed"
@@ -114,26 +115,9 @@
 						</div>
 					</form>
 
-
-
-
-
-
-
-
-
-
-
-
 				</div>
 
-
-
 			</div>
-
-
-
-
 
 			<div class="am-popup am-popup-inner" id="my-popups">
 
@@ -201,24 +185,9 @@
 					</form>
 
 
-
-
-
-
-
-
-
-
-
-
 				</div>
 
-
-
 			</div>
-
-
-
 
 
 
@@ -242,29 +211,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 				</div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -273,87 +220,43 @@
 						class="am-table am-table-bordered am-table-radius am-table-striped am-table-hover">
 						<thead>
 							<tr class="am-success">
-								<th class="table-check"><input type="checkbox" />
-								</th>
-
+								<th class="table-check"><input type="checkbox" /></th>
 								<th class="table-id">ID</th>
-								<th class="table-title">商品名称</th>
-								<th class="table-type">购买数量</th>
 								<th class="table-author am-hide-sm-only">购买人</th>
 								<th class="table-author am-hide-sm-only">地址</th>
 								<th class="table-date am-hide-sm-only">购买日期</th>
+								<th class="table-type">总计</th>
+								<th class="table-type">状态</th>
 								<th width="130px" class="table-set">操作</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td><input type="checkbox" />
-								</td>
-
-								<td>14</td>
-								<td><a href="#">Business management</a>
-								</td>
-								<td>3件 （消费455个积分）</td>
-								<td class="am-hide-sm-only">访问</td>
-								<td class="am-hide-sm-only">访问</td>
-								<td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-								<td>
-
-
-
-									<div class="am-btn-toolbar">
-										<div class="am-btn-group am-btn-group-xs">
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-success am-round">
-												<span class="am-icon-search" title="查看订单详情"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"
-												data-am-modal="{target: '#my-popups'}" title="修改订单">
-												<span class="am-icon-pencil-square-o"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
-												title="删除订单">
-												<span class="am-icon-trash-o"></span>
-											</button>
+							<c:forEach items="${pb.beanList }" var="order">
+								<tr>
+									<td><input type="checkbox" /></td>
+									<td>${order.oid}</td>
+									<td><a href="#">${order.owner}</a></td>
+									<td>${order.address}</td>
+									<td class="am-hide-sm-only">${order.ordertime}</td>
+									<td class="am-hide-sm-only">${order.total}</td>
+									<td class="am-hide-sm-only">${order.status}</td>
+									<td>
+										<div class="am-btn-toolbar">
+											<div class="am-btn-group am-btn-group-xs">
+												<button
+													class="am-btn am-btn-default am-btn-xs am-text-success am-round">
+													<span class="am-icon-search" title="查看订单详情"></span>
+												</button>
+												<button
+													class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
+													title="删除订单">
+													<span class="am-icon-trash-o"></span>
+												</button>
+											</div>
 										</div>
-									</div></td>
-							</tr>
-							<tr>
-								<td><input type="checkbox" />
-								</td>
-
-								<td>15</td>
-								<td><a href="#">Business management</a>
-								</td>
-								<td>default</td>
-								<td class="am-hide-sm-only"><i
-									class="am-icon-close am-text-primary"></i>
-								</td>
-								<td class="am-hide-sm-only">访问</td>
-								<td class="am-hide-sm-only">2014年9月4日 7:28:47</td>
-								<td>
-
-									<div class="am-btn-toolbar">
-										<div class="am-btn-group am-btn-group-xs">
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-success am-round">
-												<span class="am-icon-search" title="查看订单详情"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-secondary am-round"
-												data-am-modal="{target: '#my-popups'}" title="修改订单">
-												<span class="am-icon-pencil-square-o"></span>
-											</button>
-											<button
-												class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
-												title="删除订单">
-												<span class="am-icon-trash-o"></span>
-											</button>
-										</div>
-									</div></td>
-							</tr>
+									</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 

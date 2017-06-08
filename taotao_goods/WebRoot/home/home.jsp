@@ -387,7 +387,7 @@
 								<i class="am-icon-shopping-basket am-icon-md  seprate"></i>
 							</div>
 							<a
-								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[1].gid}'/> "><img
+								href="<c:url value='/GoodsServlet?method=findByGid&gid=${parent.children[0].goods[1].gid}'/> "><img 
 								src="../${parent.children[0].goods[1].image_1}" /> </a>
 						</div>
 

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
@@ -17,6 +18,7 @@ import com.sise.taotao.domain.Goods;
 import com.sise.taotao.domain.Order;
 import com.sise.taotao.domain.OrderItem;
 import com.sise.taotao.domain.PageBean;
+import com.sise.taotao.domain.User;
 import com.sise.taotao.other.Expression;
 import com.sise.taotao.other.PageConstants;
 
@@ -89,6 +91,14 @@ public class OrderDao {
 		qr.batch(sql, objs);
 	}
 
+	/**
+	 * 通用的查询方法
+	 * 
+	 * @param exprList
+	 * @param pc
+	 * @return
+	 * @throws SQLException
+	 */
 	private PageBean<Order> findByCriteria(List<Expression> exprList, int pc)
 			throws SQLException {
 		/*
@@ -136,8 +146,11 @@ public class OrderDao {
 				Order.class), params.toArray());
 		// 虽然已经获取所有的订单，但每个订单中并没有订单条目。
 		// 遍历每个订单，为其加载它的所有订单条目
+		
+		
 		for (Order order : beanList) {
 			loadOrderItem(order);
+			loadOwner(order);
 		}
 
 		/*
@@ -166,8 +179,11 @@ public class OrderDao {
 		return findByCriteria(exprList, pc);
 	}
 
-	/*
+	/**
 	 * 为指定的order载它的所有OrderItem
+	 * 
+	 * @param order
+	 * @throws SQLException
 	 */
 	private void loadOrderItem(Order order) throws SQLException {
 		/*
@@ -180,6 +196,23 @@ public class OrderDao {
 		List<OrderItem> orderItemList = toOrderItemList(mapList);
 
 		order.setOrderItemList(orderItemList);
+	}
+
+
+	/**
+	 * 为指定的order载它的所有owner
+	 * @param order
+	 * @throws SQLException
+	 */
+	private void loadOwner(Order order) throws SQLException {
+		/*
+		 * 1. 给sql语句select * from t_orderitem where oid=? 2.
+		 * 执行之，得到List<OrderItem> 3. 设置给Order对象
+		 */
+		String sql = "SELECT * FROM t_user WHERE uid=?";
+		User user = qr.query(sql, new BeanHandler<User>(User.class), order
+				.getOwner().getUid());
+		order.setOwner(user);
 	}
 
 	/**

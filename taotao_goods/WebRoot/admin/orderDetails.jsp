@@ -11,7 +11,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>订单管理</title>
+<title>订单详情</title>
 <meta name="description" content="这是一个 index 页面">
 <meta name="keywords" content="index">
 <meta name="viewport"

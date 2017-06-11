@@ -213,7 +213,7 @@ public class OrderServlet extends BaseServlet {
 		 */
 		pb.setUrl(url);
 		req.setAttribute("pb", pb);
-		return "f:/admin/order.jsp";
+		return "f:/admin/orderDetails.jsp";
 	}
 
 	/**

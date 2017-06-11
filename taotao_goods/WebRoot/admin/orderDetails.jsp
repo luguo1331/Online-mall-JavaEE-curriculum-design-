@@ -29,6 +29,19 @@
 <link rel="stylesheet" href="<c:url value='/assets/css/admin.css'/>">
 <script src="<c:url value='/assets/js/jquery.min.js'/>"></script>
 <script src="<c:url value='/assets/js/app.js'/>"></script>
+
+<link href="<c:url value='/css/personal.css" rel="stylesheet'/>"
+	type="text/css">
+<link href="<c:url value='/css/orstyle.css" rel="stylesheet'/>"
+	type="text/css">
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".orderNum").each(function() {
+			$(this).text($(this).text().substring(0, 18));
+		});
+
+	});
+</script>
 </head>
 <body>
 	<!--[if lte IE 9]><p class="browsehappy">升级你的浏览器吧！ <a href="http://se.360.cn/" target="_blank">升级浏览器</a>以获得更好的体验！</p><![endif]-->
@@ -46,8 +59,7 @@
 
 		<div class=" admin-content">
 
-			<div class="daohang">
-			</div>
+			<div class="daohang"></div>
 
 
 			<div class="am-popup am-popup-inner" id="my-popup">
@@ -198,14 +210,12 @@
 					</ul>
 
 					<dl class="am-icon-home" style="float: right;">
-						当前位置： 首页 >
-						<a href="#">商品列表</a>
+						当前位置： 首页 >订单列表>
+						<a href="#">订单详情</a>
 					</dl>
 
 					<dl>
-						<button type="button"
-							class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus">
-							补充线订单</button>
+
 					</dl>
 					<!--这里打开的是新页面-->
 
@@ -216,78 +226,136 @@
 
 
 				<form class="am-form am-g">
-					<table width="100%"
-						class="am-table am-table-bordered am-table-radius am-table-striped am-table-hover">
-						<thead>
-							<tr class="am-success">
-								<th class="table-check"><input type="checkbox" /></th>
-								<th class="table-id">ID</th>
-								<th class="table-author am-hide-sm-only">购买人</th>
-								<th class="table-author am-hide-sm-only">地址</th>
-								<th class="table-date am-hide-sm-only">购买日期</th>
-								<th class="table-type">总计</th>
-								<th class="table-type">状态</th>
-								<th width="130px" class="table-set">操作</th>
-							</tr>
-						</thead>
-						<tbody>
-							<c:forEach items="${pb.beanList }" var="order">
-								<tr>
-									<td><input type="checkbox" /></td>
-									<td>${order.oid}</td>
-									<td><a href="#">${order.owner.loginname}</a></td>
-									<td>${order.address}</td>
-									<td class="am-hide-sm-only">${order.ordertime}</td>
-									<td class="am-hide-sm-only">${order.total}</td>
-									<td class="am-hide-sm-only">${order.status}</td>
-									<td>
-										<div class="am-btn-toolbar">
-											<div class="am-btn-group am-btn-group-xs">
-												<button
-													class="am-btn am-btn-default am-btn-xs am-text-success am-round">
-													<span class="am-icon-search" title="查看订单详情"></span>
-												</button>
-												<button
-													class="am-btn am-btn-default am-btn-xs am-text-danger am-round"
-													title="删除订单">
-													<span class="am-icon-trash-o"></span>
-												</button>
-											</div>
-										</div>
-									</td>
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
-
-					<div class="am-btn-group am-btn-group-xs">
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-plus"></span> 删除
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-save"></span> 上架
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-save"></span> 下架
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-save"></span> 移动
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-plus"></span> 新增
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-save"></span> 保存
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-archive"></span> 移动
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-trash-o"></span> 删除
-						</button>
+					<div class="order-top">
+						<div class="th th-item">
+							<td class="td-inner">商品</td>
+						</div>
+						<div class="th th-price">
+							<td class="td-inner">单价</td>
+						</div>
+						<div class="th th-number">
+							<td class="td-inner">数量</td>
+						</div>
+						<div class="th th-operation">
+							<td class="td-inner">商品操作</td>
+						</div>
+						<div class="th th-amount">
+							<td class="td-inner">合计</td>
+						</div>
+						<div class="th th-status">
+							<td class="td-inner">交易状态</td>
+						</div>
+						<div class="th th-change">
+							<td class="td-inner">交易操作</td>
+						</div>
 					</div>
 
-					<c:import url="/pager.jsp"></c:import>	
+					<div class="order-main">
+						<div class="order-list">
+							<c:forEach items="${pb.beanList }" var="order">
+								<!--交易成功-->
+								<div class="order-status5">
+									<div class="order-title">
+										<div class="dd-num">
+											订单编号：<a href="javascript:;" class="orderNum">${order.oid
+												}</a>
+										</div>
+										<span>成交时间：${order.ordertime}</span>
+										<!--    <em>店铺：小桔灯</em>-->
+									</div>
+									<div class="order-content">
+										<div class="order-left">
+											<c:forEach items="${order.orderItemList }" var="orderItem">
+												<ul class="item-list">
+													<li class="td td-item">
+														<div class="item-pic">
+															<a href="#" class="J_MakePoint"> <img
+																src="${orderItem.goods.image_4}"
+																class="itempic J_ItemImg"> </a>
+														</div>
+														<div class="item-info">
+															<div class="item-basic-info">
+																<a href="#">
+																	<p>${orderItem.goods.gname}</p>
+																	<p class="info-little">
+																		<br />${orderItem.orderItemId}
+																	</p> </a>
+															</div>
+														</div></li>
+													<li class="td td-price">
+														<div class="item-price">${orderItem.goods.currPrice}0</div>
+													</li>
+													<li class="td td-number">
+														<div class="item-number">
+															<span>×</span>${orderItem.quantity}
+														</div></li>
+													<li class="td td-operation">
+														<div class="item-operation"></div></li>
+												</ul>
+											</c:forEach>
+										</div>
+										<div class="order-right">
+											<li class="td td-amount">
+												<div class="item-amount">
+													合计：${order.total}0
+													<p>
+														含运费：<span>0.00</span>
+													</p>
+												</div></li>
+											<div class="move-right">
+												<li class="td td-status">
+													<div class="item-status">
+														<c:choose>
+															<c:when test="${order.status eq 1 }">
+																<p class="Mystatus">等待付款</p>
+															</c:when>
+															<c:when test="${order.status eq 2 }">
+																<p class="Mystatus">准备发货</p>
+															</c:when>
+															<c:when test="${order.status eq 3 }">
+																<p class="Mystatus">等待确认</p>
+															</c:when>
+															<c:when test="${order.status eq 4 }">
+																<p class="Mystatus">交易成功</p>
+															</c:when>
+															<c:when test="${order.status eq 5 }">
+																<p class="Mystatus">已取消</p>
+															</c:when>
+														</c:choose>
+													</div></li>
+												<li class="td td-change"><c:choose>
+														<c:when test="${order.status eq 1 }">
+															<a href="#"><div class="am-btn am-btn-danger anniu am-disabled">发货</div>
+															</a>
+														</c:when>
+														<c:when test="${order.status eq 2 }">
+															<a href="#"><div class="am-btn am-btn-danger anniu">发货</div>
+															</a>
+														</c:when>
+														<c:when test="${order.status eq 3 }">
+															<a
+																href="<c:url value='/OrderServlet?method=confirm&oid=${order.oid }'/>"><div
+																	class="am-btn am-btn-danger anniu">已发货</div> </a>
+														</c:when>
+														<c:when test="${order.status eq 4 }">
+															<a href="#"><div class="am-btn am-btn-danger anniu">已发货</div>
+															</a>
+														</c:when>
+														<c:when test="${order.status eq 5 }">
+															<a href="#"><div class="am-btn am-btn-danger anniu">已发货</div>
+															</a>
+														</c:when>
+													</c:choose></li>
+											</div>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+					</div>
+
+					
+					<c:import url="/pager.jsp"></c:import>
 					<hr />
 					<p>注：.....</p>
 				</form>

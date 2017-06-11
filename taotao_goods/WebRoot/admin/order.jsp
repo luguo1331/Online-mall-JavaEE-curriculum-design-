@@ -235,7 +235,8 @@
 								<tr>
 									<td><input type="checkbox" /></td>
 									<td>${order.oid}</td>
-									<td><a href="#">${order.owner.loginname}</a></td>
+									<td><a href="<c:url value='/OrderServlet?method=findByUser&uid=${order.owner.uid}'/>">${order.owner.loginname}</a></td>
+												
 									<td>${order.address}</td>
 									<td class="am-hide-sm-only">${order.ordertime}</td>
 									<td class="am-hide-sm-only">${order.total}</td>

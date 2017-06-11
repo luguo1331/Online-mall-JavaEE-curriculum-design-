@@ -92,6 +92,45 @@ public class OrderDao {
 	}
 
 	/**
+	 * 查询所有订单
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
+	public PageBean<Order> findAll(int pc) throws SQLException {
+		List<Expression> exprList = new ArrayList<Expression>();
+		return findByCriteria2(exprList, pc);
+	}
+	
+	/**
+	 * 根据oid查询订单
+	 * 
+	 * @param oid
+	 * @return
+	 * @throws SQLException
+	 */
+	public PageBean<Order> findByOid(String oid,int pc) throws SQLException {
+		List<Expression> exprList = new ArrayList<Expression>();
+		exprList.add(new Expression("oid", "=", oid));
+		return findByCriteria2(exprList, pc);
+	}
+
+
+	/**
+	 * 按用户查询订单
+	 * 
+	 * @param uid
+	 * @param pc
+	 * @return
+	 * @throws SQLException
+	 */
+	public PageBean<Order> findByUser(String uid, int pc) throws SQLException {
+		List<Expression> exprList = new ArrayList<Expression>();
+		exprList.add(new Expression("uid", "=", uid));
+		return findByCriteria(exprList, pc);
+	}
+
+	/**
 	 * 通用的查询方法
 	 * 
 	 * @param exprList
@@ -219,7 +258,6 @@ public class OrderDao {
 
 		List<Map<String, Object>> mapList = qr.query(sql, new MapListHandler(),
 				params.toArray());
-		System.out.println(mapList);
 		List<Order> orderList = toOrderList(mapList);
 
 		// 虽然已经获取所有的订单，但每个订单中并没有订单条目。
@@ -280,20 +318,8 @@ public class OrderDao {
 	private Order toOrder(Map<String, Object> map) {
 		Order order = CommonUtils.toBean(map, Order.class);
 		User user = CommonUtils.toBean(map, User.class);
-		System.out.println(user.getUid());
 		order.setOwner(user);
 		return order;
-	}
-
-	/**
-	 * 查询所有订单
-	 * 
-	 * @return
-	 * @throws SQLException
-	 */
-	public PageBean<Order> findAll(int pc) throws SQLException {
-		List<Expression> exprList = new ArrayList<Expression>();
-		return findByCriteria2(exprList, pc);
 	}
 
 	/**
@@ -343,17 +369,4 @@ public class OrderDao {
 		return orderItem;
 	}
 
-	/**
-	 * 按用户查询订单
-	 * 
-	 * @param uid
-	 * @param pc
-	 * @return
-	 * @throws SQLException
-	 */
-	public PageBean<Order> findByUser(String uid, int pc) throws SQLException {
-		List<Expression> exprList = new ArrayList<Expression>();
-		exprList.add(new Expression("uid", "=", uid));
-		return findByCriteria(exprList, pc);
-	}
 }

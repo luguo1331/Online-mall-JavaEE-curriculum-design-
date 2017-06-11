@@ -83,6 +83,31 @@ public class GoodsServlet extends BaseServlet {
 	}
 
 	/**
+	 * 按cid查找商品
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findByCategoryAmdin(HttpServletRequest req,
+			HttpServletResponse resp) throws ServletException, IOException {
+		// 获取当前页码
+		int pc = getPc(req);
+		// 获取当前url
+		String url = getUrl(req);
+		// 获取当前插叙条件
+		String cid = req.getParameter("cid");
+		// 使用cid与pc查询
+		PageBean<Goods> pb = goodsService.findByCategory(cid, pc);
+		// 设置pageBean参数
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/admin/goods.jsp";
+	}
+
+	/**
 	 * 查询所有商品
 	 * 
 	 * @param req

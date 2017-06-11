@@ -26,6 +26,43 @@ import com.sise.taotao.domain.Goods;
 public class CategoryDao {
 	private QueryRunner qr = new TxQueryRunner();
 
+
+
+	/**
+	 * 返回所有分类
+	 * 
+	 * @return
+	 * @throws SQLException
+	 */
+	public List<Category> findAll() throws SQLException {
+		String sql = "SELECT * FROM t_category WHERE pid IS NULL ORDER BY orderBy";
+		List<Map<String, Object>> mapList = qr.query(sql, new MapListHandler());
+
+		List<Category> parents = toCategoryList(mapList);
+
+		for (Category parent : parents) {
+			parent.setChildren(findByParent(parent.getCid()));
+			for (Category child : parent.getChildren()) {
+				child.setGoods(new GoodsDao().findByCategory(child.getCid()));
+			}
+		}
+		return parents;
+	}
+
+	/**
+	 * 通过父分类查询子分类
+	 * 
+	 * @param pid
+	 * @return
+	 * @throws SQLException
+	 */
+	public List<Category> findByParent(String pid) throws SQLException {
+		String sql = "SELECT * FROM t_category WHERE pid=? ORDER BY orderBy";
+		List<Map<String, Object>> mapList = qr.query(sql, new MapListHandler(),
+				pid);
+		return toCategoryList(mapList);
+	}
+	
 	/**
 	 * 将一个Map中的数据映射到category中
 	 * 
@@ -57,40 +94,6 @@ public class CategoryDao {
 		}
 		return categoryList;
 	}
-
-	/**
-	 * 返回所有分类
-	 * 
-	 * @return
-	 * @throws SQLException
-	 */
-	public List<Category> findAll() throws SQLException {
-		String sql = "SELECT * FROM t_category WHERE pid IS NULL ORDER BY orderBy";
-		List<Map<String, Object>> mapList = qr.query(sql, new MapListHandler());
-
-		List<Category> parents = toCategoryList(mapList);
-
-		for (Category parent : parents) {
-			parent.setChildren(findByParent(parent.getCid()));
-			for (Category child : parent.getChildren()) {
-				child.setGoods(new GoodsDao().findByCategory(child.getCid()));
-			}
-		}
-		return parents;
-	}
-
-	/**
-	 * 通过父分类查询子分类
-	 * 
-	 * @param pid
-	 * @return
-	 * @throws SQLException
-	 */
-	private List<Category> findByParent(String pid) throws SQLException {
-		String sql = "SELECT * FROM t_category WHERE pid=? ORDER BY orderBy";
-		List<Map<String, Object>> mapList = qr.query(sql, new MapListHandler(),
-				pid);
-		return toCategoryList(mapList);
-	}
+	
 
 }

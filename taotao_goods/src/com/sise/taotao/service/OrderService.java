@@ -48,9 +48,9 @@ public class OrderService {
 		}
 	}
 
-	
 	/**
 	 * 查询所有
+	 * 
 	 * @param pc
 	 * @return
 	 */
@@ -63,7 +63,8 @@ public class OrderService {
 		} catch (SQLException e) {
 			try {
 				JdbcUtils.rollbackTransaction();
-			} catch (SQLException e1) {}
+			} catch (SQLException e1) {
+			}
 			throw new RuntimeException(e);
 		}
 	}
@@ -98,6 +99,28 @@ public class OrderService {
 		try {
 			JdbcUtils.beginTransaction();
 			PageBean<Order> pb = orderDao.findByUser(uid, pc);
+			JdbcUtils.commitTransaction();
+			return pb;
+		} catch (SQLException e) {
+			try {
+				JdbcUtils.rollbackTransaction();
+			} catch (SQLException e1) {
+			}
+			throw new RuntimeException(e);
+		}
+	}
+
+	/**
+	 * 根据uid查询订单
+	 * 
+	 * @param oid
+	 * @param pc
+	 * @return
+	 */
+	public PageBean<Order> findByOid(String oid, int pc) {
+		try {
+			JdbcUtils.beginTransaction();
+			PageBean<Order> pb = orderDao.findByOid(oid, pc);
 			JdbcUtils.commitTransaction();
 			return pb;
 		} catch (SQLException e) {

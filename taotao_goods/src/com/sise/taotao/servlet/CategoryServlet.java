@@ -37,4 +37,36 @@ public class CategoryServlet extends BaseServlet {
 		return categoryService.findAll();
 	}
 
+	/**
+	 * 查找一级分类
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findAll(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		List<Category> categoryList = categoryService.findAll();
+		req.setAttribute("categoryList", categoryList);
+		return "f:/admin/category.jsp";
+	}
+
+	/**
+	 * 查找二级分类
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findSecondCategory(HttpServletRequest req,
+			HttpServletResponse resp) throws ServletException, IOException {
+		String cid = (String) req.getParameter("cid");
+		List<Category> categoryList = categoryService.findByParent(cid);
+		req.setAttribute("categoryList", categoryList);
+		return "f:/admin/category.jsp";
+	}
 }

@@ -205,9 +205,44 @@ public class OrderServlet extends BaseServlet {
 		User user = CommonUtils.toBean(req.getParameterMap(), User.class);
 
 		/*
-		 * 4. 使用pc和cid调用service#findByCategory得到PageBean
+		 * 4. 使用pc和uid调用service#myOrders得到PageBean
 		 */
 		PageBean<Order> pb = orderService.myOrders(user.getUid(), pc);
+		/*
+		 * 5. 给PageBean设置url，保存PageBean，转发到/person/order.jsp
+		 */
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/admin/orderDetails.jsp";
+	}
+
+	/**
+	 * 根据oid查询订单
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String findByOid(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		/*
+		 * 1. 得到pc：如果页面传递，使用页面的，如果没传，pc=1
+		 */
+		int pc = 1;
+		/*
+		 * 2. 得到url：...
+		 */
+		String url = getUrl(req);
+		/*
+		 * 3. 从当前form中获取User
+		 */
+		String oid = req.getQueryString().substring(21);
+		/*
+		 * 4. 使用pc和oid调用service#findByOid得到PageBean
+		 */
+		PageBean<Order> pb = orderService.findByOid(oid, pc);
 		/*
 		 * 5. 给PageBean设置url，保存PageBean，转发到/person/order.jsp
 		 */
@@ -272,6 +307,7 @@ public class OrderServlet extends BaseServlet {
 		/*
 		 * 5. 给PageBean设置url，保存PageBean，转发到/person/order.jsp
 		 */
+
 		pb.setUrl(url);
 		req.setAttribute("pb", pb);
 		return "f:/person/change.jsp";

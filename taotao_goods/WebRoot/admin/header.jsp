@@ -40,7 +40,8 @@
 		<a href="<c:url value='/UserServlet?method=findAll'/>">用户管理</a> <a
 			href="<c:url value='/OrderServlet?method=findAll'/>">订单管理</a> <a
 			href="<c:url value='/GoodsServlet?method=findAll'/>">商品管理</a><a
-			href="#">消息管理</a></li>
+			href="#">消息管理</a>
+			<a href="<c:url value='/CategoryServlet?method=findAll'/>">分类管理</a></li>
 		<li class="soso">
 			<p>
 				<select

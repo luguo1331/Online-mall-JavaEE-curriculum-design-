@@ -259,16 +259,23 @@
 
 			<div class="admin-biaogelist">
 				<div class="listbiaoti am-cf">
-					<ul class="am-icon-flag on">商品栏目管理
+					<ul class="am-icon-flag on">分类管理
 					</ul>
 					<dl class="am-icon-home" style="float: right;">
 						当前位置： 首页 >
-						<a href="#">商品列表</a>
+						<a href="#">分类列表</a>
 					</dl>
 					<dl>
-						<button type="button"
-							class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"
-							data-am-modal="{target: '#my-popup'}">添加商品一级分类</button>
+						<c:choose>
+							<c:when test="${empty categoryList[0].parent }">
+							</c:when>
+							<c:otherwise>
+								<button type="button"
+									class="am-btn am-btn-danger am-round am-btn-xs am-icon-plus"
+									data-am-modal="{target: '#my-popup'}">添加商品一级分类</button>
+							</c:otherwise>
+						</c:choose>
+
 					</dl>
 					<!--data-am-modal="{target: '#my-popup'}" 弹出层 ID  弹出层 190行 开始  271行结束-->
 

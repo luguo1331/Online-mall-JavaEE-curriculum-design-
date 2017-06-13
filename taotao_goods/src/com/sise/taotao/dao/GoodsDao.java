@@ -184,5 +184,16 @@ public class GoodsDao {
 		}
 		return goods;
 	}
-
+	
+	
+	/**
+	 * 更新库存
+	 * @param num
+	 * @param gid 
+	 * @throws SQLException
+	 */
+	public void updateNum(int num, String gid) throws SQLException {
+		String sql = "UPDATE t_goods SET num=? WHERE gid=? "; 
+		qr.update(sql,num,gid);
+	}
 }

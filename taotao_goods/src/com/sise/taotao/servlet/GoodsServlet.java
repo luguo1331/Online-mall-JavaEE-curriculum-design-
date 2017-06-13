@@ -159,6 +159,34 @@ public class GoodsServlet extends BaseServlet {
 	}
 
 	/**
+	 * 修改库存
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String updateNum(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		// 获取当前页码
+		int pc = getPc(req);
+		// 获取当前url
+		String url = getUrl(req);
+		// 获取当前插叙条件
+		String gid = req.getParameter("gid");
+		int num = 0;
+		// 修改库存
+		goodsService.updateNum(num,gid);
+		// 使用pc查询
+		PageBean<Goods> pb = goodsService.findAll(pc);
+		// 设置pageBean参数
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/admin/goods.jsp";
+	}
+
+	/**
 	 * 根据gid查询商品
 	 * 
 	 * @param req

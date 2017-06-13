@@ -55,17 +55,20 @@
 							class="am-btn am-btn-default am-radius am-btn-xs">
 							帮助中心<a href="javascript: void(0)" class="am-close am-close-spin"
 								data-am-modal-close="">×</a>
-						</button></li>
+						</button>
+					</li>
 					<li><button type="button"
 							class="am-btn am-btn-default am-radius am-btn-xs">
 							奖金管理<a href="javascript: void(0)" class="am-close am-close-spin"
 								data-am-modal-close="">×</a>
-						</button></li>
+						</button>
+					</li>
 					<li><button type="button"
 							class="am-btn am-btn-default am-radius am-btn-xs">
 							产品管理<a href="javascript: void(0)" class="am-close am-close-spin"
 								data-am-modal-close="">×</a>
-						</button></li>
+						</button>
+					</li>
 
 
 				</ul>
@@ -96,11 +99,22 @@
 				<div class="fbneirong">
 					<form class="am-form">
 						<div class="am-form-group am-cf">
-							<div class="zuo">标题：</div>
-							<div class="you">
-								<input type="email" class="am-input-sm" id="doc-ipt-email-1"
-									placeholder="请输入标题">
-							</div>
+							<ul>
+								<li>书名： <input id="bname" type="text" name="bname"
+									value="Spring实战(第3版)（In Action系列中最畅销的Spring图书，近十万读者学习Spring的共同选择）"
+									style="width:500px;" />
+								</li>
+								<li>大图： <input id="image_w" type="file" name="image_w" />
+								</li>
+								<li>小图： <input id="image_b" type="file" name="image_b" />
+								</li>
+								<li>当前价：<input id="currPrice" type="text" name="currPrice"
+									value="40.7" style="width:50px;" />
+								</li>
+								<li>定价： <input id="price" type="text" name="price"
+									value="59.0" style="width:50px;" /> 折扣：<input id="discount"
+									type="text" name="discount" value="6.9" style="width:30px;" />折</li>
+							</ul
 						</div>
 						<div class="am-form-group am-cf">
 							<div class="zuo">关键词：</div>

@@ -329,20 +329,19 @@
 															</a>
 														</c:when>
 														<c:when test="${order.status eq 2 }">
-															<a href="#"><div class="am-btn am-btn-danger anniu">发货</div>
-															</a>
+														<a
+																href="<c:url value='/OrderServlet?method=send&oid=${order.oid }'/>"><div
+																	class="am-btn am-btn-danger anniu">发货</div> </a>
 														</c:when>
 														<c:when test="${order.status eq 3 }">
-															<a
-																href="<c:url value='/OrderServlet?method=confirm&oid=${order.oid }'/>"><div
-																	class="am-btn am-btn-danger anniu">已发货</div> </a>
+															<a href="#"><div class="am-btn am-btn-danger anniu">已发货</div>
 														</c:when>
 														<c:when test="${order.status eq 4 }">
 															<a href="#"><div class="am-btn am-btn-danger anniu">已发货</div>
 															</a>
 														</c:when>
 														<c:when test="${order.status eq 5 }">
-															<a href="#"><div class="am-btn am-btn-danger anniu">已发货</div>
+															<a href="#"><div class="am-btn am-btn-danger anniu">已取消</div>
 															</a>
 														</c:when>
 													</c:choose></li>

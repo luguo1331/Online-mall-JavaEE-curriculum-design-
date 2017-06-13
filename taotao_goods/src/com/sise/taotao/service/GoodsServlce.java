@@ -75,4 +75,18 @@ public class GoodsServlce {
 			throw new RuntimeException(e);
 		}
 	}
+
+	/**
+	 * 更新库存
+	 * 
+	 * @param num
+	 * @param gid
+	 */
+	public void updateNum(int num, String gid) {
+		try {
+			goodsDao.updateNum(num, gid);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

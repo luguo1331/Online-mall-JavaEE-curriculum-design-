@@ -145,6 +145,35 @@ public class OrderServlet extends BaseServlet {
 	}
 
 	/**
+	 * 发货
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String send(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		String oid = req.getParameter("oid");
+
+		/*
+		 * 校验订单状态
+		 */
+		int status = orderService.findStatus(oid);
+
+		int pc = getPc(req);
+		String url = getUrl(req);
+		orderService.updateStatus(oid, 3);// 设置状态为交易成功！
+		req.setAttribute("code", "success");
+		req.setAttribute("msg", "恭喜，交易成功！");
+		PageBean<Order> pb = orderService.findByOid(oid, pc);
+		pb.setUrl(url);
+		req.setAttribute("pb", pb);
+		return "f:/admin/orderDetails.jsp";
+	}
+
+	/**
 	 * 我的订单
 	 * 
 	 * @param req

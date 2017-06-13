@@ -290,6 +290,9 @@
 						<div class="th th-number">
 							<td class="td-inner">库存</td>
 						</div>
+						<div class="th th-number">
+							<td class="td-inner">状态</td>
+						</div>
 						<div class="th th-change">
 							<td class="td-inner">交易操作</td>
 						</div>
@@ -297,54 +300,76 @@
 
 					<div class="order-main">
 						<div class="order-list">
-							
-								<!--交易成功-->
-								<div class="order-status5">									
-									<div class="order-content">
-										<div class="order-left">
-											<c:forEach items="${pb.beanList }" var="goods">
-												<ul class="item-list">
-													<li class="td td-item">
-														<div class="item-pic">
-															<a href="#" class="J_MakePoint"> <img
-																src="${goods.image_4}"
-																class="itempic J_ItemImg"> </a>
+							<!--交易成功-->
+							<div class="order-status5">
+								<div class="order-content">
+									<div class="order-left">
+										<c:forEach items="${pb.beanList }" var="goods">
+											<ul class="item-list">
+												<li class="td td-item">
+													<div class="item-pic">
+														<a href="#" class="J_MakePoint"> <img
+															src="${goods.image_4}" class="itempic J_ItemImg"> </a>
+													</div>
+													<div class="item-info">
+														<div class="item-basic-info">
+															<a href="#">
+																<p>${goods.gname}</p>
+																<p class="info-little">
+																	<br />${goods.gid}
+																</p> </a>
 														</div>
-														<div class="item-info">
-															<div class="item-basic-info">
-																<a href="#">
-																	<p>${goods.gname}</p>
-																	<p class="info-little">
-																		<br />${goods.gid}
-																	</p> </a>
-															</div>
-														</div>
-													</li>
-													<li class="td td-price">
-														<div class="item-price">${goods.currPrice}0</div>
-													</li>
-													<li class="td td-number">
-														<div class="item-number">
-															<span></span>${goods.num}
-														</div>
-													</li>
-													<li class="td td-operation">
-														<div class="item-operation"></div>
-													</li>
-												</ul>
-											</c:forEach>
-										</div>									
+													</div>
+												</li>
+												<li class="td td-price">
+													<div class="item-price">${goods.currPrice}0</div>
+												</li>
+												<li class="td td-number">
+													<div class="item-number">
+														<span></span>${goods.num}
+													</div>
+												</li>
+												<li class="td td-number">
+													<div class="item-number">
+														<c:choose>
+															<c:when test="${goods.num <= 0 }">
+																<p class="Mystatus">已下架</p>
+															</c:when>
+															<c:otherwise>
+																<p class="Mystatus">在售</p>
+															</c:otherwise>
+														</c:choose>
+													</div>
+												</li>
+												<li class="td td-operation">
+													<div class="am-btn-group am-btn-group-xs">
+														<c:choose>
+															<c:when test="${goods.num <= 0 }">
+																<button type="button" class="am-btn am-btn-default">
+																	<span class="am-icon-save"></span> 上架
+																</button>
+															</c:when>
+															<c:otherwise>
+																<button type="button" class="am-btn am-btn-default">
+																	<a class="am-icon-save" href="<c:url value='/GoodsServlet?method=updateNum&gid=${goods.gid}'/>"></a> 下架
+																</button>
+															</c:otherwise>
+														</c:choose>
+														<button type="button" class="am-btn am-btn-default">
+															<span class="am-icon-trash-o"></span> 修改
+														</button>
+													</div></li>
+											</ul>
+										</c:forEach>
 									</div>
 								</div>
-															
+							</div>
+
 						</div>
 					</div>
 
 
 					<div class="am-btn-group am-btn-group-xs">
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-plus"></span> 删除
-						</button>
 						<button type="button" class="am-btn am-btn-default">
 							<span class="am-icon-save"></span> 上架
 						</button>
@@ -352,16 +377,7 @@
 							<span class="am-icon-save"></span> 下架
 						</button>
 						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-save"></span> 移动
-						</button>
-						<button type="button" class="am-btn am-btn-default">
 							<span class="am-icon-plus"></span> 新增
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-save"></span> 保存
-						</button>
-						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-archive"></span> 移动
 						</button>
 						<button type="button" class="am-btn am-btn-default">
 							<span class="am-icon-trash-o"></span> 删除
@@ -369,19 +385,7 @@
 					</div>
 					<c:import url="/pager.jsp"></c:import>
 					<hr />
-					<p>
-						备注：操作图标含义 <a class="am-text-success am-icon-file" title="添加子栏目">
-							添加子栏目</a> <a class="am-icon-pencil-square-o am-text-secondary"
-							title="修改"> 修改栏目</a> <a class="am-icon-copy am-text-warning"
-							title="复制"> 复制栏目</a> <a class="am-icon-trash-o am-text-danger"
-							title="删除"> 删除栏目</a>
-
-
-
-
-
-
-					</p>
+					<p></p>
 				</form>
 
 				<div class="foods">

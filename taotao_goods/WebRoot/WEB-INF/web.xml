@@ -39,6 +39,11 @@
     <servlet-name>OrderServlet</servlet-name>
     <servlet-class>com.sise.taotao.servlet.OrderServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>AdminAddBookServlet</servlet-name>
+    <servlet-class>com.sise.taotao.servlet.AdminAddBookServlet</servlet-class>
+  </servlet>
+
 
 
 
@@ -77,6 +82,10 @@
   <servlet-mapping>
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>/OrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminAddBookServlet</servlet-name>
+    <url-pattern>/AdminAddBookServlet</url-pattern>
   </servlet-mapping>
 <!-- 主页过滤器 -->
 	<filter>

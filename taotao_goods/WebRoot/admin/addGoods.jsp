@@ -36,25 +36,21 @@
 				function() {
 					var gname = $("#gname").val();
 					var currPrice = $("#currPrice").val();
+					
 					var price = $("#price").val();
 					var discount = $("#discount").val();
-					var author = $("#author").val();
+					var image_1 = $("#image_1").val();
+					var image_2 = $("#image_2").val();
+					var image_3 = $("#image_3").val();
+					var image_4 = $("#image_4").val();
+					
+					var num = $("#num").val();
 					var press = $("#press").val();
 					var pid = $("#pid").val();
 					var cid = $("#cid").val();
-					var image_w = $("#image_w").val();
-					var image_b = $("#image_b").val();
+					var type = $("#type").val();
 
-					if (!bname || !currPrice || !price || !discount || !author
-							|| !press || !pid || !cid || !image_w || !image_b) {
-						alert("图名、当前价、定价、折扣、作者、出版社、1级分类、2级分类、大图、小图都不能为空！");
-						return false;
-					}
-
-					if (isNaN(currPrice) || isNaN(price) || isNaN(discount)) {
-						alert("当前价、定价、折扣必须是合法小数！");
-						return false;
-					}
+				
 					$("#form").submit();
 				});
 	});
@@ -160,7 +156,8 @@
 				</div>
 
 				<div class="fbneirong">
-					<form class="am-form" action="<c:url value=''/>">
+					<form class="am-form" action="<c:url value='/AdminAddBookServlet'/>" method="post" id="form" enctype="multipart/form-data">
+					
 						<div class="am-form-group am-cf">
 							<div class="zuo">名字：</div>
 							<div class="you">
@@ -229,7 +226,7 @@
 						<div class="am-form-group am-cf">
 							<div class="zuo">描述：</div>
 							<div class="you">
-								<textarea class="" rows="2" id="doc-ta-1" name="press"></textarea>
+								<textarea class="" rows="2" id="doc-ta-1" name="press">${msg }</textarea>
 							</div>
 						</div>
 
@@ -260,7 +257,7 @@
 						<div class="am-form-group am-cf">
 							<div class="zuo">产品类型：</div>
 							<div class="you">
-								<select>
+								<select name="type" id="type">
 									<option value="1" selected='selected'>中式糕点</option>
 									<option value="2">西式糕点</option>
 								</select>

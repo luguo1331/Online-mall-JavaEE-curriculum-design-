@@ -89,4 +89,18 @@ public class GoodsServlce {
 			throw new RuntimeException(e);
 		}
 	}
+
+	/**
+	 * 添加图书
+	 * 
+	 * @param goods
+	 */
+	public void add(Goods goods) {
+		try {
+			goodsDao.add(goods);
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
 }

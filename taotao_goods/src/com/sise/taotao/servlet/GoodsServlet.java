@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cn.itcast.commons.CommonUtils;
 import cn.itcast.servlet.BaseServlet;
 
 import com.sise.taotao.domain.Category;
@@ -271,4 +272,11 @@ public class GoodsServlet extends BaseServlet {
 		return "f:/home/introduction.jsp";
 	}
 
+	public String addGoods(HttpServletRequest req,
+			HttpServletResponse resp) throws ServletException, IOException {
+		Goods formGoods = CommonUtils.toBean(req.getParameterMap(), Goods.class);
+		System.out.println(formGoods);
+		System.out.println(formGoods.getImage_1());
+		return null;
+	}
 }

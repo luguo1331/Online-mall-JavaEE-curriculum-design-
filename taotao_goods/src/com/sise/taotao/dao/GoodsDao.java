@@ -19,7 +19,6 @@ import com.sise.taotao.domain.Goods;
 import com.sise.taotao.domain.PageBean;
 import com.sise.taotao.other.Expression;
 import com.sise.taotao.other.PageConstants;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 /*
  * 类名称: GoodsDao   
@@ -95,6 +94,7 @@ public class GoodsDao {
 
 	/**
 	 * 查询所有商品
+	 * 
 	 * @param pc
 	 * @return
 	 * @throws SQLException
@@ -150,7 +150,8 @@ public class GoodsDao {
 		int tr = number.intValue();
 
 		// 查询beanList
-		sql = "SELECT * FROM t_goods" + whereSql + " ORDER BY orderBy LIMIT ?,?";
+		sql = "SELECT * FROM t_goods" + whereSql
+				+ " ORDER BY orderBy LIMIT ?,?";
 		params.add((pc - 1) * ps);
 		params.add(ps);
 		List<Goods> beanList = qr.query(sql, new BeanListHandler<Goods>(
@@ -184,16 +185,34 @@ public class GoodsDao {
 		}
 		return goods;
 	}
-	
-	
+
 	/**
 	 * 更新库存
+	 * 
 	 * @param num
-	 * @param gid 
+	 * @param gid
 	 * @throws SQLException
 	 */
 	public void updateNum(int num, String gid) throws SQLException {
-		String sql = "UPDATE t_goods SET num=? WHERE gid=? "; 
-		qr.update(sql,num,gid);
+		String sql = "UPDATE t_goods SET num=? WHERE gid=? ";
+		qr.update(sql, num, gid);
+	}
+
+	/**
+	 * 添加图书
+	 * 
+	 * @param book
+	 * @throws SQLException
+	 */
+	public void add(Goods goods) throws SQLException {
+		String sql = "INSERT INTO t_goods(gid,gname,price,currPrice,"
+				+ "discount,press,image_1,image_2,num,cid,type,image_3,image_4)"
+				+ " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		Object[] params = { goods.getGid(), goods.getGname(), goods.getPrice(),
+				goods.getCurrPrice(), goods.getDiscount(), goods.getPress(),
+				goods.getImage_1(), goods.getImage_2(), goods.getNum(),
+				goods.getCategory().getCid(), goods.getType(),
+				goods.getImage_3(), goods.getImage_4() };
+		qr.update(sql, params);
 	}
 }

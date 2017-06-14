@@ -11,7 +11,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Amaze UI Admin index Examples</title>
+<title>添加商品</title>
 <meta name="description" content="这是一个 index 页面">
 <meta name="keywords" content="index">
 <meta name="viewport"
@@ -29,6 +29,72 @@
 <link rel="stylesheet" href="<c:url value='/assets/css/admin.css'/>">
 <script src="<c:url value='/assets/js/jquery.min.js'/>"></script>
 <script src="<c:url value='/assets/js/app.js'/>"></script>
+<script type="text/javascript">
+	$(function() {
+
+		$("#btn").click(
+				function() {
+					var gname = $("#gname").val();
+					var currPrice = $("#currPrice").val();
+					var price = $("#price").val();
+					var discount = $("#discount").val();
+					var author = $("#author").val();
+					var press = $("#press").val();
+					var pid = $("#pid").val();
+					var cid = $("#cid").val();
+					var image_w = $("#image_w").val();
+					var image_b = $("#image_b").val();
+
+					if (!bname || !currPrice || !price || !discount || !author
+							|| !press || !pid || !cid || !image_w || !image_b) {
+						alert("图名、当前价、定价、折扣、作者、出版社、1级分类、2级分类、大图、小图都不能为空！");
+						return false;
+					}
+
+					if (isNaN(currPrice) || isNaN(price) || isNaN(discount)) {
+						alert("当前价、定价、折扣必须是合法小数！");
+						return false;
+					}
+					$("#form").submit();
+				});
+	});
+
+	function loadChildren() {
+		/*
+		1. 获取pid
+		2. 发出异步请求，功能之：
+		  3. 得到一个数组
+		  4. 获取cid元素(<select>)，把内部的<option>全部删除
+		  5. 添加一个头（<option>请选择2级分类</option>）
+		  6. 循环数组，把数组中每个对象转换成一个<option>添加到cid中
+		 */
+		// 1. 获取pid
+		var pid = $("#pid").val();
+		// 2. 发送异步请求
+		$.ajax({
+			async : true,
+			cache : false,
+			url : "/taotao_goods/GoodsServlet",
+			data : {
+				method : "ajaxFindChildren",
+				pid : pid
+			},
+			type : "POST",
+			dataType : "json",
+			success : function(arr) {
+				// 3. 得到cid，删除它的内容
+				$("#cid").empty();//删除元素的子元素
+				$("#cid").append($("<option>====请选择2级分类====</option>"));//4.添加头
+				// 5. 循环遍历数组，把每个对象转换成<option>添加到cid中
+				for ( var i = 0; i < arr.length; i++) {
+					var option = $("<option>").val(arr[i].cid).text(
+							arr[i].cname);
+					$("#cid").append(option);
+				}
+			}
+		});
+	}
+</script>
 </head>
 <body>
 	<!--[if lte IE 9]><p class="browsehappy">升级你的浏览器吧！ <a href="http://se.360.cn/" target="_blank">升级浏览器</a>以获得更好的体验！</p><![endif]-->
@@ -55,20 +121,17 @@
 							class="am-btn am-btn-default am-radius am-btn-xs">
 							帮助中心<a href="javascript: void(0)" class="am-close am-close-spin"
 								data-am-modal-close="">×</a>
-						</button>
-					</li>
+						</button></li>
 					<li><button type="button"
 							class="am-btn am-btn-default am-radius am-btn-xs">
 							奖金管理<a href="javascript: void(0)" class="am-close am-close-spin"
 								data-am-modal-close="">×</a>
-						</button>
-					</li>
+						</button></li>
 					<li><button type="button"
 							class="am-btn am-btn-default am-radius am-btn-xs">
 							产品管理<a href="javascript: void(0)" class="am-close am-close-spin"
 								data-am-modal-close="">×</a>
-						</button>
-					</li>
+						</button></li>
 
 
 				</ul>
@@ -97,91 +160,123 @@
 				</div>
 
 				<div class="fbneirong">
-					<form class="am-form">
+					<form class="am-form" action="<c:url value=''/>">
 						<div class="am-form-group am-cf">
-							<ul>
-								<li>书名： <input id="bname" type="text" name="bname"
-									value="Spring实战(第3版)（In Action系列中最畅销的Spring图书，近十万读者学习Spring的共同选择）"
-									style="width:500px;" />
-								</li>
-								<li>大图： <input id="image_w" type="file" name="image_w" />
-								</li>
-								<li>小图： <input id="image_b" type="file" name="image_b" />
-								</li>
-								<li>当前价：<input id="currPrice" type="text" name="currPrice"
-									value="40.7" style="width:50px;" />
-								</li>
-								<li>定价： <input id="price" type="text" name="price"
-									value="59.0" style="width:50px;" /> 折扣：<input id="discount"
-									type="text" name="discount" value="6.9" style="width:30px;" />折</li>
-							</ul
-						</div>
-						<div class="am-form-group am-cf">
-							<div class="zuo">关键词：</div>
+							<div class="zuo">名字：</div>
 							<div class="you">
-								<input type="password" class="am-input-sm" id="doc-ipt-pwd-1"
-									placeholder="请输入关键词">
+								<input type="text" class="am-input-sm" id="gname" 
+									name="gname" placeholder="请输入名字">
 							</div>
 						</div>
+
+						<div class="am-form-group am-cf">
+							<div class="zuo">大图：</div>
+							<div class="you">
+								<input id="image_1" type="file" name="image_1" />
+							</div>
+						</div>
+						<div class="am-form-group am-cf">
+							<div class="zuo">小图1：</div>
+							<div class="you">
+								<input id="image_2" type="file" name="image_2" />
+							</div>
+						</div>
+						<div class="am-form-group am-cf">
+							<div class="zuo">小图2：</div>
+							<div class="you">
+								<input id="image_3" type="file" name="image_3" />
+							</div>
+						</div>
+						<div class="am-form-group am-cf">
+							<div class="zuo">小图3：</div>
+							<div class="you">
+								<input id="image_4" type="file" name="image_4" />
+							</div>
+						</div>
+
+						<div class="am-form-group am-cf">
+							<div class="zuo">当前价格：</div>
+							<div class="you">
+								<input type="text" class="am-input-sm" id="doc-ipt-pwd-1"
+									name="price" placeholder="请输入当前价">
+							</div>
+						</div>
+
+
+						<div class="am-form-group am-cf">
+							<div class="zuo">定价：</div>
+							<div class="you">
+								<input type="text" class="am-input-sm" id="doc-ipt-pwd-1"
+									name="currPrice" placeholder="请输入定价">
+							</div>
+						</div>
+
+						<div class="am-form-group am-cf">
+							<div class="zuo">折扣：</div>
+							<div class="you">
+								<input type="text" class="am-input-sm" id="doc-ipt-pwd-1"
+									name="discount" placeholder="请输入折扣">
+							</div>
+						</div>
+						<div class="am-form-group am-cf">
+							<div class="zuo">库存：</div>
+							<div class="you">
+								<input type="text" class="am-input-sm" id="doc-ipt-pwd-1"
+									name="num" placeholder="请输入库存">
+							</div>
+						</div>
+
 						<div class="am-form-group am-cf">
 							<div class="zuo">描述：</div>
 							<div class="you">
-								<textarea class="" rows="2" id="doc-ta-1"></textarea>
+								<textarea class="" rows="2" id="doc-ta-1" name="press"></textarea>
 							</div>
 						</div>
+
+						<hr data-am-widget="divider" style=""
+							class="am-divider am-divider-default" />
+
 						<div class="am-form-group am-cf">
-							<div class="zuo">缩略图：</div>
+							<div class="zuo">一级分类：</div>
 							<div class="you">
-								<input type="file" id="doc-ipt-file-1">
+								<select name="cname" id="pid" onchange="loadChildren()">
+									<option value="">==请选择1级分类==</option>
+									<c:forEach items="${parents }" var="parent">
+										<option value="${parent.cid }">${parent.cname }</option>
+									</c:forEach>
+								</select>
 							</div>
 						</div>
 
 						<div class="am-form-group am-cf">
-							<div class="zuo">产品图片：</div>
-							<div class="you" style="height: 45px;">
-								<input type="file" id="doc-ipt-file-1">
-								<p class="am-form-help">请选择要上传的文件...</p>
-							</div>
-						</div>
-
-
-						<div class="am-form-group am-cf">
-							<div class="zuo">内容：</div>
+							<div class="zuo">二级分类：</div>
 							<div class="you">
-								<textarea class="" rows="2" id="doc-ta-1"></textarea>
+								<select name="cid" id="cid">
+									<option value="">==请选择2级分类==</option>
+								</select>
 							</div>
 						</div>
 
 						<div class="am-form-group am-cf">
-							<div class="zuo">其他信息：</div>
+							<div class="zuo">产品类型：</div>
 							<div class="you">
-								<textarea class="" rows="2" id="doc-ta-1"></textarea>
+								<select>
+									<option value="1" selected='selected'>中式糕点</option>
+									<option value="2">西式糕点</option>
+								</select>
 							</div>
 						</div>
 
 
-						<div class="am-form-group am-cf">
-							<div class="zuo">推荐：</div>
-							<div class="you" style="margin-top: 5px;">
-								<label class="am-checkbox-inline"> <input
-									type="checkbox" value="option1"> 选我 </label> <label
-									class="am-checkbox-inline"> <input type="checkbox"
-									value="option2"> 同时可以选我 </label> <label
-									class="am-checkbox-inline"> <input type="checkbox"
-									value="option3"> 还可以选我 </label>
-							</div>
-						</div>
 						<div class="am-form-group am-cf">
 							<div class="you" style="margin-left: 11%;">
-								<button type="submit" class="am-btn am-btn-success am-radius">发布并关闭窗口</button>
+								<button type="submit"  id="btn"class="am-btn am-btn-success am-radius">
+									&nbsp; &nbsp;&nbsp; &nbsp;发布 &nbsp; &nbsp;&nbsp; &nbsp;</button>
 								&nbsp; &raquo; &nbsp;
-								<button type="submit" class="am-btn am-btn-secondary am-radius">发布并继续发布</button>
-
 							</div>
 						</div>
 					</form>
 				</div>
-
 
 
 				<div class="foods">

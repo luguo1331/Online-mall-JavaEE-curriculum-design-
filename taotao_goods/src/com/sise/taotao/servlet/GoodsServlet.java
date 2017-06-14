@@ -1,6 +1,7 @@
 package com.sise.taotao.servlet;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import cn.itcast.servlet.BaseServlet;
 
+import com.sise.taotao.domain.Category;
 import com.sise.taotao.domain.Goods;
 import com.sise.taotao.domain.PageBean;
+import com.sise.taotao.service.CategoryService;
 import com.sise.taotao.service.GoodsServlce;
 
 /*
@@ -23,6 +26,7 @@ import com.sise.taotao.service.GoodsServlce;
  */
 public class GoodsServlet extends BaseServlet {
 	private GoodsServlce goodsService = new GoodsServlce();
+	private CategoryService categoryService = new CategoryService();
 
 	/**
 	 * 获取当前页码，默认值是1
@@ -177,13 +181,76 @@ public class GoodsServlet extends BaseServlet {
 		String gid = req.getParameter("gid");
 		int num = 0;
 		// 修改库存
-		goodsService.updateNum(num,gid);
+		goodsService.updateNum(num, gid);
 		// 使用pc查询
 		PageBean<Goods> pb = goodsService.findAll(pc);
 		// 设置pageBean参数
 		pb.setUrl(url);
 		req.setAttribute("pb", pb);
 		return "f:/admin/goods.jsp";
+	}
+
+	/**
+	 * 跳转添加商品页面
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String add(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		List<Category> parents = categoryService.findAll();
+		req.setAttribute("parents", parents);
+		return "f:/admin/addGoods.jsp";
+	}
+
+	/**
+	 * 异步查询二级分类
+	 * 
+	 * @param req
+	 * @param resp
+	 * @return
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public String ajaxFindChildren(HttpServletRequest req,
+			HttpServletResponse resp) throws ServletException, IOException {
+		/*
+		 * 1. 获取pid 2. 通过pid查询出所有2级分类 3. 把List<Category>转换成json，输出给客户端
+		 */
+		String pid = req.getParameter("pid");
+		List<Category> children = categoryService.findByParent(pid);
+		String json = toJson(children);
+		resp.getWriter().print(json);
+		return null;
+	}
+
+	// {"cid":"fdsafdsa", "cname":"fdsafdas"}
+	private String toJson(Category category) {
+		StringBuilder sb = new StringBuilder("{");
+		sb.append("\"cid\"").append(":").append("\"").append(category.getCid())
+				.append("\"");
+		sb.append(",");
+		sb.append("\"cname\"").append(":").append("\"")
+				.append(category.getCname()).append("\"");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	// [{"cid":"fdsafdsa", "cname":"fdsafdas"}, {"cid":"fdsafdsa",
+	// "cname":"fdsafdas"}]
+	private String toJson(List<Category> categoryList) {
+		StringBuilder sb = new StringBuilder("[");
+		for (int i = 0; i < categoryList.size(); i++) {
+			sb.append(toJson(categoryList.get(i)));
+			if (i < categoryList.size() - 1) {
+				sb.append(",");
+			}
+		}
+		sb.append("]");
+		return sb.toString();
 	}
 
 	/**

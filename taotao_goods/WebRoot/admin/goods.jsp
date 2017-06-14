@@ -377,7 +377,7 @@
 							<span class="am-icon-save"></span> 下架
 						</button>
 						<button type="button" class="am-btn am-btn-default">
-							<span class="am-icon-plus"></span> 新增
+							<a class="am-icon-plus" href="<c:url value='/GoodsServlet?method=add'/>">新增</a> 
 						</button>
 						<button type="button" class="am-btn am-btn-default">
 							<span class="am-icon-trash-o"></span> 删除

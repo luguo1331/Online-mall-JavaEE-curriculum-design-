@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -14,22 +15,24 @@
 		style="color:#aeb2b7; margin: 10px 0 0 0;">欢迎系统管理员：清风抚雪</div>
 	<div class="sideMenu">
 		<h3 class="am-icon-flag">
-			<em></em> <a href="#">商品管理</a>
+			<em></em> <a href="<c:url value='/GoodsServlet?method=findAll'/>">商品管理</a>
 		</h3>
 		<ul>
-			<li><a href="">商品列表</a></li>
+			<li><a href="">商品列表</a>
+			</li>
 			<li class="func" dataType='html' dataLink='msn.htm'
-				iconImg='images/msn.gif'>添加新商品</li>
-			<li>商品分类</li>
+				iconImg='images/msn.gif'></li>
+			<li><a href="<c:url value='/GoodsServlet?method=add'/>">新增商品</a>
+			</li>
 			<li>用户评论</li>
 			<li>商品回收站</li>
 			<li>库存管理</li>
 		</ul>
 		<h3 class="am-icon-cart-plus">
-			<em></em> <a href="#"> 订单管理</a>
+			<em></em><a href="<c:url value='/OrderServlet?method=findAll'/>">订单管理</a>
 		</h3>
 		<ul>
-			<li>订单列表</li>
+			<li><a href="<c:url value='/OrderServlet?method=findAll'/>">订单列表</a></li>
 			<li>合并订单</li>
 			<li>订单打印</li>
 			<li>添加订单</li>
@@ -37,10 +40,10 @@
 			<li>换货单列表</li>
 		</ul>
 		<h3 class="am-icon-users">
-			<em></em> <a href="#">会员管理</a>
+			<em></em> <a href="<c:url value='/UserServlet?method=findAll'/>">用户管理</a>
 		</h3>
 		<ul>
-			<li>会员列表</li>
+			<li><a href="<c:url value='/UserServlet?method=findAll'/>">用户列表</a></li>
 			<li>未激活会员</li>
 			<li>团队系谱图</li>
 			<li>会员推荐图</li>
@@ -56,20 +59,7 @@
 			<li>微信</li>
 			<li>客服</li>
 		</ul>
-		<h3 class="am-icon-gears">
-			<em></em> <a href="#">系统设置</a>
-		</h3>
-		<ul>
-			<li>数据备份</li>
-			<li>邮件/短信管理</li>
-			<li>上传/下载</li>
-			<li>权限</li>
-			<li>网站设置</li>
-			<li>第三方支付</li>
-			<li>提现 /转账 出入账汇率</li>
-			<li>平台设置</li>
-			<li>声音文件</li>
-		</ul>
+
 	</div>
 	<!-- sideMenu End -->
 

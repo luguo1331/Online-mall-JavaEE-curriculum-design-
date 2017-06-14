@@ -351,7 +351,7 @@
 															</c:when>
 															<c:otherwise>
 																<button type="button" class="am-btn am-btn-default">
-																	<a class="am-icon-save" href="<c:url value='/GoodsServlet?method=updateNum&gid=${goods.gid}'/>"></a> 下架
+																	<a class="am-icon-save" href="<c:url value='/GoodsServlet?method=updateNum&gid=${goods.gid}'/>">下架</a> 
 																</button>
 															</c:otherwise>
 														</c:choose>
